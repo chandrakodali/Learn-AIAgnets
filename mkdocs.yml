@@ -1,0 +1,116 @@
+site_name: "🤖 AI Agents Development"
+site_description: "Complete 12-week learning notes for AI Agents Development"
+site_url: ""
+
+theme:
+  name: material
+  palette:
+    # Dark mode (default)
+    - scheme: slate
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # Light mode
+    - scheme: default
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  icon:
+    logo: material/robot
+
+nav:
+  - Home: index.md
+  - "📚 Study Notes":
+    - "Module 1 — Dev Environment": notes/module_1_dev_environment.md
+    - "Module 2 — Brain": notes/module_2_brain.md
+    - "Module 3 — Spine": notes/module_3_spine.md
+    - "Module 4 — Senses & Memory": notes/module_4_senses_memory.md
+    - "Module 5 — Nervous System": notes/module_5_nervous_system.md
+    - "Module 6 — Home": notes/module_6_home.md
+  - "🔗 Resources":
+    - "Video-First Learning Path": resources/curated_resources.md
+    - "Project Build Specs": resources/project_specs.md
+
+markdown_extensions:
+  # Mermaid diagrams
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  # Code highlighting
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+
+  # Collapsible sections (for quiz answers)
+  - pymdownx.details
+
+  # Tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # Emojis
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  # Task lists
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  # Admonitions (callout boxes)
+  - admonition
+
+  # Tables
+  - tables
+
+  # Table of contents
+  - toc:
+      permalink: true
+
+  # Footnotes
+  - footnotes
+
+  # Markdown in HTML
+  - md_in_html
+
+  # Keys / keyboard shortcuts
+  - pymdownx.keys
+
+  # Critic markup
+  - pymdownx.critic
+
+  # Caret, mark, tilde
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+plugins:
+  - search
+
+extra:
+  social: []
