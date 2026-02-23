@@ -1,0 +1,2323 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete 12-week learning notes for AI Agents Development">
+      
+      
+      
+      
+        <link rel="prev" href="../../notes/module_6_home/">
+      
+      
+        <link rel="next" href="../project_specs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Video-First Learning Path - 🤖 AI Agents Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-agents-development-video-first-learning-path" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🤖 AI Agents Development" class="md-header__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🤖 AI Agents Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Video-First Learning Path
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../notes/module_1_dev_environment/" class="md-tabs__link">
+          
+  
+  
+  📚 Study Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  🔗 Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🤖 AI Agents Development" class="md-nav__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    🤖 AI Agents Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Study Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 Study Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_1_dev_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 — Dev Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_2_brain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 — Brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_3_spine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 — Spine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_4_senses_memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 — Senses & Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_5_nervous_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 — Nervous System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_6_home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 6 — Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔗 Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔗 Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video-First Learning Path
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video-First Learning Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#module-1-development-environment-week-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 1: Development Environment (Week 1–2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 1: Development Environment (Week 1–2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-2-the-brain-pydantic-pydanticai-openai-agents-sdk-week-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 2: The "Brain" — Pydantic + PydanticAI + OpenAI Agents SDK (Week 3–4)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 2: The &#34;Brain&#34; — Pydantic + PydanticAI + OpenAI Agents SDK (Week 3–4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos-pydantic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — Pydantic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-pydanticai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — PydanticAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-openai-agents-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — OpenAI Agents SDK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-3-the-spine-langgraph-crewai-a2a-protocol-week-56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 3: The "Spine" — LangGraph + CrewAI + A2A Protocol (Week 5–6)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 3: The &#34;Spine&#34; — LangGraph + CrewAI + A2A Protocol (Week 5–6)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — LangGraph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-crewai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — CrewAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-a2a-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — A2A Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-4-the-senses-memory-mcp-vector-dbs-graphrag-week-78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 4: The "Senses &amp; Memory" — MCP + Vector DBs + GraphRAG (Week 7–8)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 4: The &#34;Senses &amp; Memory&#34; — MCP + Vector DBs + GraphRAG (Week 7–8)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos-mcp-fastmcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — MCP &amp; FastMCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-pgvector-qdrant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — pgvector + Qdrant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-neo4j-graphrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — Neo4j + GraphRAG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-5-the-nervous-system-langsmith-evals-week-910" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 5: The "Nervous System" — LangSmith + Evals (Week 9–10)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 5: The &#34;Nervous System&#34; — LangSmith + Evals (Week 9–10)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-6-the-home-fastapi-docker-redis-deploy-week-1112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 6: The "Home" — FastAPI + Docker + Redis + Deploy (Week 11–12)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 6: The &#34;Home&#34; — FastAPI + Docker + Redis + Deploy (Week 11–12)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — FastAPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — Redis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-cloud-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — Cloud Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-free-courses-pair-with-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Bonus: Free Courses (Pair with Modules)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tldr-the-must-watch-only-fast-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ TL;DR — The "Must Watch Only" Fast Track
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Build Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#module-1-development-environment-week-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 1: Development Environment (Week 1–2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 1: Development Environment (Week 1–2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-2-the-brain-pydantic-pydanticai-openai-agents-sdk-week-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 2: The "Brain" — Pydantic + PydanticAI + OpenAI Agents SDK (Week 3–4)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 2: The &#34;Brain&#34; — Pydantic + PydanticAI + OpenAI Agents SDK (Week 3–4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos-pydantic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — Pydantic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-pydanticai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — PydanticAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-openai-agents-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — OpenAI Agents SDK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-3-the-spine-langgraph-crewai-a2a-protocol-week-56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 3: The "Spine" — LangGraph + CrewAI + A2A Protocol (Week 5–6)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 3: The &#34;Spine&#34; — LangGraph + CrewAI + A2A Protocol (Week 5–6)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos-langgraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — LangGraph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-crewai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — CrewAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-a2a-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — A2A Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-4-the-senses-memory-mcp-vector-dbs-graphrag-week-78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 4: The "Senses &amp; Memory" — MCP + Vector DBs + GraphRAG (Week 7–8)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 4: The &#34;Senses &amp; Memory&#34; — MCP + Vector DBs + GraphRAG (Week 7–8)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos-mcp-fastmcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — MCP &amp; FastMCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-pgvector-qdrant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — pgvector + Qdrant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-neo4j-graphrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — Neo4j + GraphRAG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-5-the-nervous-system-langsmith-evals-week-910" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 5: The "Nervous System" — LangSmith + Evals (Week 9–10)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 5: The &#34;Nervous System&#34; — LangSmith + Evals (Week 9–10)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-6-the-home-fastapi-docker-redis-deploy-week-1112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module 6: The "Home" — FastAPI + Docker + Redis + Deploy (Week 11–12)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module 6: The &#34;Home&#34; — FastAPI + Docker + Redis + Deploy (Week 11–12)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videos-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — FastAPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — Redis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-cloud-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Videos — Cloud Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-if-stuck_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Reference If Stuck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-free-courses-pair-with-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Bonus: Free Courses (Pair with Modules)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tldr-the-must-watch-only-fast-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ TL;DR — The "Must Watch Only" Fast Track
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ai-agents-development-video-first-learning-path">🎬 AI Agents Development — Video-First Learning Path<a class="headerlink" href="#ai-agents-development-video-first-learning-path" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>How to use this guide:</strong>
+- 🟢 <strong>MUST</strong> = Watch this one. It's the best resource for the topic.
+- 🟡 <strong>DEEP DIVE</strong> = Only if 🟢 wasn't enough or you want more depth.
+- 🔵 <strong>OPTIONAL</strong> = Alternative angle or quick recap. Skip unless curious.
+- 📖 <strong>Reference</strong> = Docs to check only if a video didn't click.</p>
+</blockquote>
+<hr />
+<h2 id="module-1-development-environment-week-12">Module 1: Development Environment (Week 1–2)<a class="headerlink" href="#module-1-development-environment-week-12" title="Permanent link">&para;</a></h2>
+<h3 id="videos">🎬 Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1</td>
+<td>🟢 MUST</td>
+<td><a href="https://www.youtube.com/@ArjanCodes">ArjanCodes — Modern Python Patterns</a></td>
+<td>Clean Python, type hints, async/await, design patterns</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>🟡 DEEP DIVE</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=python+3.10+new+features+structural+pattern+matching+tutorial"><code>"Python 3.10 new features" tutorial</code></a></td>
+<td><code>match/case</code>, <code>ParamSpec</code>, type aliases</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=uv+python+package+manager+tutorial+getting+started+2025"><code>uv python package manager tutorial 2025</code></a></td>
+<td>uv install, <code>uv init</code>, <code>uv add</code>, <code>uv run</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="reference-if-stuck">📖 Reference If Stuck<a class="headerlink" href="#reference-if-stuck" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python 3.10 What's New</td>
+<td><a href="https://docs.python.org/3/whatsnew/3.10.html">docs.python.org/3/whatsnew/3.10.html</a></td>
+</tr>
+<tr>
+<td>RealPython — Type Checking</td>
+<td><a href="https://realpython.com/python-type-checking/">realpython.com/python-type-checking/</a></td>
+</tr>
+<tr>
+<td>uv Official Docs</td>
+<td><a href="https://docs.astral.sh/uv/">docs.astral.sh/uv/</a></td>
+</tr>
+<tr>
+<td>RealPython — Projects with uv</td>
+<td><a href="https://realpython.com/python-uv/">realpython.com/python-uv/</a></td>
+</tr>
+<tr>
+<td>DataCamp — uv Guide</td>
+<td><a href="https://www.datacamp.com/tutorial/python-uv">datacamp.com/tutorial/python-uv</a></td>
+</tr>
+<tr>
+<td>python-dotenv</td>
+<td><a href="https://pypi.org/project/python-dotenv/">pypi.org/project/python-dotenv/</a></td>
+</tr>
+<tr>
+<td>Python asyncio</td>
+<td><a href="https://docs.python.org/3/library/asyncio.html">docs.python.org/3/library/asyncio.html</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="module-2-the-brain-pydantic-pydanticai-openai-agents-sdk-week-34">Module 2: The "Brain" — Pydantic + PydanticAI + OpenAI Agents SDK (Week 3–4)<a class="headerlink" href="#module-2-the-brain-pydantic-pydanticai-openai-agents-sdk-week-34" title="Permanent link">&para;</a></h2>
+<h3 id="videos-pydantic">🎬 Videos — Pydantic<a class="headerlink" href="#videos-pydantic" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1</td>
+<td>🟢 MUST</td>
+<td><a href="https://www.youtube.com/results?search_query=arjancodes+why+python+needs+pydantic">ArjanCodes — "Why Python Needs Pydantic"</a></td>
+<td>BaseModel, validation, serialization fundamentals</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>🟡 DEEP DIVE</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=pydantic+v2+full+course"><code>Pydantic V2 Full Course</code></a></td>
+<td>Validators, nested models, settings, advanced patterns</td>
+</tr>
+</tbody>
+</table>
+<h3 id="videos-pydanticai">🎬 Videos — PydanticAI<a class="headerlink" href="#videos-pydanticai" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.3</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=master+pydantic+ai+under+1+hour+2025"><code>"Master Pydantic AI in Under 1 Hour" 2025</code></a></td>
+<td>Type-safe agents, practical coding, structured outputs</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td>🟡 DEEP DIVE</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=pydantic+ai+crash+course+fastapi+nextjs+agentic"><code>"Pydantic AI Crash Course" FastAPI NextJS agentic</code></a></td>
+<td>Full-stack agent app: FastAPI + PydanticAI + Gemini</td>
+</tr>
+<tr>
+<td>2.5</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=building+production+ai+agent+system+pydantic+2025"><code>"Building a production AI agent system with Pydantic"</code></a></td>
+<td>Production patterns, API failures, multi-agent coord</td>
+</tr>
+<tr>
+<td>2.6</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=how+to+build+ai+agents+pydanticai+beginner+tutorial"><code>"How to Build AI Agents with PydanticAI" beginner</code></a></td>
+<td>Alternative beginner walkthrough</td>
+</tr>
+</tbody>
+</table>
+<h3 id="videos-openai-agents-sdk">🎬 Videos — OpenAI Agents SDK<a class="headerlink" href="#videos-openai-agents-sdk" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.7</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=aurelio+labs+agents+sdk+openai+full+tutorial"><code>Aurelio Labs "Agents SDK from OpenAI" Full Tutorial</code></a></td>
+<td>Agent Loop, Guardrails, Function Tools, Tracing</td>
+</tr>
+<tr>
+<td>2.8</td>
+<td>🟡 DEEP DIVE</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=aurelio+labs+multi+agent+systems+openai+agents+sdk"><code>Aurelio Labs "Multi-Agent Systems in OpenAI's Agents SDK"</code></a></td>
+<td>Handoffs, orchestrator-subagent pattern</td>
+</tr>
+<tr>
+<td>2.9</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=datacamp+openai+agents+sdk+tutorial"><code>DataCamp OpenAI Agents SDK tutorial</code></a></td>
+<td>Alternative walkthrough, structured outputs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reference-if-stuck_1">📖 Reference If Stuck<a class="headerlink" href="#reference-if-stuck_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pydantic V2 Docs</td>
+<td><a href="https://docs.pydantic.dev/latest/">docs.pydantic.dev/latest/</a></td>
+</tr>
+<tr>
+<td>PydanticAI Docs + Examples</td>
+<td><a href="https://ai.pydantic.dev/">ai.pydantic.dev/</a></td>
+</tr>
+<tr>
+<td>PydanticAI Examples</td>
+<td><a href="https://ai.pydantic.dev/examples/">ai.pydantic.dev/examples/</a></td>
+</tr>
+<tr>
+<td>OpenAI Agents SDK Docs</td>
+<td><a href="https://openai.github.io/openai-agents-python/">openai.github.io/openai-agents-python/</a></td>
+</tr>
+<tr>
+<td>SDK — Guardrails</td>
+<td><a href="https://openai.github.io/openai-agents-python/guardrails/">openai.github.io/openai-agents-python/guardrails/</a></td>
+</tr>
+<tr>
+<td>SDK — Handoffs</td>
+<td><a href="https://openai.github.io/openai-agents-python/handoffs/">openai.github.io/openai-agents-python/handoffs/</a></td>
+</tr>
+<tr>
+<td>r/PydanticAI</td>
+<td><a href="https://www.reddit.com/r/PydanticAI/">reddit.com/r/PydanticAI</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="module-3-the-spine-langgraph-crewai-a2a-protocol-week-56">Module 3: The "Spine" — LangGraph + CrewAI + A2A Protocol (Week 5–6)<a class="headerlink" href="#module-3-the-spine-langgraph-crewai-a2a-protocol-week-56" title="Permanent link">&para;</a></h2>
+<h3 id="videos-langgraph">🎬 Videos — LangGraph<a class="headerlink" href="#videos-langgraph" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.1</td>
+<td>🟢 MUST</td>
+<td><a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/">DeepLearning.AI — "AI Agents in LangGraph" (FREE, 1.5hr)</a></td>
+<td>Build agents from scratch, then rebuild with LangGraph</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>🟡 DEEP DIVE</td>
+<td><a href="https://academy.langchain.com/courses/intro-to-langgraph">LangChain Academy — Intro to LangGraph (FREE)</a></td>
+<td>Full curriculum: state, memory, streaming, sub-graphs</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=langgraph+crash+course+beginners+2025+full+course"><code>"LangGraph Crash Course" beginners 2025 8 hour</code></a></td>
+<td>Same as 3.1+3.2 but in one giant video</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=1+hour+langgraph+crash+course+zero+to+hero+react+agent"><code>"1 Hour LangGraph Crash Course" zero to hero</code></a></td>
+<td>Quick recap after you've already built something</td>
+</tr>
+</tbody>
+</table>
+<h3 id="videos-crewai">🎬 Videos — CrewAI<a class="headerlink" href="#videos-crewai" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.5</td>
+<td>🟢 MUST</td>
+<td><a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/">DeepLearning.AI — "Multi AI Agent Systems with crewAI" (FREE, 2hr)</a></td>
+<td>Role-playing, memory, tools, multi-agent collaboration</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td>🟡 DEEP DIVE</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=crewai+2025+build+first+ai+agent"><code>"CrewAI 2025 Build Your First AI Agent"</code></a></td>
+<td>Hands-on project setup with various providers</td>
+</tr>
+<tr>
+<td>3.7</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=build+ai+agents+crewai+mcp+gemini+tutorial"><code>"Build AI Agents with CrewAI MCP and Gemini"</code></a></td>
+<td>CrewAI + MCP integration (the 2026 pattern)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="videos-a2a-protocol">🎬 Videos — A2A Protocol<a class="headerlink" href="#videos-a2a-protocol" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.8</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=a2a+protocol+google+agent+to+agent+explained+2025"><code>"A2A protocol" Google agent-to-agent explained</code></a></td>
+<td>What A2A is, how it complements MCP</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reference-if-stuck_2">📖 Reference If Stuck<a class="headerlink" href="#reference-if-stuck_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LangGraph Docs</td>
+<td><a href="https://langchain-ai.github.io/langgraph/">langchain-ai.github.io/langgraph/</a></td>
+</tr>
+<tr>
+<td>CrewAI Docs</td>
+<td><a href="https://docs.crewai.com/">docs.crewai.com/</a></td>
+</tr>
+<tr>
+<td>A2A GitHub Repo</td>
+<td><a href="https://github.com/google/A2A">github.com/google/A2A</a></td>
+</tr>
+<tr>
+<td>freeCodeCamp — LangGraph Guide</td>
+<td><a href="https://www.freecodecamp.org/news/how-to-use-langchain-and-langgraph/">freecodecamp.org</a></td>
+</tr>
+<tr>
+<td>r/LangChain</td>
+<td><a href="https://www.reddit.com/r/LangChain/">reddit.com/r/LangChain</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="module-4-the-senses-memory-mcp-vector-dbs-graphrag-week-78">Module 4: The "Senses &amp; Memory" — MCP + Vector DBs + GraphRAG (Week 7–8)<a class="headerlink" href="#module-4-the-senses-memory-mcp-vector-dbs-graphrag-week-78" title="Permanent link">&para;</a></h2>
+<h3 id="videos-mcp-fastmcp">🎬 Videos — MCP &amp; FastMCP<a class="headerlink" href="#videos-mcp-fastmcp" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.1</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=model+context+protocol+mcp+explained+tutorial+2025"><code>"Model Context Protocol MCP" explained tutorial 2025</code></a></td>
+<td>What MCP is, architecture, tools/resources/prompts</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>🟡 DEEP DIVE</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=build+mcp+server+python+tutorial+tools+resources+2025"><code>"Build MCP Server" Python tutorial</code></a></td>
+<td>Build your own MCP server with Python/FastMCP</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=fastmcp+tutorial+python+build+mcp+server"><code>FastMCP tutorial Python build server</code></a></td>
+<td>FastMCP 2.0 advanced features</td>
+</tr>
+</tbody>
+</table>
+<h3 id="videos-pgvector-qdrant">🎬 Videos — pgvector + Qdrant<a class="headerlink" href="#videos-pgvector-qdrant" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.4</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=build+rags+postgresql+beginner+pgvector+tutorial+2025"><code>"Build RAGs with PostgreSQL" beginner pgvector</code></a></td>
+<td>Setup pgvector, store embeddings, build RAG</td>
+</tr>
+<tr>
+<td>4.5</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=ai+on+postgres+pgvector+rag+vectors+embeddings"><code>"AI on Postgres" pgvector RAG vectors</code></a></td>
+<td>pgvector as AI backend, indexing deep dive</td>
+</tr>
+<tr>
+<td>4.6</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=qdrant+vector+database+tutorial+getting+started+python+2025"><code>Qdrant vector database tutorial Python 2025</code></a></td>
+<td>Qdrant setup, ANN search, payload filtering</td>
+</tr>
+</tbody>
+</table>
+<h3 id="videos-neo4j-graphrag">🎬 Videos — Neo4j + GraphRAG<a class="headerlink" href="#videos-neo4j-graphrag" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.7</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=neo4j+graphrag+tutorial+knowledge+graph+2025"><code>Neo4j GraphRAG tutorial knowledge graph 2025</code></a></td>
+<td>Knowledge graphs, relationships, multi-hop reasoning</td>
+</tr>
+<tr>
+<td>4.8</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=microsoft+graphrag+tutorial+python+implementation+2025"><code>Microsoft GraphRAG tutorial Python</code></a></td>
+<td>Microsoft's GraphRAG implementation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reference-if-stuck_3">📖 Reference If Stuck<a class="headerlink" href="#reference-if-stuck_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MCP Official Docs</td>
+<td><a href="https://modelcontextprotocol.io/">modelcontextprotocol.io/</a></td>
+</tr>
+<tr>
+<td>FastMCP Docs</td>
+<td><a href="https://gofastmcp.com/">gofastmcp.com/</a></td>
+</tr>
+<tr>
+<td>pgvector GitHub</td>
+<td><a href="https://github.com/pgvector/pgvector">github.com/pgvector/pgvector</a></td>
+</tr>
+<tr>
+<td>Qdrant Quickstart</td>
+<td><a href="https://qdrant.tech/documentation/quickstart/">qdrant.tech/documentation/quickstart/</a></td>
+</tr>
+<tr>
+<td>Neo4j GraphRAG Tutorial</td>
+<td><a href="https://neo4j.com/developer-blog/graphrag-tutorial/">neo4j.com — GraphRAG</a></td>
+</tr>
+<tr>
+<td>Microsoft GraphRAG GitHub</td>
+<td><a href="https://github.com/microsoft/graphrag">github.com/microsoft/graphrag</a></td>
+</tr>
+<tr>
+<td>r/modelcontextprotocol</td>
+<td><a href="https://www.reddit.com/r/modelcontextprotocol/">reddit.com/r/modelcontextprotocol</a></td>
+</tr>
+<tr>
+<td>r/vectordatabase</td>
+<td><a href="https://www.reddit.com/r/vectordatabase/">reddit.com/r/vectordatabase</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="module-5-the-nervous-system-langsmith-evals-week-910">Module 5: The "Nervous System" — LangSmith + Evals (Week 9–10)<a class="headerlink" href="#module-5-the-nervous-system-langsmith-evals-week-910" title="Permanent link">&para;</a></h2>
+<h3 id="videos_1">🎬 Videos<a class="headerlink" href="#videos_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.1</td>
+<td>🟢 MUST</td>
+<td><a href="https://www.deeplearning.ai/short-courses/agentic-ai/">DeepLearning.AI — "Agentic AI" (FREE)</a></td>
+<td>Task decomposition, <strong>evaluation</strong>, design patterns</td>
+</tr>
+<tr>
+<td>5.2</td>
+<td>🟡 DEEP DIVE</td>
+<td><a href="https://www.deeplearning.ai/short-courses/llms-as-operating-systems-agent-memory/">DeepLearning.AI — "Agent Memory" (FREE)</a></td>
+<td>Agentic memory from scratch, tool-calling</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=langsmith+tutorial+tracing+debugging+agents+2025"><code>LangSmith tutorial tracing debugging agents 2025</code></a></td>
+<td>Set up LangSmith, trace calls, debug workflows</td>
+</tr>
+<tr>
+<td>5.4</td>
+<td>🟡 DEEP DIVE</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=llm+as+judge+evaluation+ai+agents+tutorial+2025"><code>"LLM as judge" evaluation AI agents tutorial</code></a></td>
+<td>Eval suites, golden datasets, scoring rubrics</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reference-if-stuck_4">📖 Reference If Stuck<a class="headerlink" href="#reference-if-stuck_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LangSmith Docs</td>
+<td><a href="https://docs.smith.langchain.com/">docs.smith.langchain.com/</a></td>
+</tr>
+<tr>
+<td>LangSmith Quickstart</td>
+<td><a href="https://docs.smith.langchain.com/observability/quickstart">docs.smith.langchain.com/observability/quickstart</a></td>
+</tr>
+<tr>
+<td>LangSmith Evaluation Guide</td>
+<td><a href="https://docs.smith.langchain.com/evaluation">docs.smith.langchain.com/evaluation</a></td>
+</tr>
+<tr>
+<td>OpenAI Evals Cookbook</td>
+<td><a href="https://cookbook.openai.com/examples/evaluation/getting_started_with_openai_evals">cookbook.openai.com — Evals</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="module-6-the-home-fastapi-docker-redis-deploy-week-1112">Module 6: The "Home" — FastAPI + Docker + Redis + Deploy (Week 11–12)<a class="headerlink" href="#module-6-the-home-fastapi-docker-redis-deploy-week-1112" title="Permanent link">&para;</a></h2>
+<h3 id="videos-fastapi">🎬 Videos — FastAPI<a class="headerlink" href="#videos-fastapi" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.1</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=fastapi+full+course+beginners+2025+python+tutorial"><code>"FastAPI Full Course for Beginners" 2025 Python</code></a></td>
+<td>Routes, Pydantic models, async, Swagger docs</td>
+</tr>
+<tr>
+<td>6.2</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=fastapi+crash+course+python+fastest+web+framework+2025"><code>"FastAPI Crash Course" Python 2025</code></a></td>
+<td>Quick recap: HTTP methods, query params</td>
+</tr>
+</tbody>
+</table>
+<h3 id="videos-docker">🎬 Videos — Docker<a class="headerlink" href="#videos-docker" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.3</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=docker+full+course+beginners+2025"><code>"Docker Full Course for Beginners" 2025</code></a></td>
+<td>Images, containers, Dockerfile, volumes, Compose</td>
+</tr>
+<tr>
+<td>6.4</td>
+<td>🟡 DEEP DIVE</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=docker+essentials+python+developers+tutorial+2025"><code>"Docker Essentials for Python Developers" 2025</code></a></td>
+<td>Python-specific containerization, multi-stage builds</td>
+</tr>
+<tr>
+<td>6.5</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=python+web+app+docker+container+guide+tutorial+2025"><code>"Python Web App in Docker Container" guide</code></a></td>
+<td>Focused walkthrough: Python + Docker</td>
+</tr>
+</tbody>
+</table>
+<h3 id="videos-redis">🎬 Videos — Redis<a class="headerlink" href="#videos-redis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.6</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=master+redis+python+crash+course+beginners"><code>"Master Redis with Python" crash course beginners</code></a></td>
+<td>Redis basics: data types, caching, Python ops</td>
+</tr>
+<tr>
+<td>6.7</td>
+<td>🟡 DEEP DIVE</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=ai+agent+never+forgets+redis+langgraph+memory+tutorial"><code>"AI Agent That Never Forgets Redis LangGraph"</code></a></td>
+<td>Redis as AI agent memory + LangGraph</td>
+</tr>
+<tr>
+<td>6.8</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=semantic+caching+ai+agents+redis+course"><code>"Semantic Caching for AI Agents" Redis</code></a></td>
+<td>Semantic cache for faster, cheaper agents</td>
+</tr>
+</tbody>
+</table>
+<h3 id="videos-cloud-deployment">🎬 Videos — Cloud Deployment<a class="headerlink" href="#videos-cloud-deployment" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Priority</th>
+<th>Video</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.9</td>
+<td>🟢 MUST</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=modal+deploy+python+serverless+gpu+tutorial+2025"><code>Modal tutorial deploy python serverless GPU</code></a></td>
+<td>Modal: deploy AI workloads, pay-per-use</td>
+</tr>
+<tr>
+<td>6.10</td>
+<td>🔵 OPTIONAL</td>
+<td>Search: <a href="https://www.youtube.com/results?search_query=google+cloud+run+deploy+fastapi+python+tutorial+2025"><code>Google Cloud Run deploy FastAPI Python</code></a></td>
+<td>Alternative: deploy to Cloud Run</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reference-if-stuck_5">📖 Reference If Stuck<a class="headerlink" href="#reference-if-stuck_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FastAPI Tutorial</td>
+<td><a href="https://fastapi.tiangolo.com/tutorial/">fastapi.tiangolo.com/tutorial/</a></td>
+</tr>
+<tr>
+<td>Docker Getting Started</td>
+<td><a href="https://docs.docker.com/get-started/">docs.docker.com/get-started/</a></td>
+</tr>
+<tr>
+<td>Docker Compose</td>
+<td><a href="https://docs.docker.com/compose/">docs.docker.com/compose/</a></td>
+</tr>
+<tr>
+<td>Redis Docs</td>
+<td><a href="https://redis.io/docs/">redis.io/docs/</a></td>
+</tr>
+<tr>
+<td>Redis for AI</td>
+<td><a href="https://redis.io/solutions/ai/">redis.io/solutions/ai/</a></td>
+</tr>
+<tr>
+<td>Modal Docs</td>
+<td><a href="https://modal.com/docs/guide">modal.com/docs/guide</a></td>
+</tr>
+<tr>
+<td>Cloud Run Docs</td>
+<td><a href="https://cloud.google.com/run/docs">cloud.google.com/run/docs</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="bonus-free-courses-pair-with-modules">🎓 Bonus: Free Courses (Pair with Modules)<a class="headerlink" href="#bonus-free-courses-pair-with-modules" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>When</th>
+<th>Course</th>
+<th>Platform</th>
+<th>Duration</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module 3</td>
+<td>AI Agents in LangGraph</td>
+<td>DeepLearning.AI</td>
+<td>1h 32m</td>
+<td><a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/">Link</a></td>
+</tr>
+<tr>
+<td>Module 3</td>
+<td>Multi AI Agent Systems with crewAI</td>
+<td>DeepLearning.AI</td>
+<td>2h 14m</td>
+<td><a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/">Link</a></td>
+</tr>
+<tr>
+<td>Module 3</td>
+<td>Intro to LangGraph</td>
+<td>LangChain Academy</td>
+<td>Self-paced</td>
+<td><a href="https://academy.langchain.com/courses/intro-to-langgraph">Link</a></td>
+</tr>
+<tr>
+<td>Module 5</td>
+<td>Agentic AI Best Practices</td>
+<td>DeepLearning.AI</td>
+<td>~2h</td>
+<td><a href="https://www.deeplearning.ai/short-courses/agentic-ai/">Link</a></td>
+</tr>
+<tr>
+<td>Module 5</td>
+<td>Agent Memory</td>
+<td>DeepLearning.AI</td>
+<td>~2h</td>
+<td><a href="https://www.deeplearning.ai/short-courses/llms-as-operating-systems-agent-memory/">Link</a></td>
+</tr>
+<tr>
+<td>Any time</td>
+<td>AI Agents in Python</td>
+<td>Coursera</td>
+<td>2h</td>
+<td><a href="https://www.coursera.org/learn/ai-agents-and-agentic-ai-in-python">Link</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tldr-the-must-watch-only-fast-track">⚡ TL;DR — The "Must Watch Only" Fast Track<a class="headerlink" href="#tldr-the-must-watch-only-fast-track" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>If you're short on time, watch <strong>only the 🟢 MUST</strong> videos. That's <strong>~15 videos</strong> total across 12 weeks.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>🟢 Must Watch Videos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1.1 (ArjanCodes Python) + 1.3 (uv)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.1 (Pydantic) + 2.3 (PydanticAI 1hr) + 2.7 (OpenAI SDK)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3.1 (LangGraph DeepLearning.AI) + 3.5 (CrewAI DeepLearning.AI) + 3.8 (A2A)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4.1 (MCP) + 4.4 (pgvector) + 4.6 (Qdrant) + 4.7 (Neo4j GraphRAG)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5.1 (Agentic AI eval) + 5.3 (LangSmith)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6.1 (FastAPI) + 6.3 (Docker) + 6.6 (Redis) + 6.9 (Modal deploy)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

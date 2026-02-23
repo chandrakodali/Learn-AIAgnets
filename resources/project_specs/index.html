@@ -1,0 +1,2212 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete 12-week learning notes for AI Agents Development">
+      
+      
+      
+      
+        <link rel="prev" href="../curated_resources/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Project Build Specs - 🤖 AI Agents Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#portfolio-projects-detailed-build-specs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🤖 AI Agents Development" class="md-header__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🤖 AI Agents Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Project Build Specs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../notes/module_1_dev_environment/" class="md-tabs__link">
+          
+  
+  
+  📚 Study Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../curated_resources/" class="md-tabs__link">
+          
+  
+  
+  🔗 Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🤖 AI Agents Development" class="md-nav__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    🤖 AI Agents Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Study Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 Study Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_1_dev_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 — Dev Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_2_brain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 — Brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_3_spine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 — Spine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_4_senses_memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 — Senses & Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_5_nervous_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 — Nervous System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/module_6_home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 6 — Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔗 Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔗 Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curated_resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video-First Learning Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Build Specs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Build Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-1-professional-python-scaffold-module-1-week-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 1: Professional Python Scaffold (Module 1, Week 1–2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 1: Professional Python Scaffold (Module 1, Week 1–2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-2-customer-support-triage-agent-module-2-week-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 2: Customer Support Triage Agent (Module 2, Week 3–4)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 2: Customer Support Triage Agent (Module 2, Week 3–4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-3-research-report-pipeline-module-3-week-56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 3: Research &amp; Report Pipeline (Module 3, Week 5–6)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 3: Research &amp; Report Pipeline (Module 3, Week 5–6)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-4-ai-knowledge-base-with-mcp-rag-module-4-week-78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 4: AI Knowledge Base with MCP + RAG (Module 4, Week 7–8)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 4: AI Knowledge Base with MCP + RAG (Module 4, Week 7–8)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-5-observability-eval-suite-module-5-week-910" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 5: Observability &amp; Eval Suite (Module 5, Week 9–10)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 5: Observability &amp; Eval Suite (Module 5, Week 9–10)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-6-production-deployment-module-6-week-1112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 6: Production Deployment (Module 6, Week 11–12)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 6: Production Deployment (Module 6, Week 11–12)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-projects-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗺️ How the projects connect
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-1-professional-python-scaffold-module-1-week-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 1: Professional Python Scaffold (Module 1, Week 1–2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 1: Professional Python Scaffold (Module 1, Week 1–2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-2-customer-support-triage-agent-module-2-week-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 2: Customer Support Triage Agent (Module 2, Week 3–4)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 2: Customer Support Triage Agent (Module 2, Week 3–4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-3-research-report-pipeline-module-3-week-56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 3: Research &amp; Report Pipeline (Module 3, Week 5–6)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 3: Research &amp; Report Pipeline (Module 3, Week 5–6)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-4-ai-knowledge-base-with-mcp-rag-module-4-week-78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 4: AI Knowledge Base with MCP + RAG (Module 4, Week 7–8)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 4: AI Knowledge Base with MCP + RAG (Module 4, Week 7–8)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-5-observability-eval-suite-module-5-week-910" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 5: Observability &amp; Eval Suite (Module 5, Week 9–10)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 5: Observability &amp; Eval Suite (Module 5, Week 9–10)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-6-production-deployment-module-6-week-1112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project 6: Production Deployment (Module 6, Week 11–12)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project 6: Production Deployment (Module 6, Week 11–12)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youre-building_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You're Building
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-stack_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features-to-build_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features to Build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folder-structure_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interview-talking-points_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Talking Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-projects-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗺️ How the projects connect
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="portfolio-projects-detailed-build-specs">🛠️ Portfolio Projects — Detailed Build Specs<a class="headerlink" href="#portfolio-projects-detailed-build-specs" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Rule</strong>: For every 🟢 MUST video you watch, spend <strong>2x the time building</strong>. These 6 projects ARE your resume.</p>
+<p>[!IMPORTANT]
+Projects <strong>stack on each other</strong>. By Project 6, you're deploying Projects 3+4+5 as one production system. Treat them as one evolving repo.</p>
+</blockquote>
+<hr />
+<h2 id="project-1-professional-python-scaffold-module-1-week-12">Project 1: Professional Python Scaffold <em>(Module 1, Week 1–2)</em><a class="headerlink" href="#project-1-professional-python-scaffold-module-1-week-12" title="Permanent link">&para;</a></h2>
+<h3 id="what-youre-building">What You're Building<a class="headerlink" href="#what-youre-building" title="Permanent link">&para;</a></h3>
+<p>A reusable project template that demonstrates modern Python best practices — the foundation every other project will use.</p>
+<h3 id="tech-stack">Tech Stack<a class="headerlink" href="#tech-stack" title="Permanent link">&para;</a></h3>
+<p><code>Python 3.12</code> · <code>uv</code> · <code>python-dotenv</code> · <code>asyncio</code> · <code>mypy</code> · <code>ruff</code></p>
+<h3 id="features-to-build">Features to Build<a class="headerlink" href="#features-to-build" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>uv project setup</strong></td>
+<td><code>uv init</code>, <code>pyproject.toml</code>, lockfile, <code>.python-version</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Type-hinted async code</strong></td>
+<td>Write 3–4 async functions that call a free API (e.g., weather, jokes) with full type hints</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Pattern matching</strong></td>
+<td>Use <code>match/case</code> to route different API response types</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Secrets management</strong></td>
+<td><code>.env</code> file for API keys, loaded via <code>python-dotenv</code>, never committed</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Linting + type checking</strong></td>
+<td><code>ruff</code> for linting, <code>mypy --strict</code> passes with zero errors</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Clean <code>.gitignore</code></strong></td>
+<td>Exclude <code>.env</code>, <code>__pycache__</code>, <code>.venv</code>, <code>uv.lock</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="folder-structure">Folder Structure<a class="headerlink" href="#folder-structure" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ai-agent-scaffold/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── pyproject.toml          # uv project config
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── .python-version         # Python 3.12
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── .env.example            # Template (no real keys)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── .gitignore
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── src/
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   ├── __init__.py
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── main.py             # Entry point with async main()
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ├── api_client.py       # Async API calls with type hints
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   └── config.py           # Load .env, export settings
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>└── README.md
+</span></code></pre></div>
+<h3 id="interview-talking-points">Interview Talking Points<a class="headerlink" href="#interview-talking-points" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>"I use uv instead of pip because it's 10–100x faster and handles Python versions + virtualenvs + dependencies in one tool"</em></li>
+<li><em>"Every function is type-hinted and passes mypy strict mode — this matters for PydanticAI later"</em></li>
+</ul>
+<hr />
+<h2 id="project-2-customer-support-triage-agent-module-2-week-34">Project 2: Customer Support Triage Agent <em>(Module 2, Week 3–4)</em><a class="headerlink" href="#project-2-customer-support-triage-agent-module-2-week-34" title="Permanent link">&para;</a></h2>
+<h3 id="what-youre-building_1">What You're Building<a class="headerlink" href="#what-youre-building_1" title="Permanent link">&para;</a></h3>
+<p>A multi-agent customer support system that routes customer queries to the right specialist agent, with safety guardrails.</p>
+<h3 id="tech-stack_1">Tech Stack<a class="headerlink" href="#tech-stack_1" title="Permanent link">&para;</a></h3>
+<p><code>PydanticAI</code> · <code>OpenAI Agents SDK</code> · <code>Pydantic V2</code> · <code>uv</code> · any LLM API (OpenAI / Gemini / Groq)</p>
+<h3 id="features-to-build_1">Features to Build<a class="headerlink" href="#features-to-build_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>PydanticAI version</strong></td>
+<td>Build a single agent with structured output: classifies queries into <code>billing</code>, <code>technical</code>, <code>sales</code> using Pydantic models</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Structured outputs</strong></td>
+<td>Define response models: <code>TriageResult(category, urgency, summary, suggested_action)</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Tool injection</strong></td>
+<td>Agent has tools: <code>lookup_order(order_id)</code>, <code>check_account_status(email)</code> — return mock data</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>OpenAI SDK rebuild</strong></td>
+<td>Rebuild the same system using OpenAI Agents SDK with 3 specialist agents</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Handoffs</strong></td>
+<td>Triage Agent → hands off to <code>BillingAgent</code>, <code>TechSupportAgent</code>, or <code>SalesAgent</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Guardrails</strong></td>
+<td>Input guardrail: block profanity/PII. Output guardrail: ensure response doesn't promise refunds without approval</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Compare both</strong></td>
+<td>Write a short <code>COMPARISON.md</code> explaining PydanticAI vs SDK trade-offs you discovered</td>
+</tr>
+</tbody>
+</table>
+<h3 id="folder-structure_1">Folder Structure<a class="headerlink" href="#folder-structure_1" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>customer-triage-agent/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── pyproject.toml
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── .env.example
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── src/
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   ├── pydantic_version/
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   │   ├── agent.py         # PydanticAI agent
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   │   ├── models.py        # Pydantic response models
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│   │   └── tools.py         # Tool functions
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│   ├── sdk_version/
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│   │   ├── triage_agent.py  # Router agent
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│   │   ├── billing_agent.py
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│   │   ├── tech_agent.py
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│   │   ├── sales_agent.py
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│   │   └── guardrails.py    # Input + output guardrails
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│   └── run.py               # CLI to test both versions
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>├── COMPARISON.md
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>└── README.md
+</span></code></pre></div>
+<h3 id="interview-talking-points_1">Interview Talking Points<a class="headerlink" href="#interview-talking-points_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>"I built the same system twice — once with PydanticAI, once with OpenAI SDK — so I can articulate trade-offs"</em></li>
+<li><em>"The guardrails prevent the agent from making financial commitments without human approval"</em></li>
+<li><em>"I chose PydanticAI for type-safety in production, SDK for rapid prototyping"</em></li>
+</ul>
+<hr />
+<h2 id="project-3-research-report-pipeline-module-3-week-56">Project 3: Research &amp; Report Pipeline <em>(Module 3, Week 5–6)</em><a class="headerlink" href="#project-3-research-report-pipeline-module-3-week-56" title="Permanent link">&para;</a></h2>
+<h3 id="what-youre-building_2">What You're Building<a class="headerlink" href="#what-youre-building_2" title="Permanent link">&para;</a></h3>
+<p>A multi-agent pipeline that takes a topic, researches it from the web, analyzes findings, and generates a structured report. This is the <strong>core project</strong> — Projects 4, 5, and 6 build on it.</p>
+<h3 id="tech-stack_2">Tech Stack<a class="headerlink" href="#tech-stack_2" title="Permanent link">&para;</a></h3>
+<p><code>LangGraph</code> · <code>CrewAI</code> · <code>Tavily Search API</code> (free tier) · <code>PydanticAI</code> or SDK agents</p>
+<h3 id="features-to-build_2">Features to Build<a class="headerlink" href="#features-to-build_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>LangGraph state graph</strong></td>
+<td>Define a graph with 3 nodes: <code>research</code> → <code>analyze</code> → <code>write</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Research Agent</strong></td>
+<td>Uses Tavily Search API to find 5–10 relevant sources on a given topic</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Analyst Agent</strong></td>
+<td>Takes raw search results, extracts key facts, identifies contradictions</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Writer Agent</strong></td>
+<td>Generates a structured Markdown report with citations</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>State persistence</strong></td>
+<td>Use LangGraph checkpointing — pipeline can resume if interrupted</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Conditional routing</strong></td>
+<td>If Research Agent finds &lt; 3 sources, it retries with broader query</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>CrewAI version (optional)</strong></td>
+<td>Rebuild the same pipeline using CrewAI Flows for comparison</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Human-in-the-loop</strong></td>
+<td>Add a breakpoint after <code>analyze</code> — user can approve/reject before writing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="folder-structure_2">Folder Structure<a class="headerlink" href="#folder-structure_2" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>research-pipeline/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── pyproject.toml
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── .env.example
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>├── src/
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   ├── graph.py             # LangGraph state graph definition
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   ├── state.py             # State schema (Pydantic)
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   ├── agents/
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   │   ├── researcher.py    # Web search agent
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│   │   ├── analyst.py       # Data processing agent
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>│   │   └── writer.py        # Report generation agent
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>│   ├── tools/
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>│   │   └── search.py        # Tavily search tool
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>│   └── run.py               # CLI entry point
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>├── output/                  # Generated reports go here
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>└── README.md
+</span></code></pre></div>
+<h3 id="interview-talking-points_2">Interview Talking Points<a class="headerlink" href="#interview-talking-points_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>"I chose LangGraph over CrewAI because I needed fine-grained control over state and conditional routing"</em></li>
+<li><em>"The pipeline has checkpointing — if the LLM API times out mid-analysis, it resumes from where it stopped"</em></li>
+<li><em>"I added human-in-the-loop at the analysis stage because I learned from Reddit that fully autonomous agents fail silently"</em></li>
+</ul>
+<hr />
+<h2 id="project-4-ai-knowledge-base-with-mcp-rag-module-4-week-78">Project 4: AI Knowledge Base with MCP + RAG <em>(Module 4, Week 7–8)</em><a class="headerlink" href="#project-4-ai-knowledge-base-with-mcp-rag-module-4-week-78" title="Permanent link">&para;</a></h2>
+<h3 id="what-youre-building_3">What You're Building<a class="headerlink" href="#what-youre-building_3" title="Permanent link">&para;</a></h3>
+<p>A personal knowledge base agent that answers questions using your own documents, powered by both vector search AND graph relationships.</p>
+<h3 id="tech-stack_3">Tech Stack<a class="headerlink" href="#tech-stack_3" title="Permanent link">&para;</a></h3>
+<p><code>FastMCP</code> · <code>PostgreSQL + pgvector</code> · <code>Neo4j</code> · <code>Qdrant</code> (optional) · <code>LangGraph</code> (from Project 3)</p>
+<h3 id="features-to-build_3">Features to Build<a class="headerlink" href="#features-to-build_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>MCP Server</strong></td>
+<td>Build a FastMCP server exposing 3 tools: <code>search_docs</code>, <code>get_related</code>, <code>summarize</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Document ingestion</strong></td>
+<td>Script to chunk Markdown/PDF files, generate embeddings (OpenAI or local), store in pgvector</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Vector search</strong></td>
+<td><code>search_docs</code> tool queries pgvector using cosine similarity, returns top-5 chunks</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Graph relationships</strong></td>
+<td>Store document → section → concept relationships in Neo4j</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Graph-enhanced RAG</strong></td>
+<td>When user asks a question: vector search finds relevant chunks + Neo4j finds related concepts = richer context</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Agent integration</strong></td>
+<td>Connect the MCP server to your Project 3 agent system — it now has "memory"</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Hybrid retrieval</strong></td>
+<td>Combine vector similarity + graph traversal results before sending to LLM</td>
+</tr>
+</tbody>
+</table>
+<h3 id="folder-structure_3">Folder Structure<a class="headerlink" href="#folder-structure_3" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>knowledge-base-agent/
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── pyproject.toml
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── .env.example
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>├── docker-compose.yml       # PostgreSQL + Neo4j containers
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>├── src/
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│   ├── mcp_server/
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   │   ├── server.py        # FastMCP server definition
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│   │   ├── tools.py         # search_docs, get_related, summarize
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│   │   └── config.py
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│   ├── ingestion/
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│   │   ├── chunker.py       # Split docs into chunks
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│   │   ├── embedder.py      # Generate embeddings
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│   │   └── graph_builder.py # Build Neo4j relationships
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>│   ├── retrieval/
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>│   │   ├── vector_search.py # pgvector queries
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>│   │   └── graph_search.py  # Neo4j traversal
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>│   └── run.py
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>├── data/                    # Sample docs to ingest
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>└── README.md
+</span></code></pre></div>
+<h3 id="interview-talking-points_3">Interview Talking Points<a class="headerlink" href="#interview-talking-points_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>"I built an MCP server so any MCP-compatible client (Claude, Cursor, etc.) can use my knowledge base"</em></li>
+<li><em>"Pure vector search missed relationships between concepts — adding Neo4j increased answer relevance by ~30% in my tests"</em></li>
+<li><em>"I used pgvector instead of a dedicated vector DB because my data fits in PostgreSQL and I avoid adding infrastructure"</em></li>
+</ul>
+<hr />
+<h2 id="project-5-observability-eval-suite-module-5-week-910">Project 5: Observability &amp; Eval Suite <em>(Module 5, Week 9–10)</em><a class="headerlink" href="#project-5-observability-eval-suite-module-5-week-910" title="Permanent link">&para;</a></h2>
+<h3 id="what-youre-building_4">What You're Building<a class="headerlink" href="#what-youre-building_4" title="Permanent link">&para;</a></h3>
+<p>Add production-grade monitoring and automated testing to your Project 3 pipeline. This turns a "demo" into a "production-ready system."</p>
+<h3 id="tech-stack_4">Tech Stack<a class="headerlink" href="#tech-stack_4" title="Permanent link">&para;</a></h3>
+<p><code>LangSmith</code> · <code>Evals (LLM-as-Judge)</code> · project 3 pipeline · <code>pytest</code></p>
+<h3 id="features-to-build_4">Features to Build<a class="headerlink" href="#features-to-build_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>LangSmith integration</strong></td>
+<td>Trace every LLM call, tool invocation, and handoff in Project 3 pipeline</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Custom trace metadata</strong></td>
+<td>Tag traces with: <code>run_id</code>, <code>topic</code>, <code>model</code>, <code>total_cost</code>, <code>latency</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Golden dataset</strong></td>
+<td>Create 20 test cases: <code>{topic, expected_sections, expected_facts, quality_criteria}</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>LLM-as-Judge eval</strong></td>
+<td>For each generated report, a judge LLM scores: <code>factual_accuracy</code>, <code>completeness</code>, <code>coherence</code>, <code>citation_quality</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Scoring rubric</strong></td>
+<td>Use named categories not numbers: <code>excellent</code>, <code>acceptable</code>, <code>needs_improvement</code>, <code>failed</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Regression tests</strong></td>
+<td><code>pytest</code> suite that runs 5 core test cases, asserts quality scores ≥ <code>acceptable</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Dashboard metrics</strong></td>
+<td>Track across runs: avg latency, cost/run, success rate, common failure categories</td>
+</tr>
+</tbody>
+</table>
+<h3 id="folder-structure_4">Folder Structure<a class="headerlink" href="#folder-structure_4" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># Add to your research-pipeline/ project:
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>research-pipeline/
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>├── ...existing files...
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>├── evals/
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>│   ├── golden_dataset.json  # 20 test cases
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>│   ├── judge.py             # LLM-as-Judge scoring
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>│   ├── rubric.py            # Named category rubrics
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>│   └── run_evals.py         # Run all evals, output report
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>├── tests/
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>│   └── test_pipeline.py     # pytest regression tests
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>└── observability/
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    ├── tracing.py           # LangSmith setup + custom metadata
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    └── dashboard.py         # Metrics aggregation
+</span></code></pre></div>
+<h3 id="interview-talking-points_4">Interview Talking Points<a class="headerlink" href="#interview-talking-points_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>"I test my agents the same way you'd test software — golden datasets, regression suites, and automated scoring"</em></li>
+<li><em>"I use named categories instead of 1-10 scales because Reddit discussions showed LLMs are better at categorical judgments"</em></li>
+<li><em>"LangSmith tracing helped me find that 40% of my latency was in the research step — I optimized by caching search results"</em></li>
+</ul>
+<hr />
+<h2 id="project-6-production-deployment-module-6-week-1112">Project 6: Production Deployment <em>(Module 6, Week 11–12)</em><a class="headerlink" href="#project-6-production-deployment-module-6-week-1112" title="Permanent link">&para;</a></h2>
+<h3 id="what-youre-building_5">What You're Building<a class="headerlink" href="#what-youre-building_5" title="Permanent link">&para;</a></h3>
+<p>Deploy your full agent system (Projects 3+4+5) as a production API with caching, containerization, and cloud hosting. <strong>This is your capstone.</strong></p>
+<h3 id="tech-stack_5">Tech Stack<a class="headerlink" href="#tech-stack_5" title="Permanent link">&para;</a></h3>
+<p><code>FastAPI</code> · <code>Docker + Docker Compose</code> · <code>Redis</code> · <code>Modal</code> or <code>Cloud Run</code> · GitHub Actions CI/CD</p>
+<h3 id="features-to-build_5">Features to Build<a class="headerlink" href="#features-to-build_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>FastAPI wrapper</strong></td>
+<td>REST API: <code>POST /research</code> (start pipeline), <code>GET /status/{run_id}</code>, <code>GET /report/{run_id}</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>WebSocket streaming</strong></td>
+<td>Stream agent progress to client in real-time: "Researching… 3/10 sources found"</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Redis caching</strong></td>
+<td>Cache search results (TTL: 1hr) + cache completed reports (TTL: 24hr)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Redis agent memory</strong></td>
+<td>Store conversation history per session in Redis</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Dockerize everything</strong></td>
+<td><code>Dockerfile</code> for the app + <code>docker-compose.yml</code> with FastAPI + Redis + PostgreSQL + Neo4j</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Health checks</strong></td>
+<td><code>/health</code> endpoint checking all services (Redis, DB, LLM API connectivity)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Deploy to cloud</strong></td>
+<td>Pick one: Modal (for GPU) or Cloud Run (for API). Deploy with one command</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>CI/CD</strong></td>
+<td>GitHub Actions: on push → run evals → if pass → deploy</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>README as portfolio</strong></td>
+<td>Screenshot/GIF of the API working, architecture diagram, tech stack badges</td>
+</tr>
+</tbody>
+</table>
+<h3 id="folder-structure_5">Folder Structure<a class="headerlink" href="#folder-structure_5" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ai-agent-production/
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>├── pyproject.toml
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>├── Dockerfile
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>├── docker-compose.yml       # FastAPI + Redis + PostgreSQL + Neo4j
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>├── .github/
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>│   └── workflows/
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>│       └── deploy.yml       # CI/CD pipeline
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>├── src/
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>│   ├── api/
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>│   │   ├── main.py          # FastAPI app
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>│   │   ├── routes.py        # /research, /status, /report
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>│   │   ├── websocket.py     # Real-time streaming
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>│   │   └── middleware.py    # Auth, rate limiting, CORS
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>│   ├── cache/
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>│   │   └── redis_client.py  # Redis caching + session memory
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>│   ├── agents/              # From Project 3
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>│   ├── mcp_server/          # From Project 4
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>│   ├── evals/               # From Project 5
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>│   └── config.py
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>├── deploy/
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>│   ├── modal_deploy.py      # Modal deployment script
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>│   └── cloudrun.yaml        # Cloud Run config
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>└── README.md                # ⭐ This IS your portfolio piece
+</span></code></pre></div>
+<h3 id="interview-talking-points_5">Interview Talking Points<a class="headerlink" href="#interview-talking-points_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>"I deployed a multi-agent system with 4 services (API + Redis + Postgres + Neo4j) using Docker Compose, then pushed to Cloud Run"</em></li>
+<li><em>"Redis semantic caching cut my LLM costs by 35% by avoiding duplicate queries"</em></li>
+<li><em>"I have CI/CD — every push runs my eval suite and only deploys if all 20 test cases pass"</em></li>
+<li><em>"The API streams agent progress via WebSocket so users see what's happening, not just a loading spinner"</em></li>
+</ul>
+<hr />
+<h2 id="how-the-projects-connect">🗺️ How the projects connect<a class="headerlink" href="#how-the-projects-connect" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Project 1 (scaffold) ──sets up──▶ Every other project
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Project 2 (triage agent) ──teaches you──▶ Agent patterns for Projects 3–6
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Project 3 (pipeline) ──is enhanced by──▶ Project 4 (knowledge base)
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>                      ──is tested by──▶ Project 5 (evals)
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>                      ──is deployed by──▶ Project 6 (production)
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Project 6 = Project 3 + 4 + 5 deployed together 🚀
+</span></code></pre></div>
+<blockquote>
+<p>[!TIP]
+<strong>GitHub tip</strong>: Create ONE repo called <code>ai-agent-system</code> and evolve it across all 6 projects. Interviewers love seeing a commit history that shows progressive learning.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

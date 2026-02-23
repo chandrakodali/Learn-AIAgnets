@@ -1,0 +1,2630 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete 12-week learning notes for AI Agents Development">
+      
+      
+      
+      
+        <link rel="prev" href="../module_3_spine/">
+      
+      
+        <link rel="next" href="../module_5_nervous_system/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Module 4 — Senses & Memory - 🤖 AI Agents Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-4-the-senses-memory-mcp-vector-dbs-graphrag" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🤖 AI Agents Development" class="md-header__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🤖 AI Agents Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 4 — Senses & Memory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../module_1_dev_environment/" class="md-tabs__link">
+          
+  
+  
+  📚 Study Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/curated_resources/" class="md-tabs__link">
+          
+  
+  
+  🔗 Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🤖 AI Agents Development" class="md-nav__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    🤖 AI Agents Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Study Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 Study Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_1_dev_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 — Dev Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_2_brain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 — Brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_3_spine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 — Spine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 — Senses & Memory
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 — Senses & Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 What &amp; Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-mcp-the-universal-adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: MCP — The Universal Adapter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: MCP — The Universal Adapter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-problem-does-mcp-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What problem does MCP solve?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 MCP Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-three-primitives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 The Three Primitives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport-how-client-talks-to-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Transport: How Client Talks to Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-fastmcp-building-mcp-servers-the-easy-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: FastMCP — Building MCP Servers the Easy Way
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: FastMCP — Building MCP Servers the Easy Way">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-fastmcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Why FastMCP?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-first-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Your First MCP Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-and-connecting-your-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Running and Connecting Your Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-real-world-mcp-server-database-query-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 A Real-World MCP Server: Database Query Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-vector-search-finding-by-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Vector Search — Finding by Meaning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Vector Search — Finding by Meaning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What are embeddings?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-create-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 How to Create Embeddings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosine-similarity-measuring-closeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Cosine Similarity — Measuring "Closeness"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgvector-vector-search-inside-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 pgvector — Vector Search Inside PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qdrant-the-dedicated-vector-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Qdrant — The Dedicated Vector Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgvector-vs-qdrant-decision-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 pgvector vs Qdrant Decision Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-graphrag-when-vectors-arent-enough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: GraphRAG — When Vectors Aren't Enough
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: GraphRAG — When Vectors Aren&#39;t Enough">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-do-embeddings-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Why do embeddings fail?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-knowledge-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What is a Knowledge Graph?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neo4j-the-graph-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Neo4j — The Graph Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-retrieval-the-best-of-both-worlds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Hybrid Retrieval — The Best of Both Worlds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-only-vs-graphrag-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Vector-Only vs GraphRAG Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-module-4-connects-to-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 How Module 4 Connects to Everything
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Cheat Sheet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcp-primitives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Primitives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastmcp-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FastMCP Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-vector-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedding + Vector Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neo4j-graphrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neo4j / GraphRAG
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checkpoint Quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_5_nervous_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 — Nervous System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_6_home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 6 — Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔗 Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔗 Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/curated_resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video-First Learning Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/project_specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Build Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 What &amp; Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-mcp-the-universal-adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: MCP — The Universal Adapter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: MCP — The Universal Adapter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-problem-does-mcp-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What problem does MCP solve?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 MCP Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-three-primitives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 The Three Primitives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport-how-client-talks-to-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Transport: How Client Talks to Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-fastmcp-building-mcp-servers-the-easy-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: FastMCP — Building MCP Servers the Easy Way
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: FastMCP — Building MCP Servers the Easy Way">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-fastmcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Why FastMCP?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-first-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Your First MCP Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-and-connecting-your-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Running and Connecting Your Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-real-world-mcp-server-database-query-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 A Real-World MCP Server: Database Query Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-vector-search-finding-by-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Vector Search — Finding by Meaning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Vector Search — Finding by Meaning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What are embeddings?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-create-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 How to Create Embeddings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosine-similarity-measuring-closeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Cosine Similarity — Measuring "Closeness"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgvector-vector-search-inside-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 pgvector — Vector Search Inside PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qdrant-the-dedicated-vector-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Qdrant — The Dedicated Vector Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgvector-vs-qdrant-decision-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 pgvector vs Qdrant Decision Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-graphrag-when-vectors-arent-enough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: GraphRAG — When Vectors Aren't Enough
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: GraphRAG — When Vectors Aren&#39;t Enough">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-do-embeddings-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Why do embeddings fail?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-knowledge-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What is a Knowledge Graph?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neo4j-the-graph-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Neo4j — The Graph Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-retrieval-the-best-of-both-worlds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Hybrid Retrieval — The Best of Both Worlds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-only-vs-graphrag-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Vector-Only vs GraphRAG Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-module-4-connects-to-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 How Module 4 Connects to Everything
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Cheat Sheet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcp-primitives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Primitives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fastmcp-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FastMCP Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-vector-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedding + Vector Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neo4j-graphrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neo4j / GraphRAG
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checkpoint Quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-4-the-senses-memory-mcp-vector-dbs-graphrag">Module 4: The "Senses &amp; Memory" — MCP + Vector DBs + GraphRAG<a class="headerlink" href="#module-4-the-senses-memory-mcp-vector-dbs-graphrag" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Goal</strong>: Give your agents eyes, ears, and long-term memory — connect them to tools, teach them to search by meaning, and build knowledge graphs.
+<strong>Time</strong>: Week 7–8 | <strong>Watch alongside</strong>: Videos 4.1–4.8 from curated resources</p>
+</blockquote>
+<hr />
+<h2 id="what-why">🎯 What &amp; Why<a class="headerlink" href="#what-why" title="Permanent link">&para;</a></h2>
+<p>Your agent from Module 2 has a brain. Module 3 gave it a spine (orchestration). But right now it's <strong>blind and amnesiac</strong>:</p>
+<ul>
+<li>❌ Can't read your database</li>
+<li>❌ Can't search the web</li>
+<li>❌ Can't remember yesterday's conversation</li>
+<li>❌ Can't look up your calendar</li>
+</ul>
+<p>This module gives it <strong>senses</strong> (MCP connects it to external tools) and <strong>memory</strong> (vector databases + graphs let it remember and retrieve knowledge).</p>
+<pre class="mermaid"><code>flowchart TB
+    subgraph "Before Module 4"
+        A["🤖 Agent"] --&gt; B["Only knows training data"]
+    end
+
+    subgraph "After Module 4"
+        C["🤖 Agent"]
+        C --&gt;|"MCP"| D["📧 Email"]
+        C --&gt;|"MCP"| E["🗄️ Database"]
+        C --&gt;|"MCP"| F["🔍 Search"]
+        C --&gt;|"Vector DB"| G["🧠 Long-term Memory"]
+        C --&gt;|"Knowledge Graph"| H["🕸️ Connected Knowledge"]
+    end</code></pre>
+<p>This module has <strong>4 layers</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What</th>
+<th>Analogy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MCP</strong></td>
+<td>Protocol connecting agents to tools</td>
+<td><strong>USB-C for AI</strong> — one standard, any device</td>
+</tr>
+<tr>
+<td><strong>FastMCP</strong></td>
+<td>Python framework for building MCP servers</td>
+<td><strong>Flask for MCP</strong> — MCP is low-level, FastMCP is easy</td>
+</tr>
+<tr>
+<td><strong>Vector Search</strong></td>
+<td>Find things by meaning, not keywords</td>
+<td><strong>GPS coordinates for meaning</strong> — similar ideas are nearby</td>
+</tr>
+<tr>
+<td><strong>GraphRAG</strong></td>
+<td>Knowledge graphs + vector search combined</td>
+<td><strong>Library catalog + Google Maps</strong> — find books AND how they connect</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-1-mcp-the-universal-adapter">Part 1: MCP — The Universal Adapter<a class="headerlink" href="#part-1-mcp-the-universal-adapter" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="what-problem-does-mcp-solve">🧠 What problem does MCP solve?<a class="headerlink" href="#what-problem-does-mcp-solve" title="Permanent link">&para;</a></h3>
+<p>Before MCP, connecting an AI agent to a tool meant writing <strong>custom code for every integration</strong>:</p>
+<pre class="mermaid"><code>flowchart TB
+    subgraph "Before MCP (N×M Problem)"
+        A1["Agent 1"] --&gt;|"custom code"| T1["Gmail API"]
+        A1 --&gt;|"custom code"| T2["Slack API"]
+        A1 --&gt;|"custom code"| T3["Database"]
+        A2["Agent 2"] --&gt;|"custom code"| T1
+        A2 --&gt;|"custom code"| T2
+        A2 --&gt;|"custom code"| T3
+        A3["Agent 3"] --&gt;|"custom code"| T1
+        A3 --&gt;|"custom code"| T2
+        A3 --&gt;|"custom code"| T3
+    end</code></pre>
+<p>That's <strong>9 custom integrations</strong> for just 3 agents and 3 tools. With 10 agents and 20 tools, you'd need <strong>200</strong> integrations. Nightmare.</p>
+<pre class="mermaid"><code>flowchart TB
+    subgraph "After MCP (N+M)"
+        A1["Agent 1"] --&gt; MCP["🔌 MCP Standard"]
+        A2["Agent 2"] --&gt; MCP
+        A3["Agent 3"] --&gt; MCP
+        MCP --&gt; T1["Gmail Server"]
+        MCP --&gt; T2["Slack Server"]
+        MCP --&gt; T3["Database Server"]
+    end</code></pre>
+<p>With MCP: <strong>3 agents + 3 servers = 6 implementations</strong> total. Any agent talks to any server.</p>
+<blockquote>
+<p><strong>The USB-C analogy</strong>: Before USB-C, every phone had a different charger (micro-USB, Lightning, barrel jack). USB-C is one standard that works for everything. MCP is the USB-C for AI — one protocol that connects any agent to any tool.</p>
+</blockquote>
+<h3 id="mcp-architecture">🧠 MCP Architecture<a class="headerlink" href="#mcp-architecture" title="Permanent link">&para;</a></h3>
+<p>MCP has three components in a <strong>host → client → server</strong> architecture:</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph Host["🏠 MCP Host\n(e.g., Claude Desktop, Cursor, your app)"]
+        LLM["🧠 LLM"]
+        Client1["📡 MCP Client 1"]
+        Client2["📡 MCP Client 2"]
+        LLM &lt;--&gt; Client1
+        LLM &lt;--&gt; Client2
+    end
+
+    Client1 &lt;--&gt;|"JSON-RPC"| Server1["🔧 MCP Server\n(Gmail)"]
+    Client2 &lt;--&gt;|"JSON-RPC"| Server2["🔧 MCP Server\n(Database)"]
+
+    Server1 --&gt; Gmail["📧 Gmail API"]
+    Server2 --&gt; DB["🗄️ PostgreSQL"]</code></pre>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>What it is</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Host</strong></td>
+<td>The AI application where the LLM lives</td>
+<td>Claude Desktop, Cursor, your FastAPI app</td>
+</tr>
+<tr>
+<td><strong>Client</strong></td>
+<td>Lives inside the host, manages connections to servers</td>
+<td>One client per server connection</td>
+</tr>
+<tr>
+<td><strong>Server</strong></td>
+<td>External program that exposes tools/data</td>
+<td>A Gmail server, a database server</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-three-primitives">🧠 The Three Primitives<a class="headerlink" href="#the-three-primitives" title="Permanent link">&para;</a></h3>
+<p>MCP servers expose <strong>three types of capabilities</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Primitive</th>
+<th>What</th>
+<th>Direction</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tools</strong></td>
+<td>Functions the LLM can <strong>call</strong></td>
+<td>LLM → Server (action)</td>
+<td><code>send_email()</code>, <code>search_web()</code>, <code>query_db()</code></td>
+</tr>
+<tr>
+<td><strong>Resources</strong></td>
+<td>Data the LLM can <strong>read</strong></td>
+<td>Server → LLM (context)</td>
+<td>File contents, database records, configs</td>
+</tr>
+<tr>
+<td><strong>Prompts</strong></td>
+<td>Templates that guide the LLM</td>
+<td>Server → LLM (instruction)</td>
+<td>"Summarize this code", "Review this PR"</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart LR
+    subgraph Server["MCP Server"]
+        Tools["🔧 Tools\nsend_email()\nsearch_db()"]
+        Resources["📄 Resources\nfile://config.yaml\ndb://users"]
+        Prompts["💬 Prompts\n'Summarize this'\n'Debug this error'"]
+    end
+
+    Agent["🤖 Agent"] --&gt;|"calls"| Tools
+    Agent --&gt;|"reads"| Resources
+    Agent --&gt;|"uses"| Prompts</code></pre>
+<h3 id="transport-how-client-talks-to-server">🧠 Transport: How Client Talks to Server<a class="headerlink" href="#transport-how-client-talks-to-server" title="Permanent link">&para;</a></h3>
+<p>MCP supports two transport methods:</p>
+<table>
+<thead>
+<tr>
+<th>Transport</th>
+<th>How it works</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>stdio</strong></td>
+<td>Server runs as a subprocess, communicates via stdin/stdout</td>
+<td>Local development, same machine</td>
+</tr>
+<tr>
+<td><strong>Streamable HTTP</strong></td>
+<td>Server runs remotely, communicates via HTTP + optional SSE</td>
+<td>Remote/cloud servers, production</td>
+</tr>
+</tbody>
+</table>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># stdio: Your app launches the server as a child process</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># The server reads from stdin, writes to stdout</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Zero network overhead — fastest option for local tools</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Streamable HTTP: Server runs anywhere on the internet</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Client sends HTTP POST requests</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Server can optionally stream responses via Server-Sent Events (SSE)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="part-2-fastmcp-building-mcp-servers-the-easy-way">Part 2: FastMCP — Building MCP Servers the Easy Way<a class="headerlink" href="#part-2-fastmcp-building-mcp-servers-the-easy-way" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="why-fastmcp">🧠 Why FastMCP?<a class="headerlink" href="#why-fastmcp" title="Permanent link">&para;</a></h3>
+<p>Raw MCP involves writing JSON-RPC handlers, managing sessions, and building request/response formats. <strong>FastMCP</strong> handles all that, just like FastAPI handles HTTP boilerplate:</p>
+<table>
+<thead>
+<tr>
+<th>MCP (raw)</th>
+<th>FastMCP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Write JSON-RPC handlers</td>
+<td><code>@mcp.tool</code> decorator</td>
+</tr>
+<tr>
+<td>Manual schema generation</td>
+<td>Auto-generated from type hints</td>
+</tr>
+<tr>
+<td>Session management</td>
+<td>Handled automatically</td>
+</tr>
+<tr>
+<td>Manual error handling</td>
+<td>Built-in error handling</td>
+</tr>
+</tbody>
+</table>
+<h3 id="your-first-mcp-server">🧠 Your First MCP Server<a class="headerlink" href="#your-first-mcp-server" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># weather_server.py</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span> <span class="nn">fastmcp</span> <span class="kn">import</span> <span class="n">FastMCP</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Create the server</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">mcp</span> <span class="o">=</span> <span class="n">FastMCP</span><span class="p">(</span><span class="s2">&quot;Weather Server&quot;</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># --- TOOL: Actions the LLM can perform ---</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nd">@mcp</span><span class="o">.</span><span class="n">tool</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">def</span> <span class="nf">get_weather</span><span class="p">(</span><span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the current weather for a city.</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="sd">    Args:</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="sd">        city: The name of the city to check weather for.</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="c1"># In production: call a real weather API</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="n">weather_data</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="s2">&quot;Chicago&quot;</span><span class="p">:</span> <span class="s2">&quot;72°F, Partly Cloudy&quot;</span><span class="p">,</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="s2">&quot;New York&quot;</span><span class="p">:</span> <span class="s2">&quot;68°F, Rainy&quot;</span><span class="p">,</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="s2">&quot;Seattle&quot;</span><span class="p">:</span> <span class="s2">&quot;58°F, Overcast&quot;</span><span class="p">,</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="p">}</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="k">return</span> <span class="n">weather_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Weather data not available for </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="nd">@mcp</span><span class="o">.</span><span class="n">tool</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="k">def</span> <span class="nf">get_forecast</span><span class="p">(</span><span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">days</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Get a multi-day weather forecast.</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="sd">    Args:</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="sd">        city: The city to get the forecast for.</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="sd">        days: Number of days to forecast (default 3).</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Forecast for </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">: Sunny for the next </span><span class="si">{</span><span class="n">days</span><span class="si">}</span><span class="s2"> days&quot;</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="c1"># --- RESOURCE: Data the LLM can read ---</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="nd">@mcp</span><span class="o">.</span><span class="n">resource</span><span class="p">(</span><span class="s2">&quot;config://weather-api&quot;</span><span class="p">)</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="k">def</span> <span class="nf">get_api_config</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the weather API configuration.&quot;&quot;&quot;</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    <span class="k">return</span> <span class="s2">&quot;API Version: 2.0, Rate Limit: 100/hour, Provider: OpenWeather&quot;</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="nd">@mcp</span><span class="o">.</span><span class="n">resource</span><span class="p">(</span><span class="s2">&quot;data://supported-cities&quot;</span><span class="p">)</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="k">def</span> <span class="nf">get_supported_cities</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Return list of cities with weather data.&quot;&quot;&quot;</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>    <span class="k">return</span> <span class="s2">&quot;Chicago, New York, Seattle, London, Tokyo&quot;</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="c1"># --- PROMPT: Templates to guide the LLM ---</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="nd">@mcp</span><span class="o">.</span><span class="n">prompt</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="k">def</span> <span class="nf">weather_report</span><span class="p">(</span><span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a formatted weather report prompt.&quot;&quot;&quot;</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Please provide a comprehensive weather report for </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">.</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="s2">Include: current conditions, temperature, humidity, and any weather alerts.</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="s2">Format the report with clear headers and bullet points.&quot;&quot;&quot;</span>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="c1"># Run the server</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>    <span class="n">mcp</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>  <span class="c1"># Starts stdio transport by default</span>
+</span></code></pre></div>
+<p><strong>Let's break down what happened:</strong></p>
+<ol>
+<li><code>FastMCP("Weather Server")</code> — Creates a named MCP server</li>
+<li><code>@mcp.tool</code> — Any function with this decorator becomes a callable tool</li>
+<li><code>@mcp.resource("uri")</code> — Exposes read-only data at a URI</li>
+<li><code>@mcp.prompt</code> — Creates a reusable prompt template</li>
+<li>FastMCP <strong>auto-generates</strong> the JSON schema from your type hints and docstrings</li>
+</ol>
+<h3 id="running-and-connecting-your-server">🧠 Running and Connecting Your Server<a class="headerlink" href="#running-and-connecting-your-server" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Option 1: Run directly (stdio mode)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>uv<span class="w"> </span>run<span class="w"> </span>weather_server.py
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Option 2: Install and test with MCP Inspector</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>uvx<span class="w"> </span>mcp-inspector<span class="w"> </span>weather_server.py
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Option 3: Connect from Claude Desktop (add to config)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># ~/Library/Application Support/Claude/claude_desktop_config.json</span>
+</span></code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;weather&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uv&quot;</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;run&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/path/to/weather_server.py&quot;</span><span class="p">]</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="a-real-world-mcp-server-database-query-tool">🧠 A Real-World MCP Server: Database Query Tool<a class="headerlink" href="#a-real-world-mcp-server-database-query-tool" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># db_server.py — A more realistic example</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">fastmcp</span> <span class="kn">import</span> <span class="n">FastMCP</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kn">import</span> <span class="nn">asyncpg</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">mcp</span> <span class="o">=</span> <span class="n">FastMCP</span><span class="p">(</span><span class="s2">&quot;Database Server&quot;</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># Connection pool (shared across all calls)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">pool</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nd">@mcp</span><span class="o">.</span><span class="n">tool</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">query_customers</span><span class="p">(</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">search_term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Search for customers by name or email.</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="sd">    Args:</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="sd">        search_term: Name or email to search for.</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="sd">        limit: Maximum number of results (default 10).</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    <span class="k">global</span> <span class="n">pool</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>    <span class="k">if</span> <span class="n">pool</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        <span class="n">pool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncpg</span><span class="o">.</span><span class="n">create_pool</span><span class="p">(</span><span class="s2">&quot;postgresql://localhost/mydb&quot;</span><span class="p">)</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    <span class="n">rows</span> <span class="o">=</span> <span class="k">await</span> <span class="n">pool</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="sd">        SELECT id, name, email, plan</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="sd">        FROM customers</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="sd">        WHERE name ILIKE $1 OR email ILIKE $1</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="sd">        LIMIT $2</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="sd">        &quot;&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>        <span class="sa">f</span><span class="s2">&quot;%</span><span class="si">{</span><span class="n">search_term</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>        <span class="n">limit</span><span class="p">,</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>    <span class="p">)</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">rows</span><span class="p">:</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;No customers found matching &#39;</span><span class="si">{</span><span class="n">search_term</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">) — </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;plan&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> plan&quot;</span><span class="p">)</span>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="nd">@mcp</span><span class="o">.</span><span class="n">tool</span>
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">get_customer_orders</span><span class="p">(</span><span class="n">customer_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Get all orders for a specific customer.</span>
+</span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>
+</span><span id="__span-4-48"><a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="sd">    Args:</span>
+</span><span id="__span-4-49"><a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="sd">        customer_id: The unique ID of the customer.</span>
+</span><span id="__span-4-50"><a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-4-51"><a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>    <span class="k">global</span> <span class="n">pool</span>
+</span><span id="__span-4-52"><a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>    <span class="k">if</span> <span class="n">pool</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-4-53"><a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>        <span class="n">pool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncpg</span><span class="o">.</span><span class="n">create_pool</span><span class="p">(</span><span class="s2">&quot;postgresql://localhost/mydb&quot;</span><span class="p">)</span>
+</span><span id="__span-4-54"><a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>
+</span><span id="__span-4-55"><a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>    <span class="n">rows</span> <span class="o">=</span> <span class="k">await</span> <span class="n">pool</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span>
+</span><span id="__span-4-56"><a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>        <span class="s2">&quot;SELECT id, total, status, created_at FROM orders WHERE customer_id = $1 ORDER BY created_at DESC&quot;</span><span class="p">,</span>
+</span><span id="__span-4-57"><a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>        <span class="n">customer_id</span><span class="p">,</span>
+</span><span id="__span-4-58"><a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>    <span class="p">)</span>
+</span><span id="__span-4-59"><a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">rows</span><span class="p">:</span>
+</span><span id="__span-4-60"><a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;No orders found for customer </span><span class="si">{</span><span class="n">customer_id</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-4-61"><a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>
+</span><span id="__span-4-62"><a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-4-63"><a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+</span><span id="__span-4-64"><a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- Order #</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: $</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;total&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">) — </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;created_at&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">%Y-%m-%d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-4-65"><a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</span><span id="__span-4-66"><a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a>
+</span><span id="__span-4-67"><a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a><span class="nd">@mcp</span><span class="o">.</span><span class="n">resource</span><span class="p">(</span><span class="s2">&quot;schema://customers&quot;</span><span class="p">)</span>
+</span><span id="__span-4-68"><a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a><span class="k">def</span> <span class="nf">get_customers_schema</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-4-69"><a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the customers table schema.&quot;&quot;&quot;</span>
+</span><span id="__span-4-70"><a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>    <span class="k">return</span> <span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-4-71"><a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a><span class="s2">    Table: customers</span>
+</span><span id="__span-4-72"><a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a><span class="s2">    - id: integer (primary key)</span>
+</span><span id="__span-4-73"><a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a><span class="s2">    - name: varchar(100)</span>
+</span><span id="__span-4-74"><a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a><span class="s2">    - email: varchar(100) unique</span>
+</span><span id="__span-4-75"><a id="__codelineno-4-75" name="__codelineno-4-75" href="#__codelineno-4-75"></a><span class="s2">    - plan: varchar(20) — &#39;free&#39;, &#39;pro&#39;, &#39;enterprise&#39;</span>
+</span><span id="__span-4-76"><a id="__codelineno-4-76" name="__codelineno-4-76" href="#__codelineno-4-76"></a><span class="s2">    - created_at: timestamp</span>
+</span><span id="__span-4-77"><a id="__codelineno-4-77" name="__codelineno-4-77" href="#__codelineno-4-77"></a><span class="s2">    &quot;&quot;&quot;</span>
+</span><span id="__span-4-78"><a id="__codelineno-4-78" name="__codelineno-4-78" href="#__codelineno-4-78"></a>
+</span><span id="__span-4-79"><a id="__codelineno-4-79" name="__codelineno-4-79" href="#__codelineno-4-79"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__span-4-80"><a id="__codelineno-4-80" name="__codelineno-4-80" href="#__codelineno-4-80"></a>    <span class="n">mcp</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+    participant User
+    participant Host as Claude Desktop
+    participant Client as MCP Client
+    participant Server as DB MCP Server
+    participant DB as PostgreSQL
+
+    User-&gt;&gt;Host: "Find customer Koushik"
+    Host-&gt;&gt;Host: LLM decides to use query_customers tool
+    Host-&gt;&gt;Client: Call query_customers("Koushik")
+    Client-&gt;&gt;Server: JSON-RPC request
+    Server-&gt;&gt;DB: SELECT * FROM customers WHERE name ILIKE '%Koushik%'
+    DB--&gt;&gt;Server: Row data
+    Server--&gt;&gt;Client: JSON-RPC response
+    Client--&gt;&gt;Host: "Koushik Kodali (kk@email.com) — pro plan"
+    Host--&gt;&gt;User: "I found Koushik Kodali on the pro plan!"</code></pre>
+<hr />
+<h2 id="part-3-vector-search-finding-by-meaning">Part 3: Vector Search — Finding by Meaning<a class="headerlink" href="#part-3-vector-search-finding-by-meaning" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="what-are-embeddings">🧠 What are embeddings?<a class="headerlink" href="#what-are-embeddings" title="Permanent link">&para;</a></h3>
+<p>Embeddings convert text (or images, audio) into <strong>lists of numbers</strong> that capture <strong>meaning</strong>. Similar meanings = similar numbers.</p>
+<blockquote>
+<p><strong>The GPS Coordinates Analogy</strong>: Just like GPS coordinates tell you WHERE a place is on Earth (and nearby places have similar coordinates), embeddings tell you where a piece of text <strong>lives in "meaning space"</strong>. Similar ideas have similar coordinates.</p>
+</blockquote>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Conceptual example — what embeddings look like</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="s2">&quot;cat&quot;</span>   <span class="err">→</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>  <span class="c1"># 1536 numbers</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="s2">&quot;kitten&quot;</span> <span class="err">→</span> <span class="p">[</span><span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.79</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="c1"># Very similar to &quot;cat&quot;!</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="s2">&quot;car&quot;</span>   <span class="err">→</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>  <span class="c1"># Very different from &quot;cat&quot;</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    subgraph "Meaning Space (simplified to 2D)"
+        direction TB
+        Cat["🐱 'cat'\n(0.2, 0.8)"]
+        Kitten["🐈 'kitten'\n(0.21, 0.79)"]
+        Dog["🐕 'dog'\n(0.3, 0.7)"]
+        Car["🚗 'car'\n(0.9, 0.1)"]
+        Truck["🚛 'truck'\n(0.88, 0.15)"]
+    end</code></pre>
+<p><strong>Why this matters for agents</strong>: Instead of searching by exact keywords (ctrl+F), your agent can search by <strong>meaning</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Search Type</th>
+<th>Query: "Affordable housing"</th>
+<th>Finds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Keyword</strong> (old way)</td>
+<td>Only docs containing "affordable housing"</td>
+<td>❌ Misses "low-cost apartments"</td>
+</tr>
+<tr>
+<td><strong>Semantic</strong> (embeddings)</td>
+<td>Docs with SIMILAR meaning</td>
+<td>✅ Finds "budget rentals", "low-cost apartments", "cheap homes"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-to-create-embeddings">🧠 How to Create Embeddings<a class="headerlink" href="#how-to-create-embeddings" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>  <span class="c1"># Uses OPENAI_API_KEY from .env</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Convert text to an embedding vector</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">embeddings</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;text-embedding-3-small&quot;</span><span class="p">,</span>  <span class="c1"># Fast, cheap, good quality</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;AI agents are transforming software development&quot;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">)</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1"># The embedding: a list of 1536 floating-point numbers</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="n">embedding</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">embedding</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dimensions: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">embedding</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1"># 1536</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First 5 values: </span><span class="si">{</span><span class="n">embedding</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># [0.023, -0.041, 0.018, ...]</span>
+</span></code></pre></div>
+<h3 id="cosine-similarity-measuring-closeness">🧠 Cosine Similarity — Measuring "Closeness"<a class="headerlink" href="#cosine-similarity-measuring-closeness" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">def</span> <span class="nf">cosine_similarity</span><span class="p">(</span><span class="n">vec_a</span><span class="p">,</span> <span class="n">vec_b</span><span class="p">):</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;How similar are two embeddings? Returns 0.0 to 1.0&quot;&quot;&quot;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">dot_product</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">vec_a</span><span class="p">,</span> <span class="n">vec_b</span><span class="p">)</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">norm_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vec_a</span><span class="p">)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">norm_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vec_b</span><span class="p">)</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="k">return</span> <span class="n">dot_product</span> <span class="o">/</span> <span class="p">(</span><span class="n">norm_a</span> <span class="o">*</span> <span class="n">norm_b</span><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># Example results:</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># &quot;cat&quot; vs &quot;kitten&quot;    → 0.95  (very similar!)</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1"># &quot;cat&quot; vs &quot;dog&quot;       → 0.78  (somewhat similar — both animals)</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1"># &quot;cat&quot; vs &quot;car&quot;       → 0.23  (very different)</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c1"># &quot;cat&quot; vs &quot;quantum physics&quot; → 0.05  (almost nothing in common)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="pgvector-vector-search-inside-postgresql">🧠 pgvector — Vector Search Inside PostgreSQL<a class="headerlink" href="#pgvector-vector-search-inside-postgresql" title="Permanent link">&para;</a></h3>
+<p>pgvector adds vector storage and search <strong>directly to PostgreSQL</strong>. If you already use Postgres, you don't need a separate database.</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">-- 1. Enable pgvector extension</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">EXTENSION</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">vector</span><span class="p">;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">-- 2. Create a table with a vector column</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">documents</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="n">content</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="n">metadata</span><span class="w"> </span><span class="n">JSONB</span><span class="p">,</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="n">embedding</span><span class="w"> </span><span class="n">vector</span><span class="p">(</span><span class="mi">1536</span><span class="p">)</span><span class="w">  </span><span class="c1">-- 1536-dimensional vector (OpenAI size)</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">);</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c1">-- 3. Insert a document with its embedding</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">documents</span><span class="w"> </span><span class="p">(</span><span class="n">content</span><span class="p">,</span><span class="w"> </span><span class="n">metadata</span><span class="p">,</span><span class="w"> </span><span class="n">embedding</span><span class="p">)</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="s1">&#39;AI agents can autonomously complete tasks&#39;</span><span class="p">,</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="s1">&#39;{&quot;source&quot;: &quot;blog&quot;, &quot;author&quot;: &quot;koushik&quot;}&#39;</span><span class="p">,</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="s1">&#39;[0.023, -0.041, 0.018, ...]&#39;</span><span class="w">  </span><span class="c1">-- 1536 numbers from OpenAI</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="p">);</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="c1">-- 4. Find the 5 most similar documents to a query embedding</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">content</span><span class="p">,</span><span class="w"> </span><span class="n">metadata</span><span class="p">,</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">       </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">embedding</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="s1">&#39;[0.025, -0.039, ...]&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">similarity</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="k">FROM</span><span class="w"> </span><span class="n">documents</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">embedding</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="s1">&#39;[0.025, -0.039, ...]&#39;</span><span class="w">  </span><span class="c1">-- &lt;=&gt; is cosine distance</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="c1">-- 5. Create an HNSW index for fast search (CRITICAL for production!)</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">documents</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="k">USING</span><span class="w"> </span><span class="n">hnsw</span><span class="w"> </span><span class="p">(</span><span class="n">embedding</span><span class="w"> </span><span class="n">vector_cosine_ops</span><span class="p">)</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="k">WITH</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="n">ef_construction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+</span></code></pre></div>
+<p><strong>Python + pgvector:</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">asyncpg</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">openai</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">search_similar</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Search for documents similar to a natural language query.&quot;&quot;&quot;</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="c1"># 1. Convert query to embedding</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">embeddings</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;text-embedding-3-small&quot;</span><span class="p">,</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>        <span class="nb">input</span><span class="o">=</span><span class="n">query</span><span class="p">,</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="p">)</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    <span class="n">query_embedding</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">embedding</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    <span class="c1"># 2. Search pgvector</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    <span class="n">conn</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncpg</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;postgresql://localhost/mydb&quot;</span><span class="p">)</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    <span class="n">rows</span> <span class="o">=</span> <span class="k">await</span> <span class="n">conn</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="sd">        SELECT content, metadata,</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="sd">               1 - (embedding &lt;=&gt; $1::vector) AS similarity</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="sd">        FROM documents</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="sd">        ORDER BY embedding &lt;=&gt; $1::vector</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="sd">        LIMIT $2</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="sd">        &quot;&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>        <span class="nb">str</span><span class="p">(</span><span class="n">query_embedding</span><span class="p">),</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>        <span class="n">limit</span><span class="p">,</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>    <span class="p">)</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>    <span class="k">await</span> <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>    <span class="c1"># 3. Return results</span>
+</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;similarity&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>
+</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="c1"># Usage:</span>
+</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="c1"># await search_similar(&quot;How do AI agents work?&quot;)</span>
+</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="c1"># [0.943] AI agents can autonomously complete tasks</span>
+</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="c1"># [0.891] Building intelligent agents with LLMs</span>
+</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="c1"># [0.834] Agent frameworks comparison guide</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    A["User Query:\n'How do AI agents work?'"] --&gt; B["OpenAI API\ntext-embedding-3-small"]
+    B --&gt; C["Query Vector\n[0.025, -0.039, ...]"]
+    C --&gt; D["pgvector\nCosine Distance Search"]
+    D --&gt; E["Top 5 Similar Docs\nsorted by similarity"]
+    E --&gt; F["Feed to LLM\nas context (RAG)"]</code></pre>
+<hr />
+<h3 id="qdrant-the-dedicated-vector-database">🧠 Qdrant — The Dedicated Vector Database<a class="headerlink" href="#qdrant-the-dedicated-vector-database" title="Permanent link">&para;</a></h3>
+<p>Qdrant is a <strong>standalone</strong> vector database built in Rust. Use it when you need advanced features pgvector doesn't offer:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span> <span class="nn">qdrant_client</span> <span class="kn">import</span> <span class="n">QdrantClient</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kn">from</span> <span class="nn">qdrant_client.models</span> <span class="kn">import</span> <span class="n">Distance</span><span class="p">,</span> <span class="n">VectorParams</span><span class="p">,</span> <span class="n">PointStruct</span><span class="p">,</span> <span class="n">Filter</span><span class="p">,</span> <span class="n">FieldCondition</span><span class="p">,</span> <span class="n">MatchValue</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">openai</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">qdrant</span> <span class="o">=</span> <span class="n">QdrantClient</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">6333</span><span class="p">)</span>  <span class="c1"># or qdrant.io for cloud</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1"># 1. Create a collection (like a table)</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="n">qdrant</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="n">collection_name</span><span class="o">=</span><span class="s2">&quot;knowledge_base&quot;</span><span class="p">,</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="n">vectors_config</span><span class="o">=</span><span class="n">VectorParams</span><span class="p">(</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>        <span class="n">size</span><span class="o">=</span><span class="mi">1536</span><span class="p">,</span>               <span class="c1"># OpenAI embedding dimensions</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>        <span class="n">distance</span><span class="o">=</span><span class="n">Distance</span><span class="o">.</span><span class="n">COSINE</span> <span class="c1"># Similarity metric</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    <span class="p">),</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="p">)</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="c1"># 2. Insert documents</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="k">def</span> <span class="nf">embed</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">embeddings</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;text-embedding-3-small&quot;</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">embedding</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="n">qdrant</span><span class="o">.</span><span class="n">upsert</span><span class="p">(</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>    <span class="n">collection_name</span><span class="o">=</span><span class="s2">&quot;knowledge_base&quot;</span><span class="p">,</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>    <span class="n">points</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>        <span class="n">PointStruct</span><span class="p">(</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>            <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>            <span class="n">vector</span><span class="o">=</span><span class="n">embed</span><span class="p">(</span><span class="s2">&quot;PydanticAI is a framework for building AI agents&quot;</span><span class="p">),</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>            <span class="n">payload</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;PydanticAI is a framework for building AI agents&quot;</span><span class="p">,</span>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>                     <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;module_2&quot;</span><span class="p">,</span> <span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;agents&quot;</span><span class="p">}</span>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>        <span class="p">),</span>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>        <span class="n">PointStruct</span><span class="p">(</span>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>            <span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>            <span class="n">vector</span><span class="o">=</span><span class="n">embed</span><span class="p">(</span><span class="s2">&quot;LangGraph uses nodes and edges for agent orchestration&quot;</span><span class="p">),</span>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>            <span class="n">payload</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;LangGraph uses nodes and edges for agent orchestration&quot;</span><span class="p">,</span>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>                     <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;module_3&quot;</span><span class="p">,</span> <span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;orchestration&quot;</span><span class="p">}</span>
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>        <span class="p">),</span>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>        <span class="n">PointStruct</span><span class="p">(</span>
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>            <span class="nb">id</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>            <span class="n">vector</span><span class="o">=</span><span class="n">embed</span><span class="p">(</span><span class="s2">&quot;Docker containers ensure consistent deployments&quot;</span><span class="p">),</span>
+</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>            <span class="n">payload</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Docker containers ensure consistent deployments&quot;</span><span class="p">,</span>
+</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>                     <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;module_6&quot;</span><span class="p">,</span> <span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;deployment&quot;</span><span class="p">}</span>
+</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>        <span class="p">),</span>
+</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>    <span class="p">],</span>
+</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="p">)</span>
+</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>
+</span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a><span class="c1"># 3. Search by meaning</span>
+</span><span id="__span-10-47"><a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a><span class="n">results</span> <span class="o">=</span> <span class="n">qdrant</span><span class="o">.</span><span class="n">query_points</span><span class="p">(</span>
+</span><span id="__span-10-48"><a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>    <span class="n">collection_name</span><span class="o">=</span><span class="s2">&quot;knowledge_base&quot;</span><span class="p">,</span>
+</span><span id="__span-10-49"><a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>    <span class="n">query</span><span class="o">=</span><span class="n">embed</span><span class="p">(</span><span class="s2">&quot;How do I build an AI agent?&quot;</span><span class="p">),</span>
+</span><span id="__span-10-50"><a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a>    <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-10-51"><a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a><span class="p">)</span>
+</span><span id="__span-10-52"><a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a><span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">points</span><span class="p">:</span>
+</span><span id="__span-10-53"><a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">point</span><span class="o">.</span><span class="n">score</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">point</span><span class="o">.</span><span class="n">payload</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-10-54"><a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a>
+</span><span id="__span-10-55"><a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a><span class="c1"># 4. ADVANCED: Search with filtering (Qdrant&#39;s killer feature!)</span>
+</span><span id="__span-10-56"><a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a><span class="n">results</span> <span class="o">=</span> <span class="n">qdrant</span><span class="o">.</span><span class="n">query_points</span><span class="p">(</span>
+</span><span id="__span-10-57"><a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a>    <span class="n">collection_name</span><span class="o">=</span><span class="s2">&quot;knowledge_base&quot;</span><span class="p">,</span>
+</span><span id="__span-10-58"><a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a>    <span class="n">query</span><span class="o">=</span><span class="n">embed</span><span class="p">(</span><span class="s2">&quot;How do I build an AI agent?&quot;</span><span class="p">),</span>
+</span><span id="__span-10-59"><a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a>    <span class="n">query_filter</span><span class="o">=</span><span class="n">Filter</span><span class="p">(</span>
+</span><span id="__span-10-60"><a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a>        <span class="n">must</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-10-61"><a id="__codelineno-10-61" name="__codelineno-10-61" href="#__codelineno-10-61"></a>            <span class="n">FieldCondition</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;module&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="n">MatchValue</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s2">&quot;module_2&quot;</span><span class="p">))</span>
+</span><span id="__span-10-62"><a id="__codelineno-10-62" name="__codelineno-10-62" href="#__codelineno-10-62"></a>        <span class="p">]</span>
+</span><span id="__span-10-63"><a id="__codelineno-10-63" name="__codelineno-10-63" href="#__codelineno-10-63"></a>    <span class="p">),</span>
+</span><span id="__span-10-64"><a id="__codelineno-10-64" name="__codelineno-10-64" href="#__codelineno-10-64"></a>    <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-10-65"><a id="__codelineno-10-65" name="__codelineno-10-65" href="#__codelineno-10-65"></a><span class="p">)</span>
+</span><span id="__span-10-66"><a id="__codelineno-10-66" name="__codelineno-10-66" href="#__codelineno-10-66"></a><span class="c1"># Only returns results from Module 2!</span>
+</span></code></pre></div>
+<h3 id="pgvector-vs-qdrant-decision-table">🧠 pgvector vs Qdrant Decision Table<a class="headerlink" href="#pgvector-vs-qdrant-decision-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>pgvector</th>
+<th>Qdrant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>You already use PostgreSQL</strong></td>
+<td>✅ Use pgvector</td>
+<td>Adds complexity</td>
+</tr>
+<tr>
+<td><strong>Advanced metadata filtering</strong></td>
+<td>Basic SQL WHERE</td>
+<td>✅ Powerful payload filters</td>
+</tr>
+<tr>
+<td><strong>Dataset &lt; 10M vectors</strong></td>
+<td>✅ Great throughput</td>
+<td>Great latency</td>
+</tr>
+<tr>
+<td><strong>Dataset &gt; 100M vectors</strong></td>
+<td>Limited scaling</td>
+<td>✅ Horizontal scaling</td>
+</tr>
+<tr>
+<td><strong>Ops simplicity</strong></td>
+<td>✅ One database</td>
+<td>Separate infra</td>
+</tr>
+<tr>
+<td><strong>Lowest single-query latency</strong></td>
+<td>Good</td>
+<td>✅ Better</td>
+</tr>
+<tr>
+<td><strong>Learning curve</strong></td>
+<td>✅ Just SQL</td>
+<td>New API to learn</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>✅ Free (Postgres extension)</td>
+<td>Free OSS / paid cloud</td>
+</tr>
+<tr>
+<td><strong>Best for your projects</strong></td>
+<td>✅ Start here</td>
+<td>Upgrade when needed</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Rule of thumb</strong>: Start with <strong>pgvector</strong> (one database for everything). Move to <strong>Qdrant</strong> when you need advanced filtering, billion-scale, or dedicated vector infrastructure.</p>
+</blockquote>
+<hr />
+<h2 id="part-4-graphrag-when-vectors-arent-enough">Part 4: GraphRAG — When Vectors Aren't Enough<a class="headerlink" href="#part-4-graphrag-when-vectors-arent-enough" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="why-do-embeddings-fail">🧠 Why do embeddings fail?<a class="headerlink" href="#why-do-embeddings-fail" title="Permanent link">&para;</a></h3>
+<p>Vector search finds <strong>similar text</strong>, but it can't understand <strong>relationships</strong> between concepts:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Question: &quot;Who are the co-founders of the company that acquired Instagram?&quot;
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Vector search returns:
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>- &quot;Instagram was acquired in 2012&quot;  (relevant text)
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>- &quot;Facebook&#39;s founding story includes...&quot;  (relevant text)
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>BUT: It can&#39;t CONNECT these two facts to answer &quot;Mark Zuckerberg&quot;
+</span></code></pre></div>
+<blockquote>
+<p><strong>The Library Analogy</strong>: Vector search is like searching a library by book summaries — you find relevant books. But GraphRAG is like having the librarian who says: <em>"Oh, you're reading about Instagram's acquisition? Let me also grab the Facebook founders book AND the tech acquisitions timeline, because they're all connected."</em></p>
+</blockquote>
+<h3 id="what-is-a-knowledge-graph">🧠 What is a Knowledge Graph?<a class="headerlink" href="#what-is-a-knowledge-graph" title="Permanent link">&para;</a></h3>
+<p>A knowledge graph stores information as <strong>entities</strong> (nodes) and <strong>relationships</strong> (edges):</p>
+<pre class="mermaid"><code>graph LR
+    Meta["🏢 Meta\n(Company)"] --&gt;|"acquired"| IG["📸 Instagram\n(Company)"]
+    Meta --&gt;|"founded_by"| MZ["👤 Mark Zuckerberg\n(Person)"]
+    Meta --&gt;|"founded_by"| EC["👤 Eduardo Saverin\n(Person)"]
+    IG --&gt;|"founded_by"| KS["👤 Kevin Systrom\n(Person)"]
+    Meta --&gt;|"headquarters"| MP["📍 Menlo Park\n(Location)"]
+    IG --&gt;|"acquired_year"| Y2012["📅 2012\n(Date)"]
+    MZ --&gt;|"alma_mater"| Harvard["🎓 Harvard\n(University)"]</code></pre>
+<p>Now when someone asks <em>"Who founded the company that acquired Instagram?"</em>, the graph can <strong>traverse</strong>: Instagram ← acquired by ← Meta ← founded by → Mark Zuckerberg ✅</p>
+<h3 id="neo4j-the-graph-database">🧠 Neo4j — The Graph Database<a class="headerlink" href="#neo4j-the-graph-database" title="Permanent link">&para;</a></h3>
+<p>Neo4j uses <strong>Cypher</strong> — a query language designed for graphs:</p>
+<div class="language-cypher highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// Create nodes</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="p">(</span><span class="n">meta</span><span class="p">:</span><span class="n">Company</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Meta&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">industry</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Tech&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">revenue</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;117B&quot;</span><span class="p">})</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">CREATE</span><span class="w"> </span><span class="p">(</span><span class="n">ig</span><span class="p">:</span><span class="n">Company</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Instagram&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Social Media&quot;</span><span class="p">})</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">CREATE</span><span class="w"> </span><span class="p">(</span><span class="n">mz</span><span class="p">:</span><span class="n">Person</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Mark Zuckerberg&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">role</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;CEO&quot;</span><span class="p">})</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1">// Create relationships</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="k">CREATE</span><span class="w"> </span><span class="p">(</span><span class="n">meta</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">ACQUIRED</span><span class="w"> </span><span class="p">{</span><span class="n">year</span><span class="p">:</span><span class="w"> </span><span class="m">2012</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1B&quot;</span><span class="p">}</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">ig</span><span class="p">)</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="k">CREATE</span><span class="w"> </span><span class="p">(</span><span class="n">mz</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">FOUNDED</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="k">CREATE</span><span class="w"> </span><span class="p">(</span><span class="n">mz</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">CEO_OF</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="c1">// Query: Who founded the company that acquired Instagram?</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">FOUNDED</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">company</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">ACQUIRED</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Instagram&quot;</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="k">RETURN</span><span class="w"> </span><span class="n">person</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">company</span><span class="p">.</span><span class="n">name</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="c1">// Result: Mark Zuckerberg, Meta ✅</span>
+</span></code></pre></div>
+<p><strong>Python with Neo4j:</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span> <span class="nn">neo4j</span> <span class="kn">import</span> <span class="n">GraphDatabase</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">driver</span> <span class="o">=</span> <span class="n">GraphDatabase</span><span class="o">.</span><span class="n">driver</span><span class="p">(</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="s2">&quot;bolt://localhost:7687&quot;</span><span class="p">,</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;neo4j&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="k">def</span> <span class="nf">find_connections</span><span class="p">(</span><span class="n">entity_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Find all entities connected to a given entity.&quot;&quot;&quot;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    <span class="k">with</span> <span class="n">driver</span><span class="o">.</span><span class="n">session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>        <span class="n">result</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="sd">            MATCH (e {name: $name})-[r]-(connected)</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="sd">            RETURN type(r) AS relationship,</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="sd">                   connected.name AS connected_entity,</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="sd">                   labels(connected) AS entity_type</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="sd">            &quot;&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>            <span class="n">name</span><span class="o">=</span><span class="n">entity_name</span><span class="p">,</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>        <span class="p">)</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>        <span class="k">return</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">result</span><span class="p">]</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="c1"># Usage</span>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="n">connections</span> <span class="o">=</span> <span class="n">find_connections</span><span class="p">(</span><span class="s2">&quot;Meta&quot;</span><span class="p">)</span>
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="c1"># [</span>
+</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="c1">#   {&quot;relationship&quot;: &quot;ACQUIRED&quot;, &quot;connected_entity&quot;: &quot;Instagram&quot;, &quot;entity_type&quot;: [&quot;Company&quot;]},</span>
+</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="c1">#   {&quot;relationship&quot;: &quot;FOUNDED&quot;, &quot;connected_entity&quot;: &quot;Mark Zuckerberg&quot;, &quot;entity_type&quot;: [&quot;Person&quot;]},</span>
+</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="c1">#   {&quot;relationship&quot;: &quot;CEO_OF&quot;, &quot;connected_entity&quot;: &quot;Mark Zuckerberg&quot;, &quot;entity_type&quot;: [&quot;Person&quot;]},</span>
+</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="c1"># ]</span>
+</span></code></pre></div>
+<h3 id="hybrid-retrieval-the-best-of-both-worlds">🧠 Hybrid Retrieval — The Best of Both Worlds<a class="headerlink" href="#hybrid-retrieval-the-best-of-both-worlds" title="Permanent link">&para;</a></h3>
+<p>Production RAG systems use <strong>both</strong> vector search AND graph traversal:</p>
+<pre class="mermaid"><code>flowchart TB
+    Q["User Query:\n'Who founded Meta and what did they acquire?'"]
+
+    Q --&gt; V["🔍 Vector Search\n(pgvector/Qdrant)"]
+    Q --&gt; G["🕸️ Graph Search\n(Neo4j)"]
+
+    V --&gt; VR["Relevant chunks:\n'Meta is a tech company...'\n'Instagram acquisition 2012...'"]
+    G --&gt; GR["Connected entities:\nMeta → founded_by → Zuckerberg\nMeta → acquired → Instagram"]
+
+    VR --&gt; Combine["🔀 Combine &amp; Deduplicate"]
+    GR --&gt; Combine
+
+    Combine --&gt; LLM["🤖 LLM generates answer\nwith FULL context"]
+    LLM --&gt; A["✅ 'Meta was founded by Mark Zuckerberg\nand acquired Instagram in 2012 for $1B'"]</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">hybrid_search</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Search using both vector similarity AND graph relationships.&quot;&quot;&quot;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="c1"># 1. Vector search — find semantically similar text</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="n">vector_results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">pgvector_search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    <span class="c1"># 2. Extract entities from the query (using LLM or NER)</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="n">entities</span> <span class="o">=</span> <span class="n">extract_entities</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>  <span class="c1"># [&quot;Meta&quot;, &quot;founders&quot;]</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="c1"># 3. Graph search — find connected entities</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="n">graph_results</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">entities</span><span class="p">:</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>        <span class="n">connections</span> <span class="o">=</span> <span class="n">find_connections</span><span class="p">(</span><span class="n">entity</span><span class="p">)</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>        <span class="n">graph_results</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">connections</span><span class="p">)</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>    <span class="c1"># 4. Combine into rich context</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>    <span class="n">context</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="s2">    ## Relevant Documents (from vector search):</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="s2">    </span><span class="si">{</span><span class="n">format_vector_results</span><span class="p">(</span><span class="n">vector_results</span><span class="p">)</span><span class="si">}</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="s2">    ## Entity Relationships (from knowledge graph):</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="s2">    </span><span class="si">{</span><span class="n">format_graph_results</span><span class="p">(</span><span class="n">graph_results</span><span class="p">)</span><span class="si">}</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="s2">    &quot;&quot;&quot;</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>    <span class="c1"># 5. Send to LLM with combined context</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>    <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>        <span class="n">system</span><span class="o">=</span><span class="s2">&quot;Answer based on the provided context.&quot;</span><span class="p">,</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>        <span class="n">user</span><span class="o">=</span><span class="n">query</span><span class="p">,</span>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>        <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">,</span>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>    <span class="p">)</span>
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>    <span class="k">return</span> <span class="n">response</span>
+</span></code></pre></div>
+<h3 id="vector-only-vs-graphrag-comparison">🧠 Vector-Only vs GraphRAG Comparison<a class="headerlink" href="#vector-only-vs-graphrag-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Vector Search Only</th>
+<th>Hybrid GraphRAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Simple questions</strong></td>
+<td>✅ Great</td>
+<td>✅ Great</td>
+</tr>
+<tr>
+<td><strong>Multi-hop reasoning</strong></td>
+<td>❌ Struggles</td>
+<td>✅ Traverses relationships</td>
+</tr>
+<tr>
+<td><strong>"Who founded X?"</strong></td>
+<td>Might find text</td>
+<td>✅ Follows edges directly</td>
+</tr>
+<tr>
+<td><strong>Explainability</strong></td>
+<td>🟡 "Similar to these docs"</td>
+<td>✅ "Found via: A → B → C"</td>
+</tr>
+<tr>
+<td><strong>Setup complexity</strong></td>
+<td>✅ Simple</td>
+<td>🟡 Needs graph DB + extraction</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>FAQ, search, basic RAG</td>
+<td>Complex knowledge bases</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="how-module-4-connects-to-everything">🔗 How Module 4 Connects to Everything<a class="headerlink" href="#how-module-4-connects-to-everything" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TB
+    M2["Module 2\nAgents (brain)"] --&gt; M4
+    M3["Module 3\nOrchestration (spine)"] --&gt; M4
+    M4["Module 4\nMCP + RAG (senses &amp; memory)"]
+    M4 --&gt;|"Tools need monitoring"| M5["Module 5\nLangSmith (nervous system)"]
+    M4 --&gt;|"Servers need hosting"| M6["Module 6\nFastAPI + Docker (home)"]
+
+    style M4 fill:#8b5cf6,color:#fff</code></pre>
+<ul>
+<li><strong>Module 2 → 4</strong>: Your agents now have tools (MCP) and memory (vector DB)</li>
+<li><strong>Module 3 → 4</strong>: Agents in your graph can call MCP tools and search knowledge</li>
+<li><strong>Module 4 → 5</strong>: RAG pipelines need monitoring — are you retrieving good context?</li>
+<li><strong>Module 4 → 6</strong>: MCP servers and vector DBs need Docker for deployment</li>
+</ul>
+<hr />
+<h2 id="cheat-sheet">⚡ Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<h3 id="mcp-primitives">MCP Primitives<a class="headerlink" href="#mcp-primitives" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Primitive</th>
+<th>Purpose</th>
+<th>Decorator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tool</td>
+<td>LLM calls a function</td>
+<td><code>@mcp.tool</code></td>
+</tr>
+<tr>
+<td>Resource</td>
+<td>LLM reads data</td>
+<td><code>@mcp.resource("uri://path")</code></td>
+</tr>
+<tr>
+<td>Prompt</td>
+<td>Reusable template</td>
+<td><code>@mcp.prompt</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fastmcp-quick-reference">FastMCP Quick Reference<a class="headerlink" href="#fastmcp-quick-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create server</td>
+<td><code>mcp = FastMCP("Name")</code></td>
+</tr>
+<tr>
+<td>Add tool</td>
+<td><code>@mcp.tool</code> on a function</td>
+</tr>
+<tr>
+<td>Add resource</td>
+<td><code>@mcp.resource("uri")</code> on a function</td>
+</tr>
+<tr>
+<td>Add prompt</td>
+<td><code>@mcp.prompt</code> on a function</td>
+</tr>
+<tr>
+<td>Run server</td>
+<td><code>mcp.run()</code></td>
+</tr>
+<tr>
+<td>Test with inspector</td>
+<td><code>uvx mcp-inspector server.py</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="embedding-vector-search">Embedding + Vector Search<a class="headerlink" href="#embedding-vector-search" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Code/Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create embedding</td>
+<td><code>openai.embeddings.create(model="text-embedding-3-small", input="text")</code></td>
+</tr>
+<tr>
+<td>pgvector column</td>
+<td><code>embedding vector(1536)</code></td>
+</tr>
+<tr>
+<td>pgvector search</td>
+<td><code>ORDER BY embedding &lt;=&gt; query_vector LIMIT 5</code></td>
+</tr>
+<tr>
+<td>pgvector index</td>
+<td><code>CREATE INDEX USING hnsw (embedding vector_cosine_ops)</code></td>
+</tr>
+<tr>
+<td>Qdrant create</td>
+<td><code>client.create_collection(name, VectorParams(...))</code></td>
+</tr>
+<tr>
+<td>Qdrant insert</td>
+<td><code>client.upsert(collection, points=[...])</code></td>
+</tr>
+<tr>
+<td>Qdrant search</td>
+<td><code>client.query_points(collection, query=vec, limit=5)</code></td>
+</tr>
+<tr>
+<td>Qdrant filter</td>
+<td><code>query_filter=Filter(must=[FieldCondition(...)])</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="neo4j-graphrag">Neo4j / GraphRAG<a class="headerlink" href="#neo4j-graphrag" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Cypher</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create node</td>
+<td><code>CREATE (n:Label {prop: "value"})</code></td>
+</tr>
+<tr>
+<td>Create relationship</td>
+<td><code>CREATE (a)-[:REL_TYPE]-&gt;(b)</code></td>
+</tr>
+<tr>
+<td>Find connections</td>
+<td><code>MATCH (a)-[r]-(b) WHERE a.name = "X" RETURN b</code></td>
+</tr>
+<tr>
+<td>Multi-hop query</td>
+<td><code>MATCH (a)-[:REL1]-&gt;(b)-[:REL2]-&gt;(c) RETURN c</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="checkpoint-quiz">✅ Checkpoint Quiz<a class="headerlink" href="#checkpoint-quiz" title="Permanent link">&para;</a></h2>
+<p>Test yourself before moving to Module 5:</p>
+<p><strong>1.</strong> What are the three MCP primitives, and how are they different?</p>
+<details><summary>Answer</summary>
+
+**Tools** are functions the LLM can **call** to perform actions (like sending an email or querying a database). **Resources** are read-only data the LLM can **read** for context (like file contents or config). **Prompts** are reusable templates that **guide** the LLM's behavior. Tools are for actions, resources are for context, prompts are for instructions.
+</details>
+
+<p><strong>2.</strong> Why is FastMCP compared to Flask/FastAPI?</p>
+<details><summary>Answer</summary>
+
+Just as FastAPI abstracts away HTTP boilerplate (routing, request parsing, response formatting, schema generation), FastMCP abstracts away MCP boilerplate (JSON-RPC, session management, schema generation, error handling). You just write Python functions with decorators (`@mcp.tool`) and type hints, and FastMCP handles the protocol details automatically.
+</details>
+
+<p><strong>3.</strong> What is the difference between keyword search and semantic (vector) search?</p>
+<details><summary>Answer</summary>
+
+**Keyword search** matches exact words — searching for "affordable housing" only finds documents containing those exact words. **Semantic search** uses embeddings to find documents with similar **meaning** — it would also find "budget apartments", "low-cost homes", and "cheap rentals" because their embeddings are close in meaning space, even though the words are different.
+</details>
+
+<p><strong>4.</strong> When should you use pgvector vs Qdrant?</p>
+<details><summary>Answer</summary>
+
+Use **pgvector** when you already use PostgreSQL and want one database for everything — it's simpler to operate and has excellent throughput for datasets under ~10M vectors. Use **Qdrant** when you need advanced metadata filtering, need to scale to billions of vectors, want the lowest single-query latency, or are building a dedicated vector search application. Start with pgvector, upgrade to Qdrant when needed.
+</details>
+
+<p><strong>5.</strong> Why does GraphRAG outperform pure vector search for complex questions?</p>
+<details><summary>Answer</summary>
+
+Vector search finds **semantically similar text chunks** independently, but can't connect facts across different chunks. GraphRAG uses a **knowledge graph** that stores relationships between entities, enabling **multi-hop reasoning**. For "Who founded the company that acquired Instagram?", vector search finds separate chunks about Instagram and Meta, but GraphRAG can **traverse** the relationship chain: Instagram ← acquired by ← Meta ← founded by → Mark Zuckerberg. Benchmarks show hybrid GraphRAG improves recall by ~25% on complex queries.
+</details>
+
+<hr />
+<blockquote>
+<p><strong>Next up</strong>: <a href="../module_5_nervous_system/">Module 5 — The "Nervous System": LangSmith + Evals</a></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

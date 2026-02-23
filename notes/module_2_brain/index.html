@@ -1,0 +1,2242 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete 12-week learning notes for AI Agents Development">
+      
+      
+      
+      
+        <link rel="prev" href="../module_1_dev_environment/">
+      
+      
+        <link rel="next" href="../module_3_spine/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Module 2 — Brain - 🤖 AI Agents Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-2-the-brain-pydantic-pydanticai-openai-agents-sdk" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🤖 AI Agents Development" class="md-header__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🤖 AI Agents Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 2 — Brain
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../module_1_dev_environment/" class="md-tabs__link">
+          
+  
+  
+  📚 Study Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/curated_resources/" class="md-tabs__link">
+          
+  
+  
+  🔗 Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🤖 AI Agents Development" class="md-nav__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    🤖 AI Agents Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Study Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 Study Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_1_dev_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 — Dev Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 — Brain
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 — Brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 What &amp; Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-pydantic-the-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Pydantic — The Foundation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Pydantic — The Foundation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-data-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What is data validation?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basemodel-your-first-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 BaseModel — Your First Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validators-custom-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Validators — Custom Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Nested Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-pydanticai-your-first-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: PydanticAI — Your First AI Agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: PydanticAI — Your First AI Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What is an AI agent?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-agent-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 The Agent Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-first-pydanticai-agent-10-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Your First PydanticAI Agent (10 lines)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structured-outputs-the-real-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Structured Outputs — The Real Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-giving-your-agent-abilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Tools — Giving Your Agent Abilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies-injecting-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Dependencies — Injecting Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-openai-agents-sdk-the-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: OpenAI Agents SDK — The Alternative
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: OpenAI Agents SDK — The Alternative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-learn-another-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Why learn another framework?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-agent-loop-sdk-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 The Agent Loop (SDK Version)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-first-sdk-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Your First SDK Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handoffs-agent-to-agent-delegation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Handoffs — Agent-to-Agent Delegation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardrails-safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Guardrails — Safety First
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-module-2-connects-to-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 How Module 2 Connects to Everything
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Cheat Sheet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pydantic-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pydantic Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pydanticai-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PydanticAI Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-agents-sdk-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI Agents SDK Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pydanticai-vs-openai-sdk-decision-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PydanticAI vs OpenAI SDK Decision Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checkpoint Quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_3_spine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 — Spine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_4_senses_memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 — Senses & Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_5_nervous_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 — Nervous System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_6_home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 6 — Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔗 Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔗 Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/curated_resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video-First Learning Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/project_specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Build Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 What &amp; Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-pydantic-the-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Pydantic — The Foundation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Pydantic — The Foundation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-data-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What is data validation?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basemodel-your-first-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 BaseModel — Your First Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validators-custom-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Validators — Custom Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Nested Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-pydanticai-your-first-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: PydanticAI — Your First AI Agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: PydanticAI — Your First AI Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What is an AI agent?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-agent-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 The Agent Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-first-pydanticai-agent-10-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Your First PydanticAI Agent (10 lines)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structured-outputs-the-real-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Structured Outputs — The Real Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-giving-your-agent-abilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Tools — Giving Your Agent Abilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies-injecting-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Dependencies — Injecting Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-openai-agents-sdk-the-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: OpenAI Agents SDK — The Alternative
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: OpenAI Agents SDK — The Alternative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-learn-another-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Why learn another framework?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-agent-loop-sdk-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 The Agent Loop (SDK Version)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-first-sdk-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Your First SDK Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handoffs-agent-to-agent-delegation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Handoffs — Agent-to-Agent Delegation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardrails-safety-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Guardrails — Safety First
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-module-2-connects-to-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 How Module 2 Connects to Everything
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Cheat Sheet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pydantic-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pydantic Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pydanticai-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PydanticAI Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-agents-sdk-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI Agents SDK Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pydanticai-vs-openai-sdk-decision-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PydanticAI vs OpenAI SDK Decision Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checkpoint Quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-2-the-brain-pydantic-pydanticai-openai-agents-sdk">Module 2: The "Brain" — Pydantic + PydanticAI + OpenAI Agents SDK<a class="headerlink" href="#module-2-the-brain-pydantic-pydanticai-openai-agents-sdk" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Goal</strong>: Understand data validation, build your first AI agent, and learn two frameworks for agent development.
+<strong>Time</strong>: Week 3–4 | <strong>Watch alongside</strong>: Videos 2.1–2.9 from curated resources</p>
+</blockquote>
+<hr />
+<h2 id="what-why">🎯 What &amp; Why<a class="headerlink" href="#what-why" title="Permanent link">&para;</a></h2>
+<p>This module has <strong>3 layers</strong>, each building on the previous:</p>
+<pre class="mermaid"><code>flowchart TB
+    A["🔧 Pydantic\n(Data Validation)"] --&gt; B["🤖 PydanticAI\n(AI Agent Framework)"]
+    A --&gt; C["🛡️ OpenAI Agents SDK\n(AI Agent Framework)"]
+    B --&gt; D["You pick which to use\nfor your projects"]
+    C --&gt; D
+
+    style A fill:#7c3aed,color:#fff
+    style B fill:#06b6d4,color:#fff
+    style C fill:#10b981,color:#fff</code></pre>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What it is</th>
+<th>Analogy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pydantic</strong></td>
+<td>Validates data (ensures correct types, formats)</td>
+<td>A <strong>customs inspector</strong> checking every package at the border</td>
+</tr>
+<tr>
+<td><strong>PydanticAI</strong></td>
+<td>Framework for building AI agents using Pydantic</td>
+<td>A <strong>smart intern</strong> with instructions, tools, and validated outputs</td>
+</tr>
+<tr>
+<td><strong>OpenAI Agents SDK</strong></td>
+<td>Another framework for AI agents, with handoffs and guardrails</td>
+<td>A <strong>call center</strong> with specialized agents and safety rules</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Why learn both frameworks?</strong> In interviews, you'll be asked: <em>"Why did you choose PydanticAI over the Agents SDK?"</em> You need to have used both to answer intelligently.</p>
+</blockquote>
+<hr />
+<h2 id="part-1-pydantic-the-foundation">Part 1: Pydantic — The Foundation<a class="headerlink" href="#part-1-pydantic-the-foundation" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="what-is-data-validation">🧠 What is data validation?<a class="headerlink" href="#what-is-data-validation" title="Permanent link">&para;</a></h3>
+<p>When your AI agent gets data — from a user, an API, or an LLM — it arrives as raw, unstructured data. Without validation, bad data causes silent bugs:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># ❌ The nightmare: raw dictionaries</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">user</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Koushik&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="s2">&quot;twenty-five&quot;</span><span class="p">}</span>  <span class="c1"># age should be int!</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">user</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">birth_year</span> <span class="o">=</span> <span class="mi">2026</span> <span class="o">-</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span>  <span class="c1"># 💥 TypeError: unsupported operand</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hi </span><span class="si">{</span><span class="n">user</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, born in </span><span class="si">{</span><span class="n">birth_year</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># This crashes at RUNTIME, not when you write the code.</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># In a production agent, this means failed customer requests.</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># ✅ The solution: Pydantic validates on creation</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>  <span class="c1"># Pydantic will REJECT &quot;twenty-five&quot; here</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Koushik&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="s2">&quot;25&quot;</span><span class="p">)</span>  <span class="c1"># ✅ Auto-converts &quot;25&quot; → 25</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Koushik&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="s2">&quot;twenty-five&quot;</span><span class="p">)</span>  <span class="c1"># ❌ ValidationError (caught!)</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    A["Raw Input\n{'age': 'twenty-five'}"] --&gt; B{"Pydantic\nBaseModel"}
+    B --&gt;|"Type coercion OK\n'25' → 25"| C["✅ Valid User object"]
+    B --&gt;|"Can't convert\n'twenty-five'"| D["❌ ValidationError\n(caught immediately!)"]</code></pre>
+<h3 id="basemodel-your-first-model">🧠 BaseModel — Your First Model<a class="headerlink" href="#basemodel-your-first-model" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">class</span> <span class="nc">AgentResponse</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A model that describes what an AI agent should return&quot;&quot;&quot;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">answer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The agent&#39;s answer to the user&#39;s question&quot;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="p">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">ge</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>  <span class="c1"># ge = greater than or equal</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="n">le</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># le = less than or equal</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;How confident the agent is (0.0 to 1.0)&quot;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="p">)</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="n">sources</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">,</span>  <span class="c1"># Default: empty list</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;URLs the agent used to find the answer&quot;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="p">)</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="c1"># ✅ Create with valid data</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="n">response</span> <span class="o">=</span> <span class="n">AgentResponse</span><span class="p">(</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="n">answer</span><span class="o">=</span><span class="s2">&quot;Python 3.12 is the latest stable version&quot;</span><span class="p">,</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    <span class="n">confidence</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;https://python.org&quot;</span><span class="p">]</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="p">)</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">answer</span><span class="p">)</span>        <span class="c1"># &quot;Python 3.12 is the latest stable version&quot;</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>    <span class="c1"># 0.95</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>  <span class="c1"># Convert to dict (for JSON APIs)</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="c1"># ❌ Invalid data caught immediately</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="n">response</span> <span class="o">=</span> <span class="n">AgentResponse</span><span class="p">(</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>    <span class="n">answer</span><span class="o">=</span><span class="s2">&quot;something&quot;</span><span class="p">,</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>    <span class="n">confidence</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>  <span class="c1"># 💥 ValidationError: confidence must be ≤ 1.0</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>    <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">]</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="validators-custom-rules">🧠 Validators — Custom Rules<a class="headerlink" href="#validators-custom-rules" title="Permanent link">&para;</a></h3>
+<p>Sometimes type checking isn't enough. Validators let you add <strong>business logic</strong>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">field_validator</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">class</span> <span class="nc">CustomerQuery</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">question</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">priority</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="nd">@field_validator</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="nd">@classmethod</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="k">def</span> <span class="nf">email_must_be_valid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="k">if</span> <span class="s2">&quot;@&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid email address&quot;</span><span class="p">)</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># Normalize to lowercase</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="nd">@field_validator</span><span class="p">(</span><span class="s2">&quot;priority&quot;</span><span class="p">)</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="nd">@classmethod</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="k">def</span> <span class="nf">priority_must_be_known</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        <span class="n">allowed</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;low&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;high&quot;</span><span class="p">,</span> <span class="s2">&quot;critical&quot;</span><span class="p">}</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed</span><span class="p">:</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Priority must be one of: </span><span class="si">{</span><span class="n">allowed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="c1"># ✅ Valid — email gets lowercased automatically</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="n">query</span> <span class="o">=</span> <span class="n">CustomerQuery</span><span class="p">(</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>    <span class="n">email</span><span class="o">=</span><span class="s2">&quot;Koushik@Gmail.COM&quot;</span><span class="p">,</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>    <span class="n">question</span><span class="o">=</span><span class="s2">&quot;Why is my order late?&quot;</span><span class="p">,</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    <span class="n">priority</span><span class="o">=</span><span class="s2">&quot;HIGH&quot;</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="p">)</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="nb">print</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>     <span class="c1"># &quot;koushik@gmail.com&quot; (lowered!)</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="nb">print</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">priority</span><span class="p">)</span>  <span class="c1"># &quot;high&quot; (lowered!)</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="c1"># ❌ Caught: invalid email</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="n">query</span> <span class="o">=</span> <span class="n">CustomerQuery</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="s2">&quot;not-an-email&quot;</span><span class="p">,</span> <span class="n">question</span><span class="o">=</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="s2">&quot;low&quot;</span><span class="p">)</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="c1"># ValidationError: Invalid email address</span>
+</span></code></pre></div>
+<h3 id="nested-models">🧠 Nested Models<a class="headerlink" href="#nested-models" title="Permanent link">&para;</a></h3>
+<p>Real-world data has <strong>layers</strong>. Pydantic handles nesting naturally:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">class</span> <span class="nc">ToolCall</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">tool_name</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">class</span> <span class="nc">AgentStep</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">thought</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">action</span><span class="p">:</span> <span class="n">ToolCall</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Agent might not call a tool</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">class</span> <span class="nc">AgentResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="n">steps</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">AgentStep</span><span class="p">]</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">final_answer</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="n">total_tokens</span><span class="p">:</span> <span class="nb">int</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1"># Create a full agent result</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="n">result</span> <span class="o">=</span> <span class="n">AgentResult</span><span class="p">(</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        <span class="n">AgentStep</span><span class="p">(</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>            <span class="n">thought</span><span class="o">=</span><span class="s2">&quot;I need to search for the weather&quot;</span><span class="p">,</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>            <span class="n">action</span><span class="o">=</span><span class="n">ToolCall</span><span class="p">(</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>                <span class="n">tool_name</span><span class="o">=</span><span class="s2">&quot;get_weather&quot;</span><span class="p">,</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>                <span class="n">arguments</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Chicago&quot;</span><span class="p">}</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>            <span class="p">)</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        <span class="p">),</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>        <span class="n">AgentStep</span><span class="p">(</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>            <span class="n">thought</span><span class="o">=</span><span class="s2">&quot;Now I have the data, I can answer&quot;</span><span class="p">,</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>            <span class="n">action</span><span class="o">=</span><span class="kc">None</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>        <span class="p">),</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>    <span class="p">],</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>    <span class="n">final_answer</span><span class="o">=</span><span class="s2">&quot;It&#39;s 72°F in Chicago&quot;</span><span class="p">,</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>    <span class="n">total_tokens</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="p">)</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="c1"># Access nested data cleanly</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">action</span><span class="o">.</span><span class="n">tool_name</span><span class="p">)</span>  <span class="c1"># &quot;get_weather&quot;</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>classDiagram
+    class AgentResult {
+        steps: list~AgentStep~
+        final_answer: str
+        total_tokens: int
+    }
+    class AgentStep {
+        thought: str
+        action: ToolCall | None
+    }
+    class ToolCall {
+        tool_name: str
+        arguments: dict
+    }
+    AgentResult --&gt; AgentStep : contains many
+    AgentStep --&gt; ToolCall : may contain one</code></pre>
+<hr />
+<h2 id="part-2-pydanticai-your-first-ai-agent">Part 2: PydanticAI — Your First AI Agent<a class="headerlink" href="#part-2-pydanticai-your-first-ai-agent" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="what-is-an-ai-agent">🧠 What is an AI agent?<a class="headerlink" href="#what-is-an-ai-agent" title="Permanent link">&para;</a></h3>
+<p>An AI agent is <strong>NOT</strong> just a chatbot. Here's the difference:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Chatbot</th>
+<th>AI Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Does</strong></td>
+<td>Responds to messages</td>
+<td><strong>Takes actions</strong> to achieve goals</td>
+</tr>
+<tr>
+<td><strong>Has</strong></td>
+<td>Predefined responses</td>
+<td><strong>Tools</strong> it can call (APIs, databases)</td>
+</tr>
+<tr>
+<td><strong>Thinks</strong></td>
+<td>Not really</td>
+<td><strong>Reasons</strong> about which tools to use and when</td>
+</tr>
+<tr>
+<td><strong>Outputs</strong></td>
+<td>Free text (messy)</td>
+<td><strong>Structured data</strong> (validated by Pydantic)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The "Smart Intern" Analogy:</strong></p>
+<blockquote>
+<p>Imagine hiring an intern. You give them:</p>
+<ol>
+<li><strong>Instructions</strong> (system prompt) — "You're a customer support agent. Be helpful but never promise refunds."</li>
+<li><strong>Tools</strong> (functions) — Access to order lookup, account status check</li>
+<li><strong>Judgment</strong> (LLM) — They decide WHICH tool to use based on the question</li>
+<li><strong>Report template</strong> (structured output) — Their response must follow a specific format, not free text</li>
+</ol>
+</blockquote>
+<p>That's exactly what PydanticAI builds.</p>
+<h3 id="the-agent-loop">🧠 The Agent Loop<a class="headerlink" href="#the-agent-loop" title="Permanent link">&para;</a></h3>
+<p>When you run a PydanticAI agent, this loop happens automatically:</p>
+<pre class="mermaid"><code>flowchart TB
+    A["1. User sends message"] --&gt; B["2. LLM receives message\n+ system prompt\n+ available tools"]
+    B --&gt; C{"3. LLM decides"}
+    C --&gt;|"Needs more info"| D["4a. Call a Tool\n(e.g., search_web)"]
+    D --&gt;|"Tool returns result"| B
+    C --&gt;|"Ready to answer"| E["5. Generate final output"]
+    E --&gt; F["6. Pydantic validates output\nagainst your model"]
+    F --&gt;|"Valid"| G["✅ Return result"]
+    F --&gt;|"Invalid"| B
+
+    style A fill:#7c3aed,color:#fff
+    style G fill:#22c55e,color:#fff</code></pre>
+<p><strong>Key insight</strong>: The agent can call tools <strong>multiple times</strong> before answering. It loops until it has enough information.</p>
+<h3 id="your-first-pydanticai-agent-10-lines">🧠 Your First PydanticAI Agent (10 lines)<a class="headerlink" href="#your-first-pydanticai-agent-10-lines" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">pydantic_ai</span> <span class="kn">import</span> <span class="n">Agent</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Create an agent — that&#39;s it!</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;openai:gpt-4o&quot;</span><span class="p">,</span>           <span class="c1"># Which LLM to use</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">system_prompt</span><span class="o">=</span><span class="s2">&quot;You are a helpful assistant that answers questions concisely.&quot;</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">)</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># Run it (synchronously for simplicity)</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="s2">&quot;What is the capital of France?&quot;</span><span class="p">)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>  <span class="c1"># &quot;Paris&quot;</span>
+</span></code></pre></div>
+<p><strong>Let's break down what just happened:</strong></p>
+<ol>
+<li><code>Agent(...)</code> — Created an agent with a model and instructions</li>
+<li><code>run_sync(...)</code> — Sent a user message, waited for the response</li>
+<li><code>result.output</code> — The agent's response (plain string by default)</li>
+</ol>
+<h3 id="structured-outputs-the-real-power">🧠 Structured Outputs — The Real Power<a class="headerlink" href="#structured-outputs-the-real-power" title="Permanent link">&para;</a></h3>
+<p>Plain text output is <strong>dangerous</strong> in production:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># ❌ Unstructured — what format is this? Can we parse it reliably?</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="s2">&quot;What cities is it raining in?&quot;</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># &quot;It&#39;s raining in Chicago, New York, and Seattle today.&quot;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Good luck extracting city names from this consistently!</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># ✅ Structured — guaranteed format with Pydantic</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="k">class</span> <span class="nc">WeatherReport</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">cities_with_rain</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">temperature_f</span><span class="p">:</span> <span class="nb">float</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">summary</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;openai:gpt-4o&quot;</span><span class="p">,</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="n">output_type</span><span class="o">=</span><span class="n">WeatherReport</span><span class="p">,</span>  <span class="c1"># ← Forces structured output</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="n">system_prompt</span><span class="o">=</span><span class="s2">&quot;Report weather data for US cities.&quot;</span><span class="p">,</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="p">)</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="s2">&quot;What&#39;s the weather in Chicago?&quot;</span><span class="p">)</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">cities_with_rain</span><span class="p">)</span>  <span class="c1"># [&quot;Chicago&quot;]</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">temperature_f</span><span class="p">)</span>     <span class="c1"># 72.0</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">summary</span><span class="p">)</span>           <span class="c1"># &quot;Partly cloudy with rain...&quot;</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="c1"># Now you can use these values in code — reliably!</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    A["User: 'What's the weather?'"] --&gt; B["LLM generates\nstructured response"]
+    B --&gt; C{"Pydantic validates\nagainst WeatherReport"}
+    C --&gt;|"✅ Valid"| D["WeatherReport\ncities_with_rain: ['Chicago']\ntemperature_f: 72.0"]
+    C --&gt;|"❌ Invalid"| E["Retry: ask LLM again\nwith error feedback"]
+    E --&gt; B</code></pre>
+<h3 id="tools-giving-your-agent-abilities">🧠 Tools — Giving Your Agent Abilities<a class="headerlink" href="#tools-giving-your-agent-abilities" title="Permanent link">&para;</a></h3>
+<p>Without tools, an agent can only use knowledge from its training data. <strong>Tools let it DO things:</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">pydantic_ai</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">RunContext</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">import</span> <span class="nn">httpx</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">class</span> <span class="nc">WeatherResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">city</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">temperature_f</span><span class="p">:</span> <span class="nb">float</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">condition</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;openai:gpt-4o&quot;</span><span class="p">,</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="n">output_type</span><span class="o">=</span><span class="n">WeatherResult</span><span class="p">,</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="n">system_prompt</span><span class="o">=</span><span class="s2">&quot;You are a weather assistant. Use the get_weather tool to find real-time weather.&quot;</span><span class="p">,</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="p">)</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="c1"># Define a tool the agent can call</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="nd">@agent</span><span class="o">.</span><span class="n">tool</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">get_weather</span><span class="p">(</span><span class="n">ctx</span><span class="p">:</span> <span class="n">RunContext</span><span class="p">[</span><span class="kc">None</span><span class="p">],</span> <span class="n">city</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the current weather for a city.</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="sd">    Args:</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="sd">        city: The city name to check weather for.</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    <span class="c1"># In a real app, this would call a weather API</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    <span class="c1"># For learning, we&#39;ll return mock data</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>    <span class="n">weather_data</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>        <span class="s2">&quot;Chicago&quot;</span><span class="p">:</span> <span class="s2">&quot;72°F, Partly Cloudy&quot;</span><span class="p">,</span>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>        <span class="s2">&quot;New York&quot;</span><span class="p">:</span> <span class="s2">&quot;68°F, Rainy&quot;</span><span class="p">,</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>        <span class="s2">&quot;Seattle&quot;</span><span class="p">:</span> <span class="s2">&quot;58°F, Overcast&quot;</span><span class="p">,</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>    <span class="p">}</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>    <span class="k">return</span> <span class="n">weather_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Weather data not available for </span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="c1"># The agent DECIDES to call get_weather, you don&#39;t tell it to</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="s2">&quot;What&#39;s the weather in Chicago?&quot;</span><span class="p">)</span>
+</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="c1"># WeatherResult(city=&#39;Chicago&#39;, temperature_f=72.0, condition=&#39;Partly Cloudy&#39;)</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+    participant User
+    participant Agent as PydanticAI Agent
+    participant LLM as GPT-4o
+    participant Tool as get_weather()
+
+    User-&gt;&gt;Agent: "What's the weather in Chicago?"
+    Agent-&gt;&gt;LLM: User message + system prompt + available tools
+    LLM-&gt;&gt;Agent: "I should call get_weather(city='Chicago')"
+    Agent-&gt;&gt;Tool: get_weather("Chicago")
+    Tool--&gt;&gt;Agent: "72°F, Partly Cloudy"
+    Agent-&gt;&gt;LLM: Here's the tool result, now answer the user
+    LLM-&gt;&gt;Agent: WeatherResult(city="Chicago", temp=72.0, ...)
+    Agent-&gt;&gt;Agent: Pydantic validates ✅
+    Agent--&gt;&gt;User: Validated WeatherResult</code></pre>
+<h3 id="dependencies-injecting-context">🧠 Dependencies — Injecting Context<a class="headerlink" href="#dependencies-injecting-context" title="Permanent link">&para;</a></h3>
+<p>Real agents need access to databases, API clients, and user sessions. PydanticAI uses <strong>dependency injection</strong> to provide these cleanly:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">from</span> <span class="nn">pydantic_ai</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">RunContext</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Define what your agent needs access to</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nd">@dataclass</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">class</span> <span class="nc">SupportDeps</span><span class="p">:</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">customer_id</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">db_connection</span><span class="p">:</span> <span class="nb">object</span>  <span class="c1"># Your database client</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">is_premium</span><span class="p">:</span> <span class="nb">bool</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;openai:gpt-4o&quot;</span><span class="p">,</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    <span class="n">deps_type</span><span class="o">=</span><span class="n">SupportDeps</span><span class="p">,</span>  <span class="c1"># ← Agent knows what deps to expect</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="n">system_prompt</span><span class="o">=</span><span class="s2">&quot;You are a customer support agent.&quot;</span><span class="p">,</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="p">)</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="nd">@agent</span><span class="o">.</span><span class="n">tool</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">lookup_order</span><span class="p">(</span><span class="n">ctx</span><span class="p">:</span> <span class="n">RunContext</span><span class="p">[</span><span class="n">SupportDeps</span><span class="p">],</span> <span class="n">order_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Look up an order for the current customer.&quot;&quot;&quot;</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>    <span class="c1"># Access dependencies through ctx.deps</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>    <span class="n">customer_id</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">deps</span><span class="o">.</span><span class="n">customer_id</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>    <span class="n">is_premium</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">deps</span><span class="o">.</span><span class="n">is_premium</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>    <span class="c1"># In real code: query database using ctx.deps.db_connection</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Order </span><span class="si">{</span><span class="n">order_id</span><span class="si">}</span><span class="s2"> for customer </span><span class="si">{</span><span class="n">customer_id</span><span class="si">}</span><span class="s2"> (premium: </span><span class="si">{</span><span class="n">is_premium</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="c1"># Run with dependencies</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="n">deps</span> <span class="o">=</span> <span class="n">SupportDeps</span><span class="p">(</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>    <span class="n">customer_id</span><span class="o">=</span><span class="s2">&quot;CUST-123&quot;</span><span class="p">,</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>    <span class="n">db_connection</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># Would be real DB in production</span>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>    <span class="n">is_premium</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="p">)</span>
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="s2">&quot;Where is my order ORD-456?&quot;</span><span class="p">,</span> <span class="n">deps</span><span class="o">=</span><span class="n">deps</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Why not just use global variables?</strong> Dependencies make your agent <strong>testable</strong>. In tests, you inject mock deps. In production, you inject real ones. Same code, different context.</p>
+<hr />
+<h2 id="part-3-openai-agents-sdk-the-alternative">Part 3: OpenAI Agents SDK — The Alternative<a class="headerlink" href="#part-3-openai-agents-sdk-the-alternative" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="why-learn-another-framework">🧠 Why learn another framework?<a class="headerlink" href="#why-learn-another-framework" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>PydanticAI</th>
+<th>OpenAI Agents SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Strength</strong></td>
+<td>Type-safety, model-agnostic</td>
+<td>Multi-agent handoffs, guardrails</td>
+</tr>
+<tr>
+<td><strong>Feels like</strong></td>
+<td>FastAPI for agents</td>
+<td>Express.js for agents</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Single agent, strict outputs</td>
+<td>Multi-agent systems</td>
+</tr>
+<tr>
+<td><strong>LLM support</strong></td>
+<td>Any (OpenAI, Gemini, Claude, etc.)</td>
+<td>Any (despite the name)</td>
+</tr>
+<tr>
+<td><strong>Community</strong></td>
+<td>Growing (Pydantic team)</td>
+<td>Large (OpenAI backing)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-agent-loop-sdk-version">🧠 The Agent Loop (SDK Version)<a class="headerlink" href="#the-agent-loop-sdk-version" title="Permanent link">&para;</a></h3>
+<p>The SDK's agent loop is similar but with <strong>handoffs</strong> and <strong>guardrails</strong> built in:</p>
+<pre class="mermaid"><code>flowchart TB
+    A["1. User message"] --&gt; IG{"Input\nGuardrails"}
+    IG --&gt;|"❌ Blocked"| Z["⛔ Rejected\n(e.g., profanity)"]
+    IG --&gt;|"✅ Passed"| B["2. LLM processes"]
+    B --&gt; C{"3. LLM decides"}
+    C --&gt;|"Call tool"| D["4a. Execute tool"]
+    D --&gt; B
+    C --&gt;|"Handoff"| E["4b. Transfer to\nanother agent"]
+    E --&gt; B
+    C --&gt;|"Final output"| OG{"Output\nGuardrails"}
+    OG --&gt;|"❌ Blocked"| B
+    OG --&gt;|"✅ Passed"| G["✅ Return to user"]
+
+    style Z fill:#ef4444,color:#fff
+    style G fill:#22c55e,color:#fff
+    style IG fill:#f59e0b,color:#000
+    style OG fill:#f59e0b,color:#000</code></pre>
+<h3 id="your-first-sdk-agent">🧠 Your First SDK Agent<a class="headerlink" href="#your-first-sdk-agent" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span> <span class="nn">agents</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Runner</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Create a simple agent</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Assistant&quot;</span><span class="p">,</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">instructions</span><span class="o">=</span><span class="s2">&quot;You are a helpful assistant. Answer questions concisely.&quot;</span><span class="p">,</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">)</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1"># Run it</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">result</span> <span class="o">=</span> <span class="n">Runner</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="s2">&quot;What is the capital of France?&quot;</span><span class="p">)</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">final_output</span><span class="p">)</span>  <span class="c1"># &quot;Paris&quot;</span>
+</span></code></pre></div>
+<h3 id="handoffs-agent-to-agent-delegation">🧠 Handoffs — Agent-to-Agent Delegation<a class="headerlink" href="#handoffs-agent-to-agent-delegation" title="Permanent link">&para;</a></h3>
+<p>This is the SDK's killer feature. Imagine a <strong>customer support call center</strong>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span> <span class="nn">agents</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Runner</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Specialist agents</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">billing_agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Billing Specialist&quot;</span><span class="p">,</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">instructions</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;You handle billing questions ONLY.</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="s2">    You can check invoices, explain charges, and process payment issues.</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="s2">    If the question isn&#39;t about billing, transfer back to triage.&quot;&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">)</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">tech_agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Technical Support&quot;</span><span class="p">,</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="n">instructions</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;You handle technical issues ONLY.</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="s2">    You can troubleshoot errors, explain features, and guide setup.</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="s2">    If the question isn&#39;t technical, transfer back to triage.&quot;&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="p">)</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="c1"># Triage agent — the &quot;receptionist&quot; that routes queries</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="n">triage_agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Triage Agent&quot;</span><span class="p">,</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>    <span class="n">instructions</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;You are the first point of contact.</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="s2">    Determine what the customer needs and hand off to the right specialist:</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="s2">    - Billing questions → Billing Specialist</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="s2">    - Technical issues → Technical Support</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="s2">    Be brief. Don&#39;t try to answer — just route.&quot;&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>    <span class="n">handoffs</span><span class="o">=</span><span class="p">[</span><span class="n">billing_agent</span><span class="p">,</span> <span class="n">tech_agent</span><span class="p">],</span>  <span class="c1"># ← Can hand off to these agents</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="p">)</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="c1"># The magic: triage automatically routes to the right agent!</span>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="n">result</span> <span class="o">=</span> <span class="n">Runner</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="n">triage_agent</span><span class="p">,</span> <span class="s2">&quot;I was charged twice for my subscription&quot;</span><span class="p">)</span>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">final_output</span><span class="p">)</span>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="c1"># Billing Specialist handles this automatically!</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    User["👤 Customer"] --&gt; Triage["🔀 Triage Agent\n'What do you need?'"]
+    Triage --&gt;|"billing question"| Billing["💳 Billing Agent"]
+    Triage --&gt;|"tech issue"| Tech["🔧 Tech Agent"]
+    Triage --&gt;|"sales question"| Sales["📈 Sales Agent"]
+
+    Billing --&gt; Response["📝 Response to Customer"]
+    Tech --&gt; Response
+    Sales --&gt; Response</code></pre>
+<h3 id="guardrails-safety-first">🧠 Guardrails — Safety First<a class="headerlink" href="#guardrails-safety-first" title="Permanent link">&para;</a></h3>
+<p>Guardrails are <strong>automatic safety checks</strong> that run before and after the agent:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">agents</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Runner</span><span class="p">,</span> <span class="n">InputGuardrail</span><span class="p">,</span> <span class="n">GuardrailFunctionOutput</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># Input guardrail: block inappropriate content</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">check_input</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">agent</span><span class="p">,</span> <span class="n">input_text</span><span class="p">):</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Reject messages containing profanity or PII.&quot;&quot;&quot;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">blocked_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;credit card&quot;</span><span class="p">,</span> <span class="s2">&quot;ssn&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">]</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="n">input_lower</span> <span class="o">=</span> <span class="n">input_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">blocked_patterns</span><span class="p">:</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>        <span class="k">if</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">input_lower</span><span class="p">:</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>            <span class="k">return</span> <span class="n">GuardrailFunctionOutput</span><span class="p">(</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>                <span class="n">output_info</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;blocked&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Contains &#39;</span><span class="si">{</span><span class="n">pattern</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">},</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>                <span class="n">tripwire_triggered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># ← This stops the agent!</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>            <span class="p">)</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>    <span class="k">return</span> <span class="n">GuardrailFunctionOutput</span><span class="p">(</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>        <span class="n">output_info</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;blocked&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>        <span class="n">tripwire_triggered</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>    <span class="p">)</span>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="c1"># Create agent with guardrails</span>
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Support Agent&quot;</span><span class="p">,</span>
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>    <span class="n">instructions</span><span class="o">=</span><span class="s2">&quot;Help customers with their questions.&quot;</span><span class="p">,</span>
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>    <span class="n">input_guardrails</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>        <span class="n">InputGuardrail</span><span class="p">(</span><span class="n">guardrail_function</span><span class="o">=</span><span class="n">check_input</span><span class="p">),</span>
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>    <span class="p">],</span>
+</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="p">)</span>
+</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>
+</span><span id="__span-11-30"><a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="c1"># ✅ Normal question — passes guardrail</span>
+</span><span id="__span-11-31"><a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="n">result</span> <span class="o">=</span> <span class="n">Runner</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="s2">&quot;When will my order arrive?&quot;</span><span class="p">)</span>
+</span><span id="__span-11-32"><a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>
+</span><span id="__span-11-33"><a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="c1"># ❌ Blocked — tripwire triggered!</span>
+</span><span id="__span-11-34"><a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="n">result</span> <span class="o">=</span> <span class="n">Runner</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="s2">&quot;Here&#39;s my credit card number: 4111...&quot;</span><span class="p">)</span>
+</span><span id="__span-11-35"><a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="c1"># Raises InputGuardrailTripwireTriggered exception</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    A["User message"] --&gt; B{"🛡️ Input Guardrail"}
+    B --&gt;|"Contains PII?"| C["⛔ BLOCKED\nTripwire triggered"]
+    B --&gt;|"Clean input"| D["✅ Agent processes\nnormally"]
+    D --&gt; E{"🛡️ Output Guardrail"}
+    E --&gt;|"Promises refund?"| F["⛔ BLOCKED\nRetry without promise"]
+    E --&gt;|"Safe response"| G["✅ Sent to user"]
+
+    style C fill:#ef4444,color:#fff
+    style F fill:#ef4444,color:#fff
+    style G fill:#22c55e,color:#fff</code></pre>
+<hr />
+<h2 id="how-module-2-connects-to-everything">🔗 How Module 2 Connects to Everything<a class="headerlink" href="#how-module-2-connects-to-everything" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TB
+    M2["Module 2\nPydantic + Agents"]
+
+    M1["Module 1\nType hints power Pydantic"] --&gt; M2
+    M2 --&gt;|"Agents need orchestration"| M3["Module 3\nLangGraph / CrewAI"]
+    M2 --&gt;|"Agents need tools (MCP)"| M4["Module 4\nMCP + RAG"]
+    M2 --&gt;|"Agents need monitoring"| M5["Module 5\nLangSmith"]
+    M2 --&gt;|"Agents need deployment"| M6["Module 6\nFastAPI + Docker"]
+
+    style M2 fill:#06b6d4,color:#fff</code></pre>
+<ul>
+<li><strong>Module 1 → Module 2</strong>: Type hints you learned ARE Pydantic's foundation</li>
+<li><strong>Module 2 → Module 3</strong>: Single agents are limited — orchestration lets them work together</li>
+<li><strong>Module 2 → Module 4</strong>: Agents need real data — MCP connects them to tools and databases</li>
+</ul>
+<hr />
+<h2 id="cheat-sheet">⚡ Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<h3 id="pydantic-quick-reference">Pydantic Quick Reference<a class="headerlink" href="#pydantic-quick-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic model</td>
+<td><code>class User(BaseModel): name: str</code></td>
+</tr>
+<tr>
+<td>Optional field</td>
+<td><code>nickname: str \| None = None</code></td>
+</tr>
+<tr>
+<td>Default value</td>
+<td><code>retries: int = 3</code></td>
+</tr>
+<tr>
+<td>Constrained field</td>
+<td><code>age: int = Field(ge=0, le=150)</code></td>
+</tr>
+<tr>
+<td>Field description</td>
+<td><code>name: str = Field(description="User's full name")</code></td>
+</tr>
+<tr>
+<td>Custom validator</td>
+<td><code>@field_validator("email")</code></td>
+</tr>
+<tr>
+<td>To dict</td>
+<td><code>model.model_dump()</code></td>
+</tr>
+<tr>
+<td>To JSON string</td>
+<td><code>model.model_dump_json()</code></td>
+</tr>
+<tr>
+<td>From dict</td>
+<td><code>User.model_validate({"name": "K"})</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pydanticai-quick-reference">PydanticAI Quick Reference<a class="headerlink" href="#pydanticai-quick-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create agent</td>
+<td><code>Agent(model="openai:gpt-4o", system_prompt="...")</code></td>
+</tr>
+<tr>
+<td>Structured output</td>
+<td><code>Agent(..., output_type=MyModel)</code></td>
+</tr>
+<tr>
+<td>Define tool</td>
+<td><code>@agent.tool</code> decorator</td>
+</tr>
+<tr>
+<td>Access deps</td>
+<td><code>ctx.deps</code> inside tools</td>
+</tr>
+<tr>
+<td>Run sync</td>
+<td><code>agent.run_sync("message")</code></td>
+</tr>
+<tr>
+<td>Run async</td>
+<td><code>await agent.run("message")</code></td>
+</tr>
+<tr>
+<td>Get result</td>
+<td><code>result.output</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="openai-agents-sdk-quick-reference">OpenAI Agents SDK Quick Reference<a class="headerlink" href="#openai-agents-sdk-quick-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create agent</td>
+<td><code>Agent(name="Bot", instructions="...")</code></td>
+</tr>
+<tr>
+<td>Add tools</td>
+<td><code>Agent(..., tools=[my_func])</code></td>
+</tr>
+<tr>
+<td>Add handoffs</td>
+<td><code>Agent(..., handoffs=[other_agent])</code></td>
+</tr>
+<tr>
+<td>Input guardrail</td>
+<td><code>Agent(..., input_guardrails=[...])</code></td>
+</tr>
+<tr>
+<td>Run</td>
+<td><code>Runner.run_sync(agent, "message")</code></td>
+</tr>
+<tr>
+<td>Get result</td>
+<td><code>result.final_output</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pydanticai-vs-openai-sdk-decision-table">PydanticAI vs OpenAI SDK Decision Table<a class="headerlink" href="#pydanticai-vs-openai-sdk-decision-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Need strict type-safe outputs</td>
+<td><strong>PydanticAI</strong></td>
+</tr>
+<tr>
+<td>Building multi-agent handoff systems</td>
+<td><strong>OpenAI SDK</strong></td>
+</tr>
+<tr>
+<td>Need to use non-OpenAI models (Gemini, Claude)</td>
+<td><strong>Either</strong> (both support it)</td>
+</tr>
+<tr>
+<td>Want minimal boilerplate</td>
+<td><strong>PydanticAI</strong></td>
+</tr>
+<tr>
+<td>Need built-in guardrails</td>
+<td><strong>OpenAI SDK</strong></td>
+</tr>
+<tr>
+<td>Production: single-agent focused</td>
+<td><strong>PydanticAI</strong></td>
+</tr>
+<tr>
+<td>Production: multi-agent orchestra</td>
+<td><strong>OpenAI SDK</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="checkpoint-quiz">✅ Checkpoint Quiz<a class="headerlink" href="#checkpoint-quiz" title="Permanent link">&para;</a></h2>
+<p>Test yourself before moving to Module 3:</p>
+<p><strong>1.</strong> What's the difference between <code>model_dump()</code> and <code>model_dump_json()</code> in Pydantic?</p>
+<details><summary>Answer</summary>
+
+`model_dump()` returns a Python **dictionary** (`dict`). `model_dump_json()` returns a **JSON string** (`str`). Use `model_dump()` when working in Python, `model_dump_json()` when sending data over HTTP or storing it.
+</details>
+
+<p><strong>2.</strong> In PydanticAI, what does <code>output_type=WeatherReport</code> do?</p>
+<details><summary>Answer</summary>
+
+It forces the agent to return data matching the `WeatherReport` Pydantic model structure. The LLM's response is automatically **validated** against this schema. If the LLM returns invalid data, PydanticAI retries automatically, sending the validation error back to the LLM so it can correct itself.
+</details>
+
+<p><strong>3.</strong> What is a "handoff" in the OpenAI Agents SDK?</p>
+<details><summary>Answer</summary>
+
+A handoff is when one agent **transfers control** to another specialized agent. For example, a triage agent detects a billing question and hands off to a billing specialist agent. The entire conversation history is passed to the new agent. Under the hood, handoffs are implemented as a special type of tool call.
+</details>
+
+<p><strong>4.</strong> Why use dependency injection (<code>deps_type</code>) in PydanticAI instead of global variables?</p>
+<details><summary>Answer</summary>
+
+Dependency injection makes agents **testable** and **reusable**. In tests, you inject mock dependencies (fake DB, fake API). In production, you inject real ones. Same agent code works in both environments. Global variables make testing hard and create tight coupling.
+</details>
+
+<p><strong>5.</strong> What happens when a guardrail's <code>tripwire_triggered</code> is set to <code>True</code>?</p>
+<details><summary>Answer</summary>
+
+The agent **immediately stops execution** and raises an exception (`InputGuardrailTripwireTriggered` or `OutputGuardrailTripwireTriggered`). The user's message is NOT processed (for input guardrails) or the response is NOT sent (for output guardrails). This prevents the agent from handling unsafe, irrelevant, or policy-violating content.
+</details>
+
+<hr />
+<blockquote>
+<p><strong>Next up</strong>: <a href="../module_3_spine/">Module 3 — The "Spine": LangGraph + CrewAI + A2A Protocol</a></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2195 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete 12-week learning notes for AI Agents Development">
+      
+      
+      
+      
+        <link rel="prev" href="../module_2_brain/">
+      
+      
+        <link rel="next" href="../module_4_senses_memory/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Module 3 — Spine - 🤖 AI Agents Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-3-the-spine-langgraph-crewai-a2a" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🤖 AI Agents Development" class="md-header__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🤖 AI Agents Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 3 — Spine
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../module_1_dev_environment/" class="md-tabs__link">
+          
+  
+  
+  📚 Study Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/curated_resources/" class="md-tabs__link">
+          
+  
+  
+  🔗 Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🤖 AI Agents Development" class="md-nav__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    🤖 AI Agents Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Study Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 Study Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_1_dev_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 — Dev Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_2_brain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 — Brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 — Spine
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 — Spine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 What &amp; Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-langgraph-the-subway-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: LangGraph — The Subway Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: LangGraph — The Subway Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What is a "graph"?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-the-shared-clipboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 State — The Shared Clipboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodes-functions-that-do-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Nodes — Functions That Do Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-edges-smart-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Conditional Edges — Smart Routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkpointing-save-resume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Checkpointing — Save &amp; Resume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#human-in-the-loop-ask-before-acting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Human-in-the-Loop — Ask Before Acting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-crewai-the-movie-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: CrewAI — The Movie Production
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: CrewAI — The Movie Production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agents-tasks-and-crews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Agents, Tasks, and Crews
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-first-crewai-crew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Your First CrewAI Crew
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequential-vs-parallel-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Sequential vs Parallel Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flows-the-event-driven-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Flows — The Event-Driven Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-a2a-protocol-agents-talking-to-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: A2A Protocol — Agents Talking to Agents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: A2A Protocol — Agents Talking to Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-problem-does-a2a-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What problem does A2A solve?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-cards-the-digital-business-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Agent Cards — The Digital Business Card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2a-vs-mcp-theyre-complementary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 A2A vs MCP — They're Complementary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langgraph-vs-crewai-when-to-use-which" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LangGraph vs CrewAI — When to Use Which
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-module-3-connects-to-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 How Module 3 Connects to Everything
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Cheat Sheet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#langgraph-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LangGraph Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewai-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CrewAI Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checkpoint Quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_4_senses_memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 — Senses & Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_5_nervous_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 — Nervous System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_6_home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 6 — Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔗 Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔗 Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/curated_resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video-First Learning Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/project_specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Build Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 What &amp; Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-langgraph-the-subway-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: LangGraph — The Subway Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: LangGraph — The Subway Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What is a "graph"?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-the-shared-clipboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 State — The Shared Clipboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodes-functions-that-do-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Nodes — Functions That Do Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-edges-smart-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Conditional Edges — Smart Routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkpointing-save-resume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Checkpointing — Save &amp; Resume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#human-in-the-loop-ask-before-acting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Human-in-the-Loop — Ask Before Acting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-crewai-the-movie-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: CrewAI — The Movie Production
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: CrewAI — The Movie Production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agents-tasks-and-crews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Agents, Tasks, and Crews
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-first-crewai-crew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Your First CrewAI Crew
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequential-vs-parallel-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Sequential vs Parallel Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flows-the-event-driven-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Flows — The Event-Driven Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-a2a-protocol-agents-talking-to-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: A2A Protocol — Agents Talking to Agents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: A2A Protocol — Agents Talking to Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-problem-does-a2a-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 What problem does A2A solve?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-cards-the-digital-business-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Agent Cards — The Digital Business Card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2a-vs-mcp-theyre-complementary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 A2A vs MCP — They're Complementary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langgraph-vs-crewai-when-to-use-which" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LangGraph vs CrewAI — When to Use Which
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-module-3-connects-to-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 How Module 3 Connects to Everything
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Cheat Sheet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#langgraph-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LangGraph Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewai-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CrewAI Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checkpoint Quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-3-the-spine-langgraph-crewai-a2a">Module 3: The "Spine" — LangGraph + CrewAI + A2A<a class="headerlink" href="#module-3-the-spine-langgraph-crewai-a2a" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Goal</strong>: Orchestrate multiple agents into workflows — route, branch, loop, checkpoint, and collaborate.
+<strong>Time</strong>: Week 5–6 | <strong>Watch alongside</strong>: Videos 3.1–3.7 from curated resources</p>
+</blockquote>
+<hr />
+<h2 id="what-why">🎯 What &amp; Why<a class="headerlink" href="#what-why" title="Permanent link">&para;</a></h2>
+<p>In Module 2, you built <strong>single agents</strong>. But real-world problems need agents to work <strong>together</strong>:</p>
+<ul>
+<li>A research agent gathers data → a writer agent drafts a report → a reviewer agent edits it</li>
+<li>A triage agent reads a support ticket → routes to billing OR tech support → specialist responds</li>
+</ul>
+<p>That's <strong>orchestration</strong> — coordinating who does what, when, and in what order.</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph "Module 2 — Single Agent"
+        A["User"] --&gt; B["One Agent"]
+        B --&gt; C["Response"]
+    end
+
+    subgraph "Module 3 — Orchestrated Agents"
+        D["User"] --&gt; E["Router"]
+        E --&gt; F["Agent A"]
+        E --&gt; G["Agent B"]
+        F --&gt; H["Combiner"]
+        G --&gt; H
+        H --&gt; I["Response"]
+    end</code></pre>
+<p>This module covers 3 orchestration approaches:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Analogy</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LangGraph</strong></td>
+<td>A <strong>subway map</strong> — you design every station and route</td>
+<td>Fine-grained control, complex branching</td>
+</tr>
+<tr>
+<td><strong>CrewAI</strong></td>
+<td>A <strong>movie production</strong> — hire roles, assign tasks, let them work</td>
+<td>Team-based collaboration, rapid prototyping</td>
+</tr>
+<tr>
+<td><strong>A2A Protocol</strong></td>
+<td><strong>Email between companies</strong> — agents discover and message each other</td>
+<td>Cross-organization agent communication</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-1-langgraph-the-subway-map">Part 1: LangGraph — The Subway Map<a class="headerlink" href="#part-1-langgraph-the-subway-map" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="what-is-a-graph">🧠 What is a "graph"?<a class="headerlink" href="#what-is-a-graph" title="Permanent link">&para;</a></h3>
+<p>A graph has <strong>nodes</strong> (stations) and <strong>edges</strong> (tracks between them). Data flows along the tracks.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["🟢 START"] --&gt; B["Node: Research"]
+    B --&gt; C{"Conditional Edge:\nEnough data?"}
+    C --&gt;|"No"| B
+    C --&gt;|"Yes"| D["Node: Write Report"]
+    D --&gt; E["🔴 END"]</code></pre>
+<p>In LangGraph:
+- <strong>Nodes</strong> = Python functions (each does one job)
+- <strong>Edges</strong> = Connections (which function runs next)
+- <strong>State</strong> = A shared data object passed between nodes (like a clipboard everyone reads/writes)</p>
+<h3 id="state-the-shared-clipboard">🧠 State — The Shared Clipboard<a class="headerlink" href="#state-the-shared-clipboard" title="Permanent link">&para;</a></h3>
+<p>State is the <strong>single source of truth</strong> flowing through your graph. Every node reads it, modifies it, and passes it on.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypedDict</span><span class="p">,</span> <span class="n">Annotated</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">langgraph.graph</span> <span class="kn">import</span> <span class="n">StateGraph</span><span class="p">,</span> <span class="n">START</span><span class="p">,</span> <span class="n">END</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Define what your graph remembers</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">class</span> <span class="nc">ResearchState</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span>                          <span class="c1"># What to research</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">sources</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span>  <span class="c1"># Accumulated sources</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">draft</span><span class="p">:</span> <span class="nb">str</span>                          <span class="c1"># Written draft</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">is_approved</span><span class="p">:</span> <span class="nb">bool</span>                   <span class="c1"># Human approval flag</span>
+</span></code></pre></div>
+<p><strong>Think of it like a shared Google Doc:</strong>
+- The researcher writes findings → adds to <code>sources</code>
+- The writer reads <code>sources</code> → writes <code>draft</code>
+- The reviewer reads <code>draft</code> → sets <code>is_approved</code></p>
+<pre class="mermaid"><code>flowchart LR
+    State["📋 State\ntopic: 'AI Agents'\nsources: []\ndraft: ''\nis_approved: false"]
+
+    A["Research Node\n→ adds sources"] --&gt; B["Write Node\n→ writes draft"]
+    B --&gt; C["Review Node\n→ sets approved"]
+
+    State -.-&gt;|"shared by all"| A
+    State -.-&gt;|"shared by all"| B
+    State -.-&gt;|"shared by all"| C</code></pre>
+<h3 id="nodes-functions-that-do-work">🧠 Nodes — Functions That Do Work<a class="headerlink" href="#nodes-functions-that-do-work" title="Permanent link">&para;</a></h3>
+<p>Each node is just a regular Python function that takes state and returns updated state:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">langgraph.graph</span> <span class="kn">import</span> <span class="n">StateGraph</span><span class="p">,</span> <span class="n">START</span><span class="p">,</span> <span class="n">END</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypedDict</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">class</span> <span class="nc">AgentState</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">research</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">report</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Node 1: Research</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">def</span> <span class="nf">research_node</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulate researching a topic&quot;&quot;&quot;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">topic</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;topic&quot;</span><span class="p">]</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="c1"># In real code: call an LLM or search API</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="n">findings</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Key findings about </span><span class="si">{</span><span class="n">topic</span><span class="si">}</span><span class="s2">: it&#39;s transforming the industry...&quot;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;research&quot;</span><span class="p">:</span> <span class="n">findings</span><span class="p">}</span>  <span class="c1"># Only return what you&#39;re updating</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1"># Node 2: Write Report</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="k">def</span> <span class="nf">write_node</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Use research to write a report&quot;&quot;&quot;</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="n">research</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;research&quot;</span><span class="p">]</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="n">report</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;# Report</span><span class="se">\n\n</span><span class="s2">Based on research: </span><span class="si">{</span><span class="n">research</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Conclusion: Very promising.&quot;</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;report&quot;</span><span class="p">:</span> <span class="n">report</span><span class="p">}</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="c1"># Build the graph</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="n">graph</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">AgentState</span><span class="p">)</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="c1"># Add nodes</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;research&quot;</span><span class="p">,</span> <span class="n">research_node</span><span class="p">)</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;write&quot;</span><span class="p">,</span> <span class="n">write_node</span><span class="p">)</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="c1"># Add edges (the flow)</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">&quot;research&quot;</span><span class="p">)</span>     <span class="c1"># Start → Research</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;research&quot;</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">)</span>   <span class="c1"># Research → Write</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;write&quot;</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>          <span class="c1"># Write → End</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="c1"># Compile and run</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="n">app</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="n">result</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;AI Agents&quot;</span><span class="p">,</span> <span class="s2">&quot;research&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;report&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">})</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;report&quot;</span><span class="p">])</span>
+</span></code></pre></div>
+<h3 id="conditional-edges-smart-routing">🧠 Conditional Edges — Smart Routing<a class="headerlink" href="#conditional-edges-smart-routing" title="Permanent link">&para;</a></h3>
+<p>This is where it gets powerful. The graph <strong>decides</strong> what to do next based on the current state:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">langgraph.graph</span> <span class="kn">import</span> <span class="n">StateGraph</span><span class="p">,</span> <span class="n">START</span><span class="p">,</span> <span class="n">END</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypedDict</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">class</span> <span class="nc">QAState</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">question</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">category</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># &quot;billing&quot;, &quot;technical&quot;, &quot;general&quot;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">answer</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">def</span> <span class="nf">classify_node</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">QAState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Classify the question type&quot;&quot;&quot;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">question</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;question&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="k">if</span> <span class="s2">&quot;bill&quot;</span> <span class="ow">in</span> <span class="n">question</span> <span class="ow">or</span> <span class="s2">&quot;charge&quot;</span> <span class="ow">in</span> <span class="n">question</span> <span class="ow">or</span> <span class="s2">&quot;payment&quot;</span> <span class="ow">in</span> <span class="n">question</span><span class="p">:</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;billing&quot;</span><span class="p">}</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="k">elif</span> <span class="s2">&quot;error&quot;</span> <span class="ow">in</span> <span class="n">question</span> <span class="ow">or</span> <span class="s2">&quot;bug&quot;</span> <span class="ow">in</span> <span class="n">question</span> <span class="ow">or</span> <span class="s2">&quot;crash&quot;</span> <span class="ow">in</span> <span class="n">question</span><span class="p">:</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;technical&quot;</span><span class="p">}</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;general&quot;</span><span class="p">}</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="k">def</span> <span class="nf">billing_node</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">QAState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;💳 Billing team response for: </span><span class="si">{</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;question&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="k">def</span> <span class="nf">tech_node</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">QAState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;🔧 Tech support response for: </span><span class="si">{</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;question&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="k">def</span> <span class="nf">general_node</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">QAState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;📋 General response for: </span><span class="si">{</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;question&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="c1"># The routing function — reads state, returns next node name</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="k">def</span> <span class="nf">route_question</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">QAState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>    <span class="k">match</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]:</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>        <span class="k">case</span> <span class="s2">&quot;billing&quot;</span><span class="p">:</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>            <span class="k">return</span> <span class="s2">&quot;billing&quot;</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>        <span class="k">case</span> <span class="s2">&quot;technical&quot;</span><span class="p">:</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>            <span class="k">return</span> <span class="s2">&quot;technical&quot;</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>            <span class="k">return</span> <span class="s2">&quot;general&quot;</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="c1"># Build the graph</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="n">graph</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">QAState</span><span class="p">)</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;classify&quot;</span><span class="p">,</span> <span class="n">classify_node</span><span class="p">)</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;billing&quot;</span><span class="p">,</span> <span class="n">billing_node</span><span class="p">)</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;technical&quot;</span><span class="p">,</span> <span class="n">tech_node</span><span class="p">)</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;general&quot;</span><span class="p">,</span> <span class="n">general_node</span><span class="p">)</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">&quot;classify&quot;</span><span class="p">)</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="c1"># Conditional edge: classify → (billing OR technical OR general)</span>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>    <span class="s2">&quot;classify&quot;</span><span class="p">,</span>             <span class="c1"># From this node...</span>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>    <span class="n">route_question</span><span class="p">,</span>         <span class="c1"># ...run this function to decide...</span>
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>    <span class="p">{</span>                       <span class="c1"># ...which maps to these nodes:</span>
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>        <span class="s2">&quot;billing&quot;</span><span class="p">:</span> <span class="s2">&quot;billing&quot;</span><span class="p">,</span>
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>        <span class="s2">&quot;technical&quot;</span><span class="p">:</span> <span class="s2">&quot;technical&quot;</span><span class="p">,</span>
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>        <span class="s2">&quot;general&quot;</span><span class="p">:</span> <span class="s2">&quot;general&quot;</span><span class="p">,</span>
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>    <span class="p">}</span>
+</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="p">)</span>
+</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>
+</span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;billing&quot;</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;technical&quot;</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span><span id="__span-2-60"><a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;general&quot;</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span><span id="__span-2-61"><a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>
+</span><span id="__span-2-62"><a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="n">app</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>flowchart TB
+    A["User Question"] --&gt; B["Classify Node"]
+    B --&gt; C{"route_question()"}
+    C --&gt;|"billing"| D["💳 Billing Node"]
+    C --&gt;|"technical"| E["🔧 Tech Node"]
+    C --&gt;|"general"| F["📋 General Node"]
+    D --&gt; G["END"]
+    E --&gt; G
+    F --&gt; G</code></pre>
+<h3 id="checkpointing-save-resume">🧠 Checkpointing — Save &amp; Resume<a class="headerlink" href="#checkpointing-save-resume" title="Permanent link">&para;</a></h3>
+<p>Without checkpointing, if your agent crashes mid-workflow, you start over. With it, you <strong>resume from the last successful step</strong>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">langgraph.checkpoint.memory</span> <span class="kn">import</span> <span class="n">MemorySaver</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Add a checkpointer when compiling</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">memory</span> <span class="o">=</span> <span class="n">MemorySaver</span><span class="p">()</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">checkpointer</span><span class="o">=</span><span class="n">memory</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Run with a thread_id (like a conversation ID)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;configurable&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;thread_id&quot;</span><span class="p">:</span> <span class="s2">&quot;user-123&quot;</span><span class="p">}}</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">result</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="p">{</span><span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="s2">&quot;I was charged twice&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">},</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">config</span><span class="o">=</span><span class="n">config</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">)</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1"># Later: the graph remembers this thread&#39;s state!</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># You can resume, inspect, or &quot;time travel&quot; to any checkpoint.</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    A["Step 1 ✅\nCheckpoint saved"] --&gt; B["Step 2 ✅\nCheckpoint saved"]
+    B --&gt; C["Step 3 💥\nCrashed!"]
+    C --&gt;|"Resume from Step 2"| D["Step 3 ✅\nRetry succeeded"]
+    D --&gt; E["Done!"]</code></pre>
+<h3 id="human-in-the-loop-ask-before-acting">🧠 Human-in-the-Loop — Ask Before Acting<a class="headerlink" href="#human-in-the-loop-ask-before-acting" title="Permanent link">&para;</a></h3>
+<p>Some actions are too risky for agents to do alone (deleting data, sending emails, processing refunds). LangGraph lets you <strong>pause</strong> the graph and ask a human:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">langgraph.graph</span> <span class="kn">import</span> <span class="n">StateGraph</span><span class="p">,</span> <span class="n">START</span><span class="p">,</span> <span class="n">END</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">langgraph.checkpoint.memory</span> <span class="kn">import</span> <span class="n">MemorySaver</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypedDict</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">class</span> <span class="nc">RefundState</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">customer_id</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">amount</span><span class="p">:</span> <span class="nb">float</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">approved</span><span class="p">:</span> <span class="nb">bool</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">result</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">def</span> <span class="nf">check_refund</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">RefundState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Prepare refund for review&quot;&quot;&quot;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Refund $</span><span class="si">{</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;amount&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> for customer </span><span class="si">{</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;customer_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="k">def</span> <span class="nf">process_refund</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">RefundState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Actually process the refund&quot;&quot;&quot;</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span class="k">if</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;approved&quot;</span><span class="p">]:</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;✅ Refund of $</span><span class="si">{</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;amount&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> processed!&quot;</span><span class="p">}</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="s2">&quot;❌ Refund denied by human reviewer.&quot;</span><span class="p">}</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="n">graph</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">RefundState</span><span class="p">)</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;check&quot;</span><span class="p">,</span> <span class="n">check_refund</span><span class="p">)</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;process&quot;</span><span class="p">,</span> <span class="n">process_refund</span><span class="p">)</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">&quot;check&quot;</span><span class="p">)</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;check&quot;</span><span class="p">,</span> <span class="s2">&quot;process&quot;</span><span class="p">)</span>  <span class="c1"># Graph PAUSES here with interrupt_before</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;process&quot;</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="n">memory</span> <span class="o">=</span> <span class="n">MemorySaver</span><span class="p">()</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="n">app</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>    <span class="n">checkpointer</span><span class="o">=</span><span class="n">memory</span><span class="p">,</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>    <span class="n">interrupt_before</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;process&quot;</span><span class="p">],</span>  <span class="c1"># ← PAUSE before processing!</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="p">)</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;configurable&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;thread_id&quot;</span><span class="p">:</span> <span class="s2">&quot;refund-001&quot;</span><span class="p">}}</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="c1"># Step 1: Run until the interrupt point</span>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="n">result</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>    <span class="p">{</span><span class="s2">&quot;customer_id&quot;</span><span class="p">:</span> <span class="s2">&quot;C123&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mf">99.99</span><span class="p">,</span> <span class="s2">&quot;approved&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">},</span>
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>    <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="p">)</span>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">])</span>  <span class="c1"># &quot;Refund $99.99 for customer C123&quot;</span>
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="c1"># Graph is now PAUSED — waiting for human approval</span>
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>
+</span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="c1"># Step 2: Human approves, resume the graph</span>
+</span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="n">app</span><span class="o">.</span><span class="n">update_state</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;approved&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+</span><span id="__span-4-48"><a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="n">result</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>  <span class="c1"># Resume!</span>
+</span><span id="__span-4-49"><a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">])</span>  <span class="c1"># &quot;✅ Refund of $99.99 processed!&quot;</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    A["Check Refund"] --&gt; B["⏸️ PAUSE\nHuman reviews"]
+    B --&gt;|"approved = true"| C["✅ Process Refund"]
+    B --&gt;|"approved = false"| D["❌ Deny Refund"]</code></pre>
+<hr />
+<h2 id="part-2-crewai-the-movie-production">Part 2: CrewAI — The Movie Production<a class="headerlink" href="#part-2-crewai-the-movie-production" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="agents-tasks-and-crews">🧠 Agents, Tasks, and Crews<a class="headerlink" href="#agents-tasks-and-crews" title="Permanent link">&para;</a></h3>
+<p>CrewAI uses a <strong>movie production</strong> metaphor:</p>
+<table>
+<thead>
+<tr>
+<th>CrewAI Concept</th>
+<th>Movie Analogy</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent</strong></td>
+<td>An actor/crew member</td>
+<td>Has a role, goal, backstory, and tools</td>
+</tr>
+<tr>
+<td><strong>Task</strong></td>
+<td>A scene to shoot</td>
+<td>Has a description, expected output, and assigned agent</td>
+</tr>
+<tr>
+<td><strong>Crew</strong></td>
+<td>The entire production</td>
+<td>Manages agents, orchestrates task execution</td>
+</tr>
+<tr>
+<td><strong>Flow</strong></td>
+<td>The shooting schedule</td>
+<td>Controls the order and conditions of execution</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart TB
+    subgraph Crew["🎬 Crew (Production)"]
+        A["🎭 Researcher Agent\nRole: Senior Researcher\nGoal: Find accurate data"]
+        B["✍️ Writer Agent\nRole: Content Writer\nGoal: Write clear reports"]
+        C["📝 Task 1: Research\nAssigned to: Researcher"]
+        D["📝 Task 2: Write Report\nAssigned to: Writer"]
+
+        C --&gt;|"output feeds into"| D
+    end</code></pre>
+<h3 id="your-first-crewai-crew">🧠 Your First CrewAI Crew<a class="headerlink" href="#your-first-crewai-crew" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">crewai</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Task</span><span class="p">,</span> <span class="n">Crew</span><span class="p">,</span> <span class="n">Process</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># 1. Define Agents (the team members)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">researcher</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">role</span><span class="o">=</span><span class="s2">&quot;Senior Research Analyst&quot;</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">goal</span><span class="o">=</span><span class="s2">&quot;Find comprehensive, accurate information on the given topic&quot;</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">backstory</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;You are an experienced researcher who excels at finding</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="s2">    reliable sources and synthesizing information into clear insights.&quot;&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># See what the agent is thinking</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">writer</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">role</span><span class="o">=</span><span class="s2">&quot;Technical Content Writer&quot;</span><span class="p">,</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">goal</span><span class="o">=</span><span class="s2">&quot;Transform research findings into clear, engaging documentation&quot;</span><span class="p">,</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">backstory</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;You are a skilled technical writer who can take complex</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="s2">    topics and explain them in a way that beginners can understand.&quot;&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="p">)</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1"># 2. Define Tasks (the work to do)</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="n">research_task</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Research the topic: </span><span class="si">{topic}</span><span class="s2">. Find key concepts, current trends, and practical applications.&quot;</span><span class="p">,</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    <span class="n">expected_output</span><span class="o">=</span><span class="s2">&quot;A detailed summary with at least 5 key findings.&quot;</span><span class="p">,</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    <span class="n">agent</span><span class="o">=</span><span class="n">researcher</span><span class="p">,</span>  <span class="c1"># ← Assigned to the researcher</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p">)</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="n">write_task</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Using the research findings, write a clear beginner-friendly guide.&quot;</span><span class="p">,</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>    <span class="n">expected_output</span><span class="o">=</span><span class="s2">&quot;A 500-word article with headers, examples, and a summary.&quot;</span><span class="p">,</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>    <span class="n">agent</span><span class="o">=</span><span class="n">writer</span><span class="p">,</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="p">)</span>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="c1"># 3. Create the Crew</span>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="n">crew</span> <span class="o">=</span> <span class="n">Crew</span><span class="p">(</span>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>    <span class="n">agents</span><span class="o">=</span><span class="p">[</span><span class="n">researcher</span><span class="p">,</span> <span class="n">writer</span><span class="p">],</span>
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>    <span class="n">tasks</span><span class="o">=</span><span class="p">[</span><span class="n">research_task</span><span class="p">,</span> <span class="n">write_task</span><span class="p">],</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>    <span class="n">process</span><span class="o">=</span><span class="n">Process</span><span class="o">.</span><span class="n">sequential</span><span class="p">,</span>  <span class="c1"># Tasks run one after another</span>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="p">)</span>
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="c1"># 4. Kick it off!</span>
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="n">result</span> <span class="o">=</span> <span class="n">crew</span><span class="o">.</span><span class="n">kickoff</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;AI Agents in Production&quot;</span><span class="p">})</span>
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="sequential-vs-parallel-execution">🧠 Sequential vs Parallel Execution<a class="headerlink" href="#sequential-vs-parallel-execution" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TB
+    subgraph "Sequential (default)"
+        S1["Task 1: Research"] --&gt; S2["Task 2: Write"]
+        S2 --&gt; S3["Task 3: Review"]
+    end
+
+    subgraph "Parallel (async tasks)"
+        P1["Task 1: Research Topic A"]
+        P2["Task 2: Research Topic B"]
+        P3["Task 3: Research Topic C"]
+        P1 --&gt; P4["Task 4: Combine All"]
+        P2 --&gt; P4
+        P3 --&gt; P4
+    end</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Sequential — each task waits for the previous one</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">crew</span> <span class="o">=</span> <span class="n">Crew</span><span class="p">(</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">agents</span><span class="o">=</span><span class="p">[</span><span class="n">researcher</span><span class="p">,</span> <span class="n">writer</span><span class="p">],</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">tasks</span><span class="o">=</span><span class="p">[</span><span class="n">research_task</span><span class="p">,</span> <span class="n">write_task</span><span class="p">],</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">process</span><span class="o">=</span><span class="n">Process</span><span class="o">.</span><span class="n">sequential</span><span class="p">,</span>  <span class="c1"># Task 2 gets Task 1&#39;s output as context</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">)</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># Parallel — tasks run at the same time</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">parallel_task_a</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Research topic A&quot;</span><span class="p">,</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">expected_output</span><span class="o">=</span><span class="s2">&quot;Findings on A&quot;</span><span class="p">,</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">agent</span><span class="o">=</span><span class="n">researcher</span><span class="p">,</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">async_execution</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># ← Runs in parallel!</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="p">)</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="n">parallel_task_b</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Research topic B&quot;</span><span class="p">,</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="n">expected_output</span><span class="o">=</span><span class="s2">&quot;Findings on B&quot;</span><span class="p">,</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="n">agent</span><span class="o">=</span><span class="n">researcher</span><span class="p">,</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>    <span class="n">async_execution</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="p">)</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="n">combine_task</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Combine findings from A and B into one report&quot;</span><span class="p">,</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="n">expected_output</span><span class="o">=</span><span class="s2">&quot;Combined report&quot;</span><span class="p">,</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="n">agent</span><span class="o">=</span><span class="n">writer</span><span class="p">,</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>    <span class="n">context</span><span class="o">=</span><span class="p">[</span><span class="n">parallel_task_a</span><span class="p">,</span> <span class="n">parallel_task_b</span><span class="p">],</span>  <span class="c1"># ← Waits for both</span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="flows-the-event-driven-orchestration">🧠 Flows — The Event-Driven Orchestration<a class="headerlink" href="#flows-the-event-driven-orchestration" title="Permanent link">&para;</a></h3>
+<p>CrewAI Flows let you build complex, multi-step pipelines with conditionals:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">crewai.flow.flow</span> <span class="kn">import</span> <span class="n">Flow</span><span class="p">,</span> <span class="n">listen</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">router</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">class</span> <span class="nc">ContentPipeline</span><span class="p">(</span><span class="n">Flow</span><span class="p">):</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A flow that researches, writes, and conditionally reviews content.&quot;&quot;&quot;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="nd">@start</span><span class="p">()</span>  <span class="c1"># This method runs first</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="k">def</span> <span class="nf">research_topic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Step 1: Research the topic&quot;&quot;&quot;</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="c1"># Could call a Crew here, or use direct LLM calls</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="s2">&quot;research&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Found 10 key findings about AI agents...&quot;</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="s2">&quot;research&quot;</span><span class="p">]</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="nd">@listen</span><span class="p">(</span><span class="n">research_topic</span><span class="p">)</span>  <span class="c1"># Runs after research_topic completes</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="k">def</span> <span class="nf">write_draft</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Step 2: Write a draft based on research&quot;&quot;&quot;</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="s2">&quot;draft&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Draft based on: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;research&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="s2">&quot;word_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">450</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="s2">&quot;draft&quot;</span><span class="p">]</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>    <span class="nd">@router</span><span class="p">(</span><span class="n">write_draft</span><span class="p">)</span>  <span class="c1"># Decides what happens next</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>    <span class="k">def</span> <span class="nf">check_quality</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Step 3: Route based on draft quality&quot;&quot;&quot;</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="s2">&quot;word_count&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>            <span class="k">return</span> <span class="s2">&quot;needs_revision&quot;</span>  <span class="c1"># Route to revision</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>        <span class="k">return</span> <span class="s2">&quot;approved&quot;</span>            <span class="c1"># Route to publish</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>    <span class="nd">@listen</span><span class="p">(</span><span class="s2">&quot;needs_revision&quot;</span><span class="p">)</span>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>    <span class="k">def</span> <span class="nf">revise_draft</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Step 4a: Revision path&quot;&quot;&quot;</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="s2">&quot;draft&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">[Additional content added during revision]&quot;</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="s2">&quot;draft&quot;</span><span class="p">]</span>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>    <span class="nd">@listen</span><span class="p">(</span><span class="s2">&quot;approved&quot;</span><span class="p">)</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>    <span class="k">def</span> <span class="nf">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Step 4b: Publish path&quot;&quot;&quot;</span>
+</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;✅ Published: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;draft&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>
+</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="c1"># Run the flow</span>
+</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="n">flow</span> <span class="o">=</span> <span class="n">ContentPipeline</span><span class="p">()</span>
+</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="n">result</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">kickoff</span><span class="p">()</span>
+</span></code></pre></div>
+<pre class="mermaid"><code>flowchart TB
+    A["@start\nresearch_topic()"] --&gt; B["@listen\nwrite_draft()"]
+    B --&gt; C{"@router\ncheck_quality()"}
+    C --&gt;|"needs_revision"| D["revise_draft()"]
+    C --&gt;|"approved"| E["publish() ✅"]
+    D --&gt; E</code></pre>
+<hr />
+<h2 id="part-3-a2a-protocol-agents-talking-to-agents">Part 3: A2A Protocol — Agents Talking to Agents<a class="headerlink" href="#part-3-a2a-protocol-agents-talking-to-agents" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="what-problem-does-a2a-solve">🧠 What problem does A2A solve?<a class="headerlink" href="#what-problem-does-a2a-solve" title="Permanent link">&para;</a></h3>
+<p>MCP (Module 4) connects an agent to <strong>tools</strong> (databases, APIs). But what if you need <strong>agents to talk to other agents</strong> — especially agents built by different companies?</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph "MCP = Agent ↔ Tool"
+        A1["Your Agent"] --&gt; T1["Database"]
+        A1 --&gt; T2["Search API"]
+        A1 --&gt; T3["Calendar"]
+    end
+
+    subgraph "A2A = Agent ↔ Agent"
+        B1["Your Agent\n(Company A)"] &lt;--&gt; B2["Hiring Agent\n(Company B)"]
+        B1 &lt;--&gt; B3["Legal Agent\n(Company C)"]
+        B2 &lt;--&gt; B3
+    end</code></pre>
+<p><strong>The email analogy</strong>: MCP is like your phone's apps (tools). A2A is like email — a standard way to send messages between different organizations who use different systems.</p>
+<h3 id="agent-cards-the-digital-business-card">🧠 Agent Cards — The Digital Business Card<a class="headerlink" href="#agent-cards-the-digital-business-card" title="Permanent link">&para;</a></h3>
+<p>Before agents can talk, they need to <strong>discover</strong> each other. Agent Cards are JSON files hosted at a well-known URL:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Travel Booking Agent&quot;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Books flights, hotels, and rental cars&quot;</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://travel-agent.example.com/a2a&quot;</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nt">&quot;capabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">&quot;streaming&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="nt">&quot;pushNotifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="nt">&quot;skills&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;book_flight&quot;</span><span class="p">,</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Book Flight&quot;</span><span class="p">,</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Search and book airline tickets&quot;</span><span class="p">,</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">      </span><span class="nt">&quot;inputModes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">      </span><span class="nt">&quot;outputModes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">]</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;book_hotel&quot;</span><span class="p">,</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Book Hotel&quot;</span><span class="p">,</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Search and book hotel rooms&quot;</span><span class="p">,</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">      </span><span class="nt">&quot;inputModes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">      </span><span class="nt">&quot;outputModes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">  </span><span class="p">],</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">  </span><span class="nt">&quot;authentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">    </span><span class="nt">&quot;schemes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;OAuth2&quot;</span><span class="p">]</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>How discovery works:</strong></p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Client as Your Agent
+    participant Card as Agent Card URL
+    participant Remote as Travel Agent
+
+    Client-&gt;&gt;Card: GET /.well-known/agent.json
+    Card--&gt;&gt;Client: Agent Card (skills, URL, auth)
+    Client-&gt;&gt;Client: "This agent can book flights — perfect!"
+    Client-&gt;&gt;Remote: POST /a2a (task request)
+    Remote--&gt;&gt;Client: Task result</code></pre>
+<h3 id="a2a-vs-mcp-theyre-complementary">🧠 A2A vs MCP — They're Complementary<a class="headerlink" href="#a2a-vs-mcp-theyre-complementary" title="Permanent link">&para;</a></h3>
+<p>This is a common interview question. Here's the definitive answer:</p>
+<pre class="mermaid"><code>flowchart TB
+    User["👤 User"] --&gt; Primary["🤖 Primary Agent"]
+
+    Primary --&gt;|"A2A\n(agent-to-agent)"| Travel["✈️ Travel Agent"]
+    Primary --&gt;|"A2A"| Legal["⚖️ Legal Agent"]
+
+    Travel --&gt;|"MCP\n(agent-to-tool)"| FlightAPI["Flight API"]
+    Travel --&gt;|"MCP"| HotelDB["Hotel Database"]
+    Legal --&gt;|"MCP"| DocStore["Document Store"]
+    Legal --&gt;|"MCP"| ComplianceDB["Compliance DB"]</code></pre>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MCP</th>
+<th>A2A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Connects</strong></td>
+<td>Agent ↔ Tools/Data</td>
+<td>Agent ↔ Agent</td>
+</tr>
+<tr>
+<td><strong>Direction</strong></td>
+<td>Vertical (depth)</td>
+<td>Horizontal (breadth)</td>
+</tr>
+<tr>
+<td><strong>Analogy</strong></td>
+<td>USB ports on your laptop</td>
+<td>Email between companies</td>
+</tr>
+<tr>
+<td><strong>Use case</strong></td>
+<td>Agent needs to search, read DB, call API</td>
+<td>Agent needs help from another agent</td>
+</tr>
+<tr>
+<td><strong>Who made it</strong></td>
+<td>Anthropic</td>
+<td>Google</td>
+</tr>
+<tr>
+<td><strong>Protocol</strong></td>
+<td>JSON-RPC over stdio/SSE</td>
+<td>HTTP + JSON</td>
+</tr>
+<tr>
+<td><strong>Together</strong></td>
+<td>Agent uses MCP to access its own tools</td>
+<td>Agent uses A2A to delegate to specialists</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key takeaway</strong>: MCP gives agents <strong>hands</strong> (to use tools). A2A gives agents <strong>voices</strong> (to talk to each other). A full system uses both.</p>
+</blockquote>
+<hr />
+<h2 id="langgraph-vs-crewai-when-to-use-which">LangGraph vs CrewAI — When to Use Which<a class="headerlink" href="#langgraph-vs-crewai-when-to-use-which" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th style="text-align: center;">Use LangGraph</th>
+<th style="text-align: center;">Use CrewAI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Need fine-grained control over every step</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Want to get a prototype running in 10 minutes</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Complex conditional routing &amp; loops</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Team of agents with clear roles</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Human-in-the-loop approval steps</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Need built-in checkpointing</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Rapid iteration / hackathon</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Production system with debugging needs</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Non-technical stakeholders define workflows</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule of thumb</strong>: Start with <strong>CrewAI</strong> to prototype. Switch to <strong>LangGraph</strong> when you need control, debugging, or production resilience.</p>
+<hr />
+<h2 id="how-module-3-connects-to-everything">🔗 How Module 3 Connects to Everything<a class="headerlink" href="#how-module-3-connects-to-everything" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TB
+    M2["Module 2\nSingle agents (brain)"] --&gt; M3
+    M3["Module 3\nOrchestration (spine)"]
+    M3 --&gt;|"Agents need tools"| M4["Module 4\nMCP + RAG (senses)"]
+    M3 --&gt;|"Workflows need monitoring"| M5["Module 5\nLangSmith (nervous system)"]
+    M3 --&gt;|"Workflows need hosting"| M6["Module 6\nFastAPI + Docker (home)"]
+
+    style M3 fill:#f59e0b,color:#000</code></pre>
+<ul>
+<li><strong>Module 2 → 3</strong>: You built single agents. Now you wire them into workflows.</li>
+<li><strong>Module 3 → 4</strong>: Agents in your graph need data — MCP and RAG provide it.</li>
+<li><strong>Module 3 → 5</strong>: Multi-step workflows are hard to debug without LangSmith traces.</li>
+</ul>
+<hr />
+<h2 id="cheat-sheet">⚡ Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<h3 id="langgraph-quick-reference">LangGraph Quick Reference<a class="headerlink" href="#langgraph-quick-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Define state</td>
+<td><code>class MyState(TypedDict): ...</code></td>
+</tr>
+<tr>
+<td>Create graph</td>
+<td><code>graph = StateGraph(MyState)</code></td>
+</tr>
+<tr>
+<td>Add node</td>
+<td><code>graph.add_node("name", function)</code></td>
+</tr>
+<tr>
+<td>Add edge</td>
+<td><code>graph.add_edge("from", "to")</code></td>
+</tr>
+<tr>
+<td>Conditional edge</td>
+<td><code>graph.add_conditional_edges("node", router_fn, mapping)</code></td>
+</tr>
+<tr>
+<td>Start edge</td>
+<td><code>graph.add_edge(START, "first_node")</code></td>
+</tr>
+<tr>
+<td>End edge</td>
+<td><code>graph.add_edge("last_node", END)</code></td>
+</tr>
+<tr>
+<td>Compile</td>
+<td><code>app = graph.compile()</code></td>
+</tr>
+<tr>
+<td>Compile + memory</td>
+<td><code>app = graph.compile(checkpointer=MemorySaver())</code></td>
+</tr>
+<tr>
+<td>Run</td>
+<td><code>app.invoke(initial_state)</code></td>
+</tr>
+<tr>
+<td>Human pause</td>
+<td><code>graph.compile(interrupt_before=["node"])</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="crewai-quick-reference">CrewAI Quick Reference<a class="headerlink" href="#crewai-quick-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create agent</td>
+<td><code>Agent(role=..., goal=..., backstory=...)</code></td>
+</tr>
+<tr>
+<td>Create task</td>
+<td><code>Task(description=..., agent=..., expected_output=...)</code></td>
+</tr>
+<tr>
+<td>Create crew</td>
+<td><code>Crew(agents=[...], tasks=[...], process=Process.sequential)</code></td>
+</tr>
+<tr>
+<td>Run crew</td>
+<td><code>crew.kickoff(inputs={...})</code></td>
+</tr>
+<tr>
+<td>Parallel task</td>
+<td><code>Task(..., async_execution=True)</code></td>
+</tr>
+<tr>
+<td>Task depends on</td>
+<td><code>Task(..., context=[other_task])</code></td>
+</tr>
+<tr>
+<td>Flow start</td>
+<td><code>@start()</code> decorator</td>
+</tr>
+<tr>
+<td>Flow listener</td>
+<td><code>@listen(prev_method)</code> decorator</td>
+</tr>
+<tr>
+<td>Flow router</td>
+<td><code>@router(prev_method)</code> decorator</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="checkpoint-quiz">✅ Checkpoint Quiz<a class="headerlink" href="#checkpoint-quiz" title="Permanent link">&para;</a></h2>
+<p>Test yourself before moving to Module 4:</p>
+<p><strong>1.</strong> In LangGraph, what is "state" and why is it a <code>TypedDict</code>?</p>
+<details><summary>Answer</summary>
+
+State is the **shared data object** that flows through every node in the graph. It's defined as a `TypedDict` because that gives you type hints (IDE autocomplete, type checking) while keeping it as a plain dictionary under the hood. Every node reads from and writes to this shared state.
+</details>
+
+<p><strong>2.</strong> What's the difference between <code>add_edge()</code> and <code>add_conditional_edges()</code> in LangGraph?</p>
+<details><summary>Answer</summary>
+
+`add_edge("A", "B")` creates a **fixed** connection — A always goes to B. `add_conditional_edges("A", router_fn, mapping)` creates a **dynamic** connection — after A runs, the `router_fn` reads the state and returns which node to go to next. This enables branching logic.
+</details>
+
+<p><strong>3.</strong> In CrewAI, what's the difference between <code>Process.sequential</code> and <code>async_execution=True</code>?</p>
+<details><summary>Answer</summary>
+
+`Process.sequential` means tasks run **one after another** in order, with each task's output available as context for the next. `async_execution=True` on a task means that task can run **in parallel** with other async tasks. You then use `context=[task_a, task_b]` on a later task to wait for the parallel tasks to complete.
+</details>
+
+<p><strong>4.</strong> How does A2A differ from MCP? Can they be used together?</p>
+<details><summary>Answer</summary>
+
+**MCP** connects an agent to **tools and data** (databases, APIs, file systems) — vertical integration. **A2A** connects an agent to **other agents** — horizontal integration. They're complementary: an agent might use A2A to ask a specialist agent for help, and that specialist uses MCP to access its own tools. A full production system uses both.
+</details>
+
+<p><strong>5.</strong> Why would you use LangGraph's <code>interrupt_before</code> feature?</p>
+<details><summary>Answer</summary>
+
+`interrupt_before=["node_name"]` pauses the graph **before** executing a specific node, enabling **human-in-the-loop** approval. Use it for high-risk actions like processing refunds, sending emails, or deleting data. The human reviews the current state, approves or modifies it, and then the graph resumes. The graph's state is preserved via checkpointing during the pause.
+</details>
+
+<hr />
+<blockquote>
+<p><strong>Next up</strong>: <a href="../module_4_senses_memory/">Module 4 — The "Senses &amp; Memory": MCP + Vector DBs + GraphRAG</a></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

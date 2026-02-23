@@ -1,0 +1,2163 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete 12-week learning notes for AI Agents Development">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../module_2_brain/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Module 1 — Dev Environment - 🤖 AI Agents Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-1-development-environment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="🤖 AI Agents Development" class="md-header__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🤖 AI Agents Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 1 — Dev Environment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  📚 Study Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/curated_resources/" class="md-tabs__link">
+          
+  
+  
+  🔗 Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="🤖 AI Agents Development" class="md-nav__button md-logo" aria-label="🤖 AI Agents Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    🤖 AI Agents Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Study Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 Study Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 — Dev Environment
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 — Dev Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 What &amp; Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-type-hints-why-ai-agents-need-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Section 1: Type Hints — Why AI Agents Need Them
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Section 1: Type Hints — Why AI Agents Need Them">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-type-hints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are type hints?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-ai-agents-care" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do AI agents care?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-key-type-hints-youll-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The key type hints you'll use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#union-types-python-310" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Union types (Python 3.10+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-structural-pattern-matching-matchcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Section 2: Structural Pattern Matching (match/case)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Section 2: Structural Pattern Matching (match/case)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is it?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-agents-need-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why agents need it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-vs-after" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before vs After
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-patterns-youll-use-most" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three patterns you'll use most
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-asyncawait-why-agents-must-be-async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Section 3: async/await — Why Agents MUST Be Async
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Section 3: async/await — Why Agents MUST Be Async">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-restaurant-analogy-from-reddit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The restaurant analogy (from Reddit)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-agents-need-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why agents need this
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-async-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic async code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-uv-the-modern-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Section 4: uv — The Modern Package Manager
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Section 4: uv — The Modern Package Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-problem-does-uv-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What problem does uv solve?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started-with-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting started with uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-first-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create your first project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily-workflow-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily workflow commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip-uv-translation-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pip → uv Translation Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-env-secrets-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Section 5: .env &amp; Secrets Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Section 5: .env &amp; Secrets Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-solution-env-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The solution: .env files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-step setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-module-1-connects-to-everything-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 How Module 1 Connects to Everything Else
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Cheat Sheet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-310-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python 3.10+ Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .env Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checkpoint Quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_2_brain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 — Brain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_3_spine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 — Spine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_4_senses_memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 4 — Senses & Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_5_nervous_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 5 — Nervous System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_6_home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 6 — Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔗 Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔗 Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/curated_resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video-First Learning Path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/project_specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Build Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 What &amp; Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-type-hints-why-ai-agents-need-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Section 1: Type Hints — Why AI Agents Need Them
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Section 1: Type Hints — Why AI Agents Need Them">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-type-hints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are type hints?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-ai-agents-care" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do AI agents care?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-key-type-hints-youll-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The key type hints you'll use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#union-types-python-310" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Union types (Python 3.10+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-structural-pattern-matching-matchcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Section 2: Structural Pattern Matching (match/case)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Section 2: Structural Pattern Matching (match/case)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is it?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-agents-need-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why agents need it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-vs-after" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before vs After
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-patterns-youll-use-most" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three patterns you'll use most
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-asyncawait-why-agents-must-be-async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Section 3: async/await — Why Agents MUST Be Async
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Section 3: async/await — Why Agents MUST Be Async">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-restaurant-analogy-from-reddit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The restaurant analogy (from Reddit)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-agents-need-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why agents need this
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-async-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic async code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-uv-the-modern-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Section 4: uv — The Modern Package Manager
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Section 4: uv — The Modern Package Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-problem-does-uv-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What problem does uv solve?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started-with-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting started with uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-first-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create your first project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily-workflow-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily workflow commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip-uv-translation-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pip → uv Translation Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-env-secrets-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Section 5: .env &amp; Secrets Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Section 5: .env &amp; Secrets Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-solution-env-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The solution: .env files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-step setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-module-1-connects-to-everything-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 How Module 1 Connects to Everything Else
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Cheat Sheet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-310-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python 3.10+ Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .env Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Checkpoint Quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-1-development-environment">Module 1: Development Environment<a class="headerlink" href="#module-1-development-environment" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Goal</strong>: Set up a modern Python environment that every AI agent project will use.
+<strong>Time</strong>: Week 1–2 | <strong>Watch alongside</strong>: Videos 1.1, 1.2, 1.3 from curated resources</p>
+</blockquote>
+<hr />
+<h2 id="what-why">🎯 What &amp; Why<a class="headerlink" href="#what-why" title="Permanent link">&para;</a></h2>
+<p>You're building AI agents. Before writing any AI code, you need a <strong>rock-solid Python setup</strong> — the same way a chef prepares their kitchen before cooking.</p>
+<p>This module covers 3 things:
+1. <strong>Modern Python features</strong> (3.10+) that agent frameworks depend on
+2. <strong>uv</strong> — the new package manager that replaces pip, poetry, pyenv, and virtualenv
+3. <strong>.env</strong> — how to safely manage API keys (you'll have many: OpenAI, Tavily, LangSmith, etc.)</p>
+<blockquote>
+<p><strong>Why this matters</strong>: If you skip this, you'll fight your tools instead of learning agents. Every tutorial from Module 2 onward assumes you know this.</p>
+</blockquote>
+<hr />
+<h2 id="section-1-type-hints-why-ai-agents-need-them">🧠 Section 1: Type Hints — Why AI Agents Need Them<a class="headerlink" href="#section-1-type-hints-why-ai-agents-need-them" title="Permanent link">&para;</a></h2>
+<h3 id="what-are-type-hints">What are type hints?<a class="headerlink" href="#what-are-type-hints" title="Permanent link">&para;</a></h3>
+<p>Type hints tell Python (and your IDE) <strong>what kind of data</strong> a variable holds or a function accepts/returns.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># ❌ Without type hints — what does this return? A string? A dict? Who knows?</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># ✅ With type hints — crystal clear</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="why-do-ai-agents-care">Why do AI agents care?<a class="headerlink" href="#why-do-ai-agents-care" title="Permanent link">&para;</a></h3>
+<p>PydanticAI and the OpenAI Agents SDK use type hints to <strong>automatically validate data</strong>. If your agent returns <code>{"name": 123}</code> but you said it should return <code>str</code>, Pydantic catches the error before it causes problems.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["LLM Output\n(messy JSON)"] --&gt; B["Pydantic Model\n(type hints)"]
+    B --&gt;|Valid| C["✅ Clean data"]
+    B --&gt;|Invalid| D["❌ ValidationError\n(caught early!)"]</code></pre>
+<h3 id="the-key-type-hints-youll-use">The key type hints you'll use<a class="headerlink" href="#the-key-type-hints-youll-use" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Basic types</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Koushik&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">age</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">25</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">score</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">98.5</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">is_active</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Collections</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">tags</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;ai&quot;</span><span class="p">]</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;retries&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># Optional — the value might be None</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">nickname</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Could be a string OR None</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1"># Python 3.10+ shorthand for Optional (much cleaner!)</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">nickname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>     <span class="c1"># Same thing, but modern syntax</span>
+</span></code></pre></div>
+<h3 id="union-types-python-310">Union types (Python 3.10+)<a class="headerlink" href="#union-types-python-310" title="Permanent link">&para;</a></h3>
+<p>Before Python 3.10, combining types was ugly:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># ❌ Old way (Python 3.9 and below)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span> <span class="nf">get_id</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="o">...</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># ✅ New way (Python 3.10+) — use the pipe operator</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">def</span> <span class="nf">get_id</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="o">...</span>
+</span></code></pre></div></p>
+<blockquote>
+<p><strong>Bottom line</strong>: Always use <code>X | Y</code> instead of <code>Union[X, Y]</code>. Every agent framework tutorial uses the modern syntax.</p>
+</blockquote>
+<hr />
+<h2 id="section-2-structural-pattern-matching-matchcase">🧠 Section 2: Structural Pattern Matching (<code>match/case</code>)<a class="headerlink" href="#section-2-structural-pattern-matching-matchcase" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-it">What is it?<a class="headerlink" href="#what-is-it" title="Permanent link">&para;</a></h3>
+<p>Python 3.10 added <code>match/case</code> — a powerful way to check data shape and route logic. Think of it as a smarter <code>if/elif/else</code>.</p>
+<h3 id="why-agents-need-it">Why agents need it<a class="headerlink" href="#why-agents-need-it" title="Permanent link">&para;</a></h3>
+<p>Agents receive different types of responses: tool calls, text, errors, handoffs. Pattern matching lets you handle each cleanly:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 🤖 Handling different agent response types</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">def</span> <span class="nf">handle_response</span><span class="p">(</span><span class="n">response</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">match</span> <span class="n">response</span><span class="p">:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="k">case</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">content</span><span class="p">}:</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Agent said: </span><span class="si">{</span><span class="n">content</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="k">case</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tool_call&quot;</span><span class="p">,</span> <span class="s2">&quot;tool&quot;</span><span class="p">:</span> <span class="n">tool_name</span><span class="p">,</span> <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="n">args</span><span class="p">}:</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Agent wants to call: </span><span class="si">{</span><span class="n">tool_name</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="k">case</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">msg</span><span class="p">}:</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Agent error: </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="k">case</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;handoff&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">agent_name</span><span class="p">}:</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Handing off to: </span><span class="si">{</span><span class="n">agent_name</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>  <span class="c1"># The underscore matches ANYTHING (default case)</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>            <span class="k">return</span> <span class="s2">&quot;Unknown response type&quot;</span>
+</span></code></pre></div>
+<h3 id="before-vs-after">Before vs After<a class="headerlink" href="#before-vs-after" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># ❌ Old way — messy nested if/elif</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">def</span> <span class="nf">handle_response</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Agent said: </span><span class="si">{</span><span class="n">content</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="k">elif</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;tool_call&quot;</span><span class="p">:</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="n">tool_name</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tool&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="n">args</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;args&quot;</span><span class="p">,</span> <span class="p">{})</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Agent wants to call: </span><span class="si">{</span><span class="n">tool_name</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="k">elif</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;error&quot;</span><span class="p">:</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="c1"># ... you get the idea. This gets ugly fast.</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># ✅ New way — match/case is cleaner AND extracts variables for you</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1"># (see example above)</span>
+</span></code></pre></div>
+<h3 id="three-patterns-youll-use-most">Three patterns you'll use most<a class="headerlink" href="#three-patterns-youll-use-most" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 1. Match by value</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">match</span> <span class="n">status_code</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">case</span> <span class="mi">200</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OK&quot;</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="k">case</span> <span class="mi">404</span><span class="p">:</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not found&quot;</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="k">case</span> <span class="mi">500</span><span class="p">:</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Server error&quot;</span><span class="p">)</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># 2. Match by structure (extracting values)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">match</span> <span class="n">user</span><span class="p">:</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="k">case</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">}:</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Admin: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="k">case</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">}:</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;User: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="c1"># 3. Match with guard conditions</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="k">match</span> <span class="n">age</span><span class="p">:</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="k">case</span> <span class="n">n</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid&quot;</span><span class="p">)</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    <span class="k">case</span> <span class="n">n</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Minor&quot;</span><span class="p">)</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adult&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="section-3-asyncawait-why-agents-must-be-async">🧠 Section 3: <code>async/await</code> — Why Agents MUST Be Async<a class="headerlink" href="#section-3-asyncawait-why-agents-must-be-async" title="Permanent link">&para;</a></h2>
+<h3 id="the-restaurant-analogy-from-reddit">The restaurant analogy (from Reddit)<a class="headerlink" href="#the-restaurant-analogy-from-reddit" title="Permanent link">&para;</a></h3>
+<p>Imagine a restaurant with <strong>one chef</strong> (your Python program has one thread):</p>
+<pre class="mermaid"><code>flowchart TB
+    subgraph "❌ Synchronous Chef (Blocking)"
+        S1["Start pasta water"] --&gt; S2["⏳ Wait 10 min\n(doing NOTHING)"]
+        S2 --&gt; S3["Cook pasta"]
+        S3 --&gt; S4["Start grilling chicken"]
+        S4 --&gt; S5["⏳ Wait 15 min\n(doing NOTHING)"]
+        S5 --&gt; S6["Serve both dishes"]
+    end</code></pre>
+<p><strong>Total time</strong>: 25+ minutes. The chef wastes time just staring at pots.</p>
+<pre class="mermaid"><code>flowchart TB
+    subgraph "✅ Async Chef (Non-Blocking)"
+        A1["Start pasta water\n(await boil)"] --&gt; A2["While waiting...\nstart grilling chicken\n(await grill)"]
+        A2 --&gt; A3["Water boils!\nCook pasta"]
+        A3 --&gt; A4["Chicken done!\nServe both dishes"]
+    end</code></pre>
+<p><strong>Total time</strong>: ~15 minutes. Same chef, same kitchen, much faster.</p>
+<h3 id="why-agents-need-this">Why agents need this<a class="headerlink" href="#why-agents-need-this" title="Permanent link">&para;</a></h3>
+<p>AI agents make many <strong>slow external calls</strong>: LLM APIs (1-5 seconds each), web searches, database queries. Without async, your agent waits idle after each call. With async, it can fire multiple calls and process results as they arrive.</p>
+<h3 id="basic-async-code">Basic async code<a class="headerlink" href="#basic-async-code" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">asyncio</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># 🔑 Step 1: Define async functions with &quot;async def&quot;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">call_llm</span><span class="p">(</span><span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulate an LLM API call that takes 2 seconds&quot;&quot;&quot;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📤 Sending: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Simulates network wait (not real sleep!)</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📥 Got response for: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Response to: </span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1"># 🔑 Step 2: Run multiple calls concurrently with asyncio.gather()</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="c1"># ❌ Sequential — takes 6 seconds (2+2+2)</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="c1"># result1 = await call_llm(&quot;What is Python?&quot;)</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    <span class="c1"># result2 = await call_llm(&quot;What is async?&quot;)</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="c1"># result3 = await call_llm(&quot;What is an agent?&quot;)</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="c1"># ✅ Concurrent — takes ~2 seconds (all 3 run at the same time!)</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        <span class="n">call_llm</span><span class="p">(</span><span class="s2">&quot;What is Python?&quot;</span><span class="p">),</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>        <span class="n">call_llm</span><span class="p">(</span><span class="s2">&quot;What is async?&quot;</span><span class="p">),</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>        <span class="n">call_llm</span><span class="p">(</span><span class="s2">&quot;What is an agent?&quot;</span><span class="p">),</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>    <span class="p">)</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2"> results&quot;</span><span class="p">)</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="c1"># 🔑 Step 3: Run the async entry point</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</span></code></pre></div>
+<p><strong>Output (concurrent version):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>📤 Sending: What is Python?
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>📤 Sending: What is async?        ← All 3 start immediately!
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>📤 Sending: What is an agent?
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>📥 Got response for: What is Python?
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>📥 Got response for: What is async?      ← All 3 finish ~2 sec later
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>📥 Got response for: What is an agent?
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Got 3 results
+</span></code></pre></div></p>
+<h3 id="the-rules">The rules<a class="headerlink" href="#the-rules" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Use <code>async def</code></td>
+<td>For any function that calls APIs, databases, or other async functions</td>
+</tr>
+<tr>
+<td>Use <code>await</code></td>
+<td>Before any async operation — it means "start this, but I can do other stuff while waiting"</td>
+</tr>
+<tr>
+<td>Use <code>asyncio.gather()</code></td>
+<td>To run multiple async tasks concurrently</td>
+</tr>
+<tr>
+<td>Use <code>asyncio.run()</code></td>
+<td>To start the async event loop from regular (sync) code</td>
+</tr>
+<tr>
+<td><strong>Never</strong> use <code>time.sleep()</code></td>
+<td>In async code, use <code>await asyncio.sleep()</code> instead</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="section-4-uv-the-modern-package-manager">🧠 Section 4: uv — The Modern Package Manager<a class="headerlink" href="#section-4-uv-the-modern-package-manager" title="Permanent link">&para;</a></h2>
+<h3 id="what-problem-does-uv-solve">What problem does uv solve?<a class="headerlink" href="#what-problem-does-uv-solve" title="Permanent link">&para;</a></h3>
+<p>Before uv, Python developers needed <strong>4–5 separate tools</strong>:</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph "❌ Old Way (4+ tools)"
+        A["pyenv\n(Python versions)"]
+        B["virtualenv\n(environments)"]
+        C["pip\n(install packages)"]
+        D["pip-tools\n(lock dependencies)"]
+        E["poetry\n(project management)"]
+    end
+
+    subgraph "✅ New Way (1 tool)"
+        F["uv\n(does ALL of it)\n10-100x faster"]
+    end</code></pre>
+<h3 id="getting-started-with-uv">Getting started with uv<a class="headerlink" href="#getting-started-with-uv" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 📦 Install uv</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># ✅ Verify it worked</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>uv<span class="w"> </span>--version
+</span></code></pre></div>
+<h3 id="create-your-first-project">Create your first project<a class="headerlink" href="#create-your-first-project" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># 🏗️ Create a new project</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>uv<span class="w"> </span>init<span class="w"> </span>my-agent-project
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">cd</span><span class="w"> </span>my-agent-project
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># 📂 What uv created for you:</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># my-agent-project/</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># ├── pyproject.toml      ← Project config (replaces setup.py + requirements.txt)</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># ├── .python-version     ← Pins Python version</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1"># ├── hello.py            ← Starter script</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># └── README.md</span>
+</span></code></pre></div>
+<h3 id="daily-workflow-commands">Daily workflow commands<a class="headerlink" href="#daily-workflow-commands" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># ➕ Add a dependency (like pip install, but faster)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>uv<span class="w"> </span>add<span class="w"> </span>pydantic-ai
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>uv<span class="w"> </span>add<span class="w"> </span>openai
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>uv<span class="w"> </span>add<span class="w"> </span>python-dotenv
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># ➕ Add a development dependency (not shipped to production)</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>pytest
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>ruff
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>mypy
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1"># 🔄 Sync your environment (install everything from lockfile)</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>uv<span class="w"> </span>sync
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="c1"># ▶️ Run your script (auto-creates venv if needed!)</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>uv<span class="w"> </span>run<span class="w"> </span>main.py
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="c1"># 🔧 Run a dev tool without installing it permanently</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>uvx<span class="w"> </span>ruff<span class="w"> </span>check<span class="w"> </span>.<span class="w">      </span><span class="c1"># Lint your code</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>uvx<span class="w"> </span>mypy<span class="w"> </span>--strict<span class="w"> </span>.<span class="w">   </span><span class="c1"># Type check</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="c1"># 🌳 See your dependency tree</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>uv<span class="w"> </span>tree
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="c1"># ❌ Remove a package</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>uv<span class="w"> </span>remove<span class="w"> </span>openai
+</span></code></pre></div>
+<h3 id="pip-uv-translation-table">pip → uv Translation Table<a class="headerlink" href="#pip-uv-translation-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>What You Want</th>
+<th>pip (old)</th>
+<th>uv (new)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Install a package</td>
+<td><code>pip install requests</code></td>
+<td><code>uv add requests</code></td>
+</tr>
+<tr>
+<td>Install dev dependency</td>
+<td><code>pip install pytest</code></td>
+<td><code>uv add --dev pytest</code></td>
+</tr>
+<tr>
+<td>Install from requirements.txt</td>
+<td><code>pip install -r requirements.txt</code></td>
+<td><code>uv add -r requirements.txt</code></td>
+</tr>
+<tr>
+<td>Create virtual environment</td>
+<td><code>python -m venv .venv</code></td>
+<td><code>uv venv</code> (or auto-created)</td>
+</tr>
+<tr>
+<td>Run a script</td>
+<td><code>python main.py</code></td>
+<td><code>uv run main.py</code></td>
+</tr>
+<tr>
+<td>Freeze dependencies</td>
+<td><code>pip freeze &gt; requirements.txt</code></td>
+<td><code>uv lock</code> (creates uv.lock)</td>
+</tr>
+<tr>
+<td>Install specific Python</td>
+<td><code>pyenv install 3.12</code></td>
+<td><code>uv python install 3.12</code></td>
+</tr>
+<tr>
+<td>Pin Python version</td>
+<td><code>pyenv local 3.12</code></td>
+<td><code>uv python pin 3.12</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="section-5-env-secrets-management">🧠 Section 5: .env &amp; Secrets Management<a class="headerlink" href="#section-5-env-secrets-management" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem">The problem<a class="headerlink" href="#the-problem" title="Permanent link">&para;</a></h3>
+<p>AI agent projects need <strong>many API keys</strong>:
+- OpenAI / Gemini / Groq (LLM providers)
+- Tavily (web search)
+- LangSmith (observability)
+- Database credentials</p>
+<p><strong>NEVER</strong> hardcode these in your code. One accidental <code>git push</code> and your keys are public.</p>
+<h3 id="the-solution-env-files">The solution: <code>.env</code> files<a class="headerlink" href="#the-solution-env-files" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart LR
+    A[".env file\n(SECRET - never commit)"] --&gt;|python-dotenv loads| B["os.environ\n(available in code)"]
+    C[".env.example\n(TEMPLATE - commit this)"] --&gt;|Tells teammates| D["What keys are needed"]
+    E[".gitignore\n(blocks .env)"] --&gt;|Prevents| F["Accidental exposure"]</code></pre>
+<h3 id="step-by-step-setup">Step-by-step setup<a class="headerlink" href="#step-by-step-setup" title="Permanent link">&para;</a></h3>
+<p><strong>1. Create <code>.env</code> (your actual secrets):</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># .env — ⚠️ NEVER commit this file</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nv">OPENAI_API_KEY</span><span class="o">=</span>sk-abc123...
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nv">TAVILY_API_KEY</span><span class="o">=</span>tvly-xyz789...
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nv">LANGSMITH_API_KEY</span><span class="o">=</span>lsv2-...
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nv">DATABASE_URL</span><span class="o">=</span>postgresql://user:pass@localhost:5432/mydb
+</span></code></pre></div></p>
+<p><strong>2. Create <code>.env.example</code> (template for others):</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># .env.example — ✅ Commit this file (no real values!)</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nv">OPENAI_API_KEY</span><span class="o">=</span>your-openai-key-here
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nv">TAVILY_API_KEY</span><span class="o">=</span>your-tavily-key-here
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nv">LANGSMITH_API_KEY</span><span class="o">=</span>your-langsmith-key-here
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nv">DATABASE_URL</span><span class="o">=</span>postgresql://user:pass@localhost:5432/mydb
+</span></code></pre></div></p>
+<p><strong>3. Add to <code>.gitignore</code>:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a># .gitignore
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>.env
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>.venv/
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>__pycache__/
+</span></code></pre></div></p>
+<p><strong>4. Load in your Python code:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># config.py</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kn">import</span> <span class="nn">os</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1"># Load .env file into environment variables</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">load_dotenv</span><span class="p">()</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="c1"># Access with type safety</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="n">OPENAI_API_KEY</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">]</span>     <span class="c1"># Crashes if missing (good!)</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="n">TAVILY_API_KEY</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;TAVILY_API_KEY&quot;</span><span class="p">]</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="n">DATABASE_URL</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;DATABASE_URL&quot;</span><span class="p">,</span> <span class="s2">&quot;sqlite:///local.db&quot;</span><span class="p">)</span>  <span class="c1"># Fallback value</span>
+</span></code></pre></div></p>
+<p><strong>5. Use in your agent code:</strong>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># main.py</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">OPENAI_API_KEY</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># Now use it — the key is loaded from .env, never hardcoded</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;openai:gpt-4o&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">OPENAI_API_KEY</span><span class="p">)</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="how-module-1-connects-to-everything-else">🔗 How Module 1 Connects to Everything Else<a class="headerlink" href="#how-module-1-connects-to-everything-else" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TB
+    M1["Module 1\nDev Environment"]
+
+    M1 --&gt;|"Type hints power"| M2["Module 2\nPydantic + PydanticAI"]
+    M1 --&gt;|"async/await powers"| M3["Module 3\nLangGraph agents"]
+    M1 --&gt;|"uv manages"| M4["Module 4\nMCP + vector DB deps"]
+    M1 --&gt;|".env secures"| M5["Module 5\nLangSmith API keys"]
+    M1 --&gt;|"Project structure feeds"| M6["Module 6\nDocker + deployment"]
+
+    style M1 fill:#22c55e,color:#fff</code></pre>
+<p>Everything you set up here is used in <strong>every</strong> future module. This is the foundation.</p>
+<hr />
+<h2 id="cheat-sheet">⚡ Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<h3 id="python-310-quick-reference">Python 3.10+ Quick Reference<a class="headerlink" href="#python-310-quick-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Syntax</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Union types</td>
+<td><code>X \| Y</code></td>
+<td><code>def foo() -&gt; int \| str:</code></td>
+</tr>
+<tr>
+<td>Optional</td>
+<td><code>X \| None</code></td>
+<td><code>name: str \| None = None</code></td>
+</tr>
+<tr>
+<td>Pattern matching</td>
+<td><code>match/case</code></td>
+<td><code>match response: case {...}:</code></td>
+</tr>
+<tr>
+<td>Type alias</td>
+<td><code>type Name = ...</code></td>
+<td><code>type UserID = int \| str</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="uv-quick-reference">uv Quick Reference<a class="headerlink" href="#uv-quick-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New project</td>
+<td><code>uv init my-project</code></td>
+</tr>
+<tr>
+<td>Add package</td>
+<td><code>uv add pydantic-ai</code></td>
+</tr>
+<tr>
+<td>Add dev package</td>
+<td><code>uv add --dev pytest</code></td>
+</tr>
+<tr>
+<td>Run script</td>
+<td><code>uv run main.py</code></td>
+</tr>
+<tr>
+<td>Run tool</td>
+<td><code>uvx ruff check .</code></td>
+</tr>
+<tr>
+<td>See deps</td>
+<td><code>uv tree</code></td>
+</tr>
+<tr>
+<td>Install Python</td>
+<td><code>uv python install 3.12</code></td>
+</tr>
+<tr>
+<td>Pin Python</td>
+<td><code>uv python pin 3.12</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="env-quick-reference">.env Quick Reference<a class="headerlink" href="#env-quick-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+<th>Git?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.env</code></td>
+<td>Real API keys</td>
+<td>❌ NEVER commit</td>
+</tr>
+<tr>
+<td><code>.env.example</code></td>
+<td>Template (no secrets)</td>
+<td>✅ Commit</td>
+</tr>
+<tr>
+<td><code>.gitignore</code></td>
+<td>Blocks <code>.env</code> from git</td>
+<td>✅ Commit</td>
+</tr>
+<tr>
+<td><code>config.py</code></td>
+<td>Loads <code>.env</code> into code</td>
+<td>✅ Commit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="checkpoint-quiz">✅ Checkpoint Quiz<a class="headerlink" href="#checkpoint-quiz" title="Permanent link">&para;</a></h2>
+<p>Test yourself before moving to Module 2:</p>
+<p><strong>1.</strong> What's the modern way to write <code>Union[int, str]</code> in Python 3.10+?</p>
+<details><summary>Answer</summary>
+
+`int | str` — use the pipe operator.
+</details>
+
+<p><strong>2.</strong> In async Python, what happens when the code hits <code>await</code>?</p>
+<details><summary>Answer</summary>
+
+The current function **pauses** and gives control back to the event loop, which can run other tasks. When the awaited operation completes, the function resumes from where it paused. (The chef analogy: "I started boiling water, let me chop veggies while I wait.")
+</details>
+
+<p><strong>3.</strong> What's the difference between <code>uv add requests</code> and <code>uv add --dev pytest</code>?</p>
+<details><summary>Answer</summary>
+
+`uv add requests` adds it as a **production dependency** (shipped with your app). `uv add --dev pytest` adds it as a **development dependency** (only used during development/testing, not shipped).
+</details>
+
+<p><strong>4.</strong> Why should you use <code>os.environ["KEY"]</code> instead of <code>os.getenv("KEY")</code>?</p>
+<details><summary>Answer</summary>
+
+`os.environ["KEY"]` **raises a KeyError** if the key is missing — this is good because it catches misconfiguration immediately. `os.getenv("KEY")` silently returns `None`, which can cause hard-to-debug errors later.
+</details>
+
+<p><strong>5.</strong> You accidentally committed your <code>.env</code> file with API keys. What should you do?</p>
+<details><summary>Answer</summary>
+
+1. **Immediately rotate/regenerate ALL API keys** in the `.env` file (the old ones are compromised)
+2. Add `.env` to `.gitignore`
+3. Remove from git history: `git rm --cached .env`
+4. Force push the fix
+5. Consider using tools like `git-secrets` to prevent this in the future
+</details>
+
+<hr />
+<blockquote>
+<p><strong>Next up</strong>: <a href="../module_2_brain/">Module 2 — The "Brain": Pydantic + PydanticAI + OpenAI Agents SDK</a></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
